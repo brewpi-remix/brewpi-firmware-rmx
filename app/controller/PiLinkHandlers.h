@@ -23,7 +23,7 @@
 /**
  * Called to invoke a system reset.
  */
-void handleReset(bool exit=true);
+void handleReset();
 
 /**
  * Called to start the platform firmware update process.

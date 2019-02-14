@@ -20,6 +20,7 @@
 
 #pragma once
 
+#include "Brewpi.h"
 #include "Platform.h"
 #include "TicksImpl.h"
 #include <stdint.h>

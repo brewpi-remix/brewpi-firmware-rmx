@@ -178,7 +178,7 @@ void PiLink::receive(void){
                             "}"), 
 					PSTR(VERSION_STRING),               // v:
 					PSTR(stringify(BUILD_NAME)),      // n:                 
-					getShieldVersion(),               // s:
+					BREWPI_STATIC_CONFIG,               // s:
 					BREWPI_SIMULATE,                    // y:
 					BREWPI_BOARD,      // b:
 					BREWPI_LOG_MESSAGES_VERSION);       // l:

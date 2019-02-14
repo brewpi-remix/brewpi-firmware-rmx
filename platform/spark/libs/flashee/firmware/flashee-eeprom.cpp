@@ -44,7 +44,7 @@ FlashDevice::~FlashDevice() { }
  */
 FlashDeviceRegion& Devices::userFlash() 
 {
-#if defined(SPARK) && PLATFORM_ID<=2
+#ifdef SPARK
     static SparkExternalFlashDevice directFlash;
 #else
     static FakeFlashDevice directFlash(512, 4096);

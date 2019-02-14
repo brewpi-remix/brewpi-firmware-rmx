@@ -27,7 +27,7 @@
 #include "Sensor.h"
 #include "TempSensor.h"
 #include "OneWireDevices.h"
-#include "Board.h"
+#include "Pins.h"
 #include "OneWire.h"
 
 /**
@@ -302,6 +302,7 @@ public:
     static void listDevices(Stream& p);
 	
 private:
+	
     static int8_t enumerateActuatorPins(uint8_t offset);
     static int8_t enumerateSensorPins(uint8_t offset);
     static int8_t enumOneWirePins(uint8_t offset);
@@ -320,8 +321,6 @@ private:
     static OneWire* oneWireBus(uint8_t pin);
 
     static bool firstDeviceOutput;
-
-    friend class ConnectedDevicesManager;
 };
 
 

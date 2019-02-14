@@ -35,13 +35,11 @@ extern void setup(void);
 extern void loop (void);
 
 
-void handleReset(bool exit) 
+void handleReset() 
 { 
-    if (!exit)
-        return;
-    // resetting using the watchdog timer (which is a full reset of all registers) 
-    // might not be compatible with old Arduino bootloaders. jumping to 0 is safer.
-    asm volatile ("  jmp 0");
+	// resetting using the watchdog timer (which is a full reset of all registers) 
+	// might not be compatible with old Arduino bootloaders. jumping to 0 is safer.
+	asm volatile ("  jmp 0");
 }
 
 void flashFirmware()

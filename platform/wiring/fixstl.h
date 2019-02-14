@@ -31,6 +31,8 @@
 #undef min
 #undef max
 #include <algorithm>
+#define min(x,y) std::min(x,y)
+#define max(x,y) std::max(x,y)
 #endif
 
 #endif	/* FIXSTL_H */

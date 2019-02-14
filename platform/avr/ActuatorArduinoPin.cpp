@@ -1,4 +1,4 @@
 
 #include "Brewpi.h"
-#include "Board.h"
+#include "Pins.h"
 #include "ActuatorArduinoPin.h"

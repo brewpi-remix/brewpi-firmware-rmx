@@ -21,7 +21,7 @@
 #include "Platform.h"
 #include "RotaryEncoder.h"
 
-#include "Board.h"
+#include "Pins.h"
 #include <limits.h>
 #include "Brewpi.h"
 

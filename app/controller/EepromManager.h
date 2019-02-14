@@ -37,11 +37,6 @@ class EepromManager {
 public:		
 		
 	EepromManager();
-        
-        /**
-         * Initialize the eeprom manager.
-         */
-        static void init();
 	
 	/**
 	 * Write -1 to the entire eeprom, emulating the reset performed by avrdude.

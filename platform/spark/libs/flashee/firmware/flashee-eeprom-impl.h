@@ -26,10 +26,6 @@ template <class T> T min(T a, T b) {
 }
 #endif
 
-#ifndef PLATFORM_ID
-#define PLATFORM_ID 3  // gcc
-#endif
-
 inline uint8_t* as_bytes(void* buf) {
     return (uint8_t*) buf;
 }
@@ -485,7 +481,7 @@ public:
         flash_addr_t dest = translateAddress(address);
         return super::readPage(data, dest, length);
     }
-    
+
     /**
      * Writes data to the flash memory, performing an erase beforehand if necessary
      * to ensure the data is written correctly.
@@ -1290,7 +1286,7 @@ public:
 };
 
 
-#if PLATFORM_ID==0
+#ifdef SPARK
 #include "sst25vf_spi.h"
 
 class SparkExternalFlashDevice : public FlashDevice {

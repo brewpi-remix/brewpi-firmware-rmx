@@ -7,7 +7,6 @@
 #include "BrewPiTouch.h"
 #include "DS2408.h"
 #include "ValvesController.h"
-#include "Platform.h"
 
 SYSTEM_MODE(SEMI_AUTOMATIC);
 
@@ -22,8 +21,6 @@ OneWire ow(0);
 BrewPiTouch touch(D3, D2);
 
 unsigned long testText();
-void printOneWireAdresses(void);
-void ballValvesSerialTest(void);
 
 void setup() {
     pinMode(act1, OUTPUT);
@@ -50,16 +47,15 @@ void setup() {
 
     Serial.begin(57600);
     
-    //configure DS248X to use active pull-up instead of pull-up resistor 
-    //configure returns 0 if it cannot find DS248X connected 
+    //configure DS2482 to use active pull-up instead of pull-up resistor 
+    //configure returns 0 if it cannot find DS2482 connected 
     if (!ow.init()) {
         const char error[] = "OneWire initialization failed\n";
         Serial.print(error);
         debugBox.println(error);
     }
-    //touch.init();
+    touch.init();
     debugBox.println("BrewPi started");
-    printOneWireAdresses();
     /*
     debugBox.print("It is ");
     debugBox.print(Time.timeStr());
@@ -74,7 +70,6 @@ void setup() {
     debugBox.print("My IP is: ");
     debugBox.println(WiFi.localIP());
      */
-    ballValvesSerialTest();
 }
 
 void printOneWireAdresses(void){
@@ -98,7 +93,6 @@ void printOneWireAdresses(void){
 
 void ballValvesSerialTest(){
     uint8_t addr[8];
-    ow.search(addr); //get first address from bus
     ValvesController valves;
     valves.init(&ow, addr);
     
@@ -131,7 +125,7 @@ void ballValvesSerialTest(){
         delay(50);        
     }
 }
-/*
+
 void touchCalibrateTest(){
     touch.calibrate(&tft);
     touch.update();
@@ -147,11 +141,9 @@ void touchCalibrateTest(){
         digitalWrite(buzz, HIGH);
     }
 }
-*/
 
 void loop(void) {
-    //printOneWireAdresses();
-    ballValvesSerialTest();
+    printOneWireAdresses();
 }
 
 unsigned long testFillScreen() {

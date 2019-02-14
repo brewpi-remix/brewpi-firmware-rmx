@@ -15,4 +15,4 @@ To get started, please head over to the [BrewPi Legacy Remix tools](https://gith
 
 End users will *not* have to compile the firmware themselves.  Pre-compiled binaries may be found [in releases](https://github.com/lbussy/brewpi-firmware-rmx/releases), however they are automatically made available and applied during the normal BrewPi Legacy Remix install process.
 
-To build the firmware for Arduino, you will have to use [Atmel Studio](http://www.atmel.com/microsite/atmel_studio6/). The repo includes an Atmel studio project. Select the right processor (Atmega328P for the Arduino Uno, Atmega32U4 for the Leonardo) and set up the right shield in Config.h.
+To build the firmware for Arduino, you will have to use [Atmel Studio version 6.2](https://www.microchip.com/mplab/avr-support/avr-and-sam-downloads-archive). The repo includes an Atmel studio project. Select the right processor (Atmega328P for the Arduino Uno, Atmega32U4 for the Leonardo) and set up the right shield in Config.h.

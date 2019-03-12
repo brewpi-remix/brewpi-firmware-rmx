@@ -11,7 +11,7 @@ Before we proceed, a huge thank you to [Elco Jacobs](https://github.com/elcojaco
 
 To get started, please head over to the [BrewPi Legacy Remix tools](https://github.com/lbussy/brewpi-tools-rmx/blob/master/README.md) README page, and follow along there.
 
-It is not necessary to compile your own firmware.  If you desire simply to obtain the firmware, you can download it compiled for your controller on the [downloads page]().
+It is not necessary to compile your own firmware.  If you desire simply to obtain the firmware, you can download it compiled for your controller on the [releases page](https://github.com/lbussy/brewpi-firmware-rmx/releases).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQwMzkzNzU2NV19
+eyJoaXN0b3J5IjpbNTIxMjc1MjY1XX0=
 -->

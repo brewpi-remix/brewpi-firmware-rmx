@@ -2,13 +2,14 @@
 The primary change in this release is to move the workspace to PlatformIO from Atmel Studio.
 
 ### Features
+ - Move to Platformio
  - Remove (some of) the Spark shrapnel that was in 0.2.10
- - Bump logMessage.h to be compatible with ESP8266 firmware
- - Re-establish build verion in eeprom (remove "unknown")
+ - Bump logMessage.h to be compatible with @Thorrak's ESP8266 firmware
 
 ### Bugfixes
- - Move to Platformio
- - 
+ - Added a reset to help LCD scramble
+ - Re-establish build version in eeprom (remove "unknown")
+
 ## 0.2.10
 ### Bugfixes
 I missed a test case in yesterday's release. Converting a temperature very close to a whole number (e.g. 20.998) converted 1 degree too high (22) due to erroneous rounding of an internal result. This releases fixes the bug and improves the unit tests to go through the entire temperature range to make sure it works.
@@ -63,5 +64,5 @@ We fixed small 1 bit rounding errors (0.0002 degree) in or temperature conversio
 - Use git describe to generate build name
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU1NDk3NjE1Nl19
+eyJoaXN0b3J5IjpbLTEwNDYyODE3MjZdfQ==
 -->

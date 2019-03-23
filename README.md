@@ -1,5 +1,5 @@
 
-# ![BrewPi Legacy Remix Logo](https://raw.githubusercontent.com/lbussy/brewpi-www-rmx/master/brewpi_logo.png)
+# ![BrewPi Legacy Remix Logo](https://raw.githubusercontent.com/lbussy/brewpi-www-rmx/master/images/brewpi_logo.png)
 *[@LBussy](https://github.com/lbussy)'s forks of the original [BrewPi Project](https://github.com/BrewPi)*.  This project has a new website, please also visit https://www/brewpiremix.com.  All code will remain here, the website is just to make it easier for me to keep current information available.
 
 This repository contains the Arduino firmware for [BrewPi Legacy Remix](https://www.brewpi.com/this-is-brewpi-0-2/) which runs on a [Raspberry Pi](https://www.raspberrypi.org/), communicating with an [Arduino](https://www.arduino.cc/en/guide/introduction).  

@@ -339,67 +339,34 @@ supplement the terms of this License with terms:
   - f) Requiring indemnification of licensors and authors of that material by
     anyone who conveys the material (or modified versions of it) with
     contractual assumptions of liability to the recipient, for any liability
-    that these contractual assumptions directly impose on those licensors and
-    authors.
+    that these contractual assumptions directly impose on those licensors and authors.
 
-All other non-permissive additional terms are considered *further restrictions*
-within the meaning of section 10. If the Program as you received it, or any
-part of it, contains a notice stating that it is governed by this License along
-with a term that is a further restriction, you may remove that term. If a
-license document contains a further restriction but permits relicensing or
-conveying under this License, you may add to a covered work material governed
-by the terms of that license document, provided that the further restriction
-does not survive such relicensing or conveying.
+All other non-permissive additional terms are considered *further restrictions* within the meaning of section 10. If the Program as you received it, or any part of it, contains a notice stating that it is governed by this License along with a term that is a further restriction, you may remove that term. If a license document contains a further restriction but permits relicensing or conveying under this License, you may add to a covered work material governed by the terms of that license document, provided that the further restriction does not survive such relicensing or conveying.
 
-If you add terms to a covered work in accord with this section, you must place,
-in the relevant source files, a statement of the additional terms that apply to
-those files, or a notice indicating where to find the applicable terms.
+If you add terms to a covered work in accord with this section, you must place, in the relevant source files, a statement of the additional terms that apply to those files, or a notice indicating where to find the applicable terms.
 
-Additional terms, permissive or non-permissive, may be stated in the form of a
-separately written license, or stated as exceptions; the above requirements
-apply either way.
+Additional terms, permissive or non-permissive, may be stated in the form of a separately written license, or stated as exceptions; the above requirements apply either way.
 
 ### 8. Termination.
 
-You may not propagate or modify a covered work except as expressly provided
-under this License. Any attempt otherwise to propagate or modify it is void,
-and will automatically terminate your rights under this License (including any
-patent licenses granted under the third paragraph of section 11).
+You may not propagate or modify a covered work except as expressly provided under this License. Any attempt otherwise to propagate or modify it is void, and will automatically terminate your rights under this License (including any patent licenses granted under the third paragraph of section 11).
 
-However, if you cease all violation of this License, then your license from a
-particular copyright holder is reinstated
+However, if you cease all violation of this License, then your license from a particular copyright holder is reinstated
 
-  - a) provisionally, unless and until the copyright holder explicitly and
-    finally terminates your license, and
-  - b) permanently, if the copyright holder fails to notify you of the
-    violation by some reasonable means prior to 60 days after the cessation.
+  - a) provisionally, unless and until the copyright holder explicitly and finally terminates your license, and
+  - b) permanently, if the copyright holder fails to notify you of the violation by some reasonable means prior to 60 days after the cessation.
 
-Moreover, your license from a particular copyright holder is reinstated
-permanently if the copyright holder notifies you of the violation by some
-reasonable means, this is the first time you have received notice of violation
-of this License (for any work) from that copyright holder, and you cure the
-violation prior to 30 days after your receipt of the notice.
+Moreover, your license from a particular copyright holder is reinstated permanently if the copyright holder notifies you of the violation by some reasonable means, this is the first time you have received notice of violation of this License (for any work) from that copyright holder, and you cure the violation prior to 30 days after your receipt of the notice.
 
-Termination of your rights under this section does not terminate the licenses
-of parties who have received copies or rights from you under this License. If
-your rights have been terminated and not permanently reinstated, you do not
-qualify to receive new licenses for the same material under section 10.
+Termination of your rights under this section does not terminate the licenses of parties who have received copies or rights from you under this License. If your rights have been terminated and not permanently reinstated, you do not qualify to receive new licenses for the same material under section 10.
 
 ### 9. Acceptance Not Required for Having Copies.
 
-You are not required to accept this License in order to receive or run a copy
-of the Program. Ancillary propagation of a covered work occurring solely as a
-consequence of using peer-to-peer transmission to receive a copy likewise does
-not require acceptance. However, nothing other than this License grants you
-permission to propagate or modify any covered work. These actions infringe
-copyright if you do not accept this License. Therefore, by modifying or
-propagating a covered work, you indicate your acceptance of this License to do
-so.
+You are not required to accept this License in order to receive or run a copy of the Program. Ancillary propagation of a covered work occurring solely as a consequence of using peer-to-peer transmission to receive a copy likewise does not require acceptance. However, nothing other than this License grants you permission to propagate or modify any covered work. These actions infringe copyright if you do not accept this License. Therefore, by modifying or propagating a covered work, you indicate your acceptance of this License to do so.
 
 ### 10. Automatic Licensing of Downstream Recipients.
 
-Each time you convey a covered work, the recipient automatically receives a
-license from the original licensors, to run, modify and propagate that work, subject to this License. You are not responsible for enforcing compliance by third parties with this License.
+Each time you convey a covered work, the recipient automatically receives a license from the original licensors, to run, modify and propagate that work, subject to this License. You are not responsible for enforcing compliance by third parties with this License.
 
 An *entity transaction* is a transaction transferring control of an organization, or substantially all assets of one, or subdividing an organization, or merging organizations. If propagation of a covered work results from an entity transaction, each party to that transaction who receives a copy of the work also receives whatever licenses to the work the party's predecessor in interest had or could give under the previous paragraph, plus a right to possession of the Corresponding Source of the work from the predecessor in interest, if the predecessor has it or can get it with reasonable efforts.
 
@@ -501,5 +468,5 @@ You should also get your employer (if you work as a programmer) or school, if an
 
 The GNU General Public License does not permit  incorporating your program into proprietary programs. If your program is a subroutine library, you may consider it more useful to permit linking proprietary applications with the library. If this is what you want to do, use the GNU Lesser General Public License instead of this License. But first, please read [http://www.gnu.org/philosophy/why-not-lgpl.html](http://www.gnu.org/philosophy/why-not-lgpl.html).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTgwNDEzOTcwXX0=
+eyJoaXN0b3J5IjpbLTEyNTI4NDE0NTRdfQ==
 -->

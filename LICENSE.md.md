@@ -453,54 +453,23 @@ charge and under the terms of this License, through a publicly available
 network server or other readily accessible means, then you must either
 
   1. cause the Corresponding Source to be so available, or
-  2. arrange to deprive yourself of the benefit of the patent license for this
-     particular work, or
-  3. arrange, in a manner consistent with the requirements of this License, to
-     extend the patent license to downstream recipients.
+  2. arrange to deprive yourself of the benefit of the patent license for this particular work, or
+  3. arrange, in a manner consistent with the requirements of this License, to      extend the patent license to downstream recipients.
 
-*Knowingly relying* means you have actual knowledge that, but for the patent
-license, your conveying the covered work in a country, or your recipient's use
-of the covered work in a country, would infringe one or more identifiable
-patents in that country that you have reason to believe are valid.
+*Knowingly relying* means you have actual knowledge that, but for the patent license, your conveying the covered work in a country, or your recipient's use of the covered work in a country, would infringe one or more identifiable patents in that country that you have reason to believe are valid.
 
-If, pursuant to or in connection with a single transaction or arrangement, you
-convey, or propagate by procuring conveyance of, a covered work, and grant a
-patent license to some of the parties receiving the covered work authorizing
-them to use, propagate, modify or convey a specific copy of the covered work,
-then the patent license you grant is automatically extended to all recipients
-of the covered work and works based on it.
+If, pursuant to or in connection with a single transaction or arrangement, you convey, or propagate by procuring conveyance of, a covered work, and grant a patent license to some of the parties receiving the covered work authorizing them to use, propagate, modify or convey a specific copy of the covered work, then the patent license you grant is automatically extended to all recipients of the covered work and works based on it.
 
-A patent license is *discriminatory* if it does not include within the scope of
-its coverage, prohibits the exercise of, or is conditioned on the non-exercise
-of one or more of the rights that are specifically granted under this License.
-You may not convey a covered work if you are a party to an arrangement with a
-third party that is in the business of distributing software, under which you
-make payment to the third party based on the extent of your activity of
-conveying the work, and under which the third party grants, to any of the
-parties who would receive the covered work from you, a discriminatory patent
-license
+A patent license is *discriminatory* if it does not include within the scope of its coverage, prohibits the exercise of, or is conditioned on the non-exercise of one or more of the rights that are specifically granted under this License. You may not convey a covered work if you are a party to an arrangement with a third party that is in the business of distributing software, under which you make payment to the third party based on the extent of your activity of conveying the work, and under which the third party grants, to any of the parties who would receive the covered work from you, a discriminatory patent license
 
-  - a) in connection with copies of the covered work conveyed by you (or copies
-    made from those copies), or
-  - b) primarily for and in connection with specific products or compilations
-    that contain the covered work, unless you entered into that arrangement, or
-    that patent license was granted, prior to 28 March 2007.
+  - a) in connection with copies of the covered work conveyed by you (or copies made from those copies), or
+  - b) primarily for and in connection with specific products or compilations     that contain the covered work, unless you entered into that arrangement, or     that patent license was granted, prior to 28 March 2007.
 
-Nothing in this License shall be construed as excluding or limiting any implied
-license or other defenses to infringement that may otherwise be available to
-you under applicable patent law.
+Nothing in this License shall be construed as excluding or limiting any implied license or other defenses to infringement that may otherwise be available to you under applicable patent law.
 
 ### 12. No Surrender of Others' Freedom.
 
-If conditions are imposed on you (whether by court order, agreement or
-otherwise) that contradict the conditions of this License, they do not excuse
-you from the conditions of this License. If you cannot convey a covered work so
-as to satisfy simultaneously your obligations under this License and any other
-pertinent obligations, then as a consequence you may not convey it at all. For
-example, if you agree to terms that obligate you to collect a royalty for
-further conveying from those to whom you convey the Program, the only way you
-could satisfy both those terms and this License would be to refrain entirely
-from conveying the Program.
+If conditions are imposed on you (whether by court order, agreement or otherwise) that contradict the conditions of this License, they do not excuse you from the conditions of this License. If you cannot convey a covered work so as to satisfy simultaneously your obligations under this License and any other pertinent obligations, then as a consequence you may not convey it at all. For example, if you agree to terms that obligate you to collect a royalty for further conveying from those to whom you convey the Program, the only way you could satisfy both those terms and this License would be to refrain entirely from conveying the Program.
 
 ### 13. Use with the GNU Affero General Public License.
 
@@ -567,5 +536,5 @@ You should also get your employer (if you work as a programmer) or school, if an
 
 The GNU General Public License does not permit  incorporating your program into proprietary programs. If your program is a subroutine library, you may consider it more useful to permit linking proprietary applications with the library. If this is what you want to do, use the GNU Lesser General Public License instead of this License. But first, please read [http://www.gnu.org/philosophy/why-not-lgpl.html](http://www.gnu.org/philosophy/why-not-lgpl.html).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzI5MTkyOTc2XX0=
+eyJoaXN0b3J5IjpbLTEzOTQzMjEwNjRdfQ==
 -->

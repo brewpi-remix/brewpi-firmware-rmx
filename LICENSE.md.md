@@ -247,16 +247,10 @@ under the terms of this License, in one of these ways:
     third party) that supports equivalent copying facilities, provided you
     maintain clear directions next to the object code saying where to find the
     Corresponding Source. Regardless of what server hosts the Corresponding
-    Source, you remain obligated to ensure that it is available for as long as
-    needed to satisfy these requirements.
-  - e) Convey the object code using peer-to-peer transmission, provided you
-    inform other peers where the object code and Corresponding Source of the
-    work are being offered to the general public at no charge under subsection
-    6d.
+    Source, you remain obligated to ensure that it is available for as long as needed to satisfy these requirements.
+  - e) Convey the object code using peer-to-peer transmission, provided you inform other peers where the object code and Corresponding Source of the work are being offered to the general public at no charge under subsection     6d.
 
-A separable portion of the object code, whose source code is excluded from the
-Corresponding Source as a System Library, need not be included in conveying the
-object code work.
+A separable portion of the object code, whose source code is excluded from the Corresponding Source as a System Library, need not be included in conveying the object code work.
 
 A *User Product* is either
 
@@ -415,5 +409,5 @@ You should also get your employer (if you work as a programmer) or school, if an
 
 The GNU General Public License does not permit  incorporating your program into proprietary programs. If your program is a subroutine library, you may consider it more useful to permit linking proprietary applications with the library. If this is what you want to do, use the GNU Lesser General Public License instead of this License. But first, please read [http://www.gnu.org/philosophy/why-not-lgpl.html](http://www.gnu.org/philosophy/why-not-lgpl.html).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU1NTk2Nzc2OF19
+eyJoaXN0b3J5IjpbLTE5MTU4NDgzODZdfQ==
 -->

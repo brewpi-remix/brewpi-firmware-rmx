@@ -260,61 +260,24 @@ object code work.
 
 A *User Product* is either
 
-  1. a *consumer product*, which means any tangible personal property which is
-     normally used for personal, family, or household purposes, or
+  1. a *consumer product*, which means any tangible personal property which is normally used for personal, family, or household purposes, or
   2. anything designed or sold for incorporation into a dwelling.
 
-In determining whether a product is a consumer product, doubtful cases shall be
-resolved in favor of coverage. For a particular product received by a
-particular user, *normally used* refers to a typical or common use of that
-class of product, regardless of the status of the particular user or of the way
-in which the particular user actually uses, or expects or is expected to use,
-the product. A product is a consumer product regardless of whether the product
-has substantial commercial, industrial or non-consumer uses, unless such uses
-represent the only significant mode of use of the product.
+In determining whether a product is a consumer product, doubtful cases shall be resolved in favor of coverage. For a particular product received by a particular user, *normally used* refers to a typical or common use of that class of product, regardless of the status of the particular user or of the way in which the particular user actually uses, or expects or is expected to use, the product. A product is a consumer product regardless of whether the product has substantial commercial, industrial or non-consumer uses, unless such uses represent the only significant mode of use of the product.
 
-*Installation Information* for a User Product means any methods, procedures,
-authorization keys, or other information required to install and execute
-modified versions of a covered work in that User Product from a modified
-version of its Corresponding Source. The information must suffice to ensure
-that the continued functioning of the modified object code is in no case
-prevented or interfered with solely because modification has been made.
+*Installation Information* for a User Product means any methods, procedures, authorization keys, or other information required to install and execute modified versions of a covered work in that User Product from a modified version of its Corresponding Source. The information must suffice to ensure that the continued functioning of the modified object code is in no case prevented or interfered with solely because modification has been made.
 
-If you convey an object code work under this section in, or with, or
-specifically for use in, a User Product, and the conveying occurs as part of a
-transaction in which the right of possession and use of the User Product is
-transferred to the recipient in perpetuity or for a fixed term (regardless of
-how the transaction is characterized), the Corresponding Source conveyed under
-this section must be accompanied by the Installation Information. But this
-requirement does not apply if neither you nor any third party retains the
-ability to install modified object code on the User Product (for example, the
-work has been installed in ROM).
+If you convey an object code work under this section in, or with, or specifically for use in, a User Product, and the conveying occurs as part of a transaction in which the right of possession and use of the User Product is transferred to the recipient in perpetuity or for a fixed term (regardless of how the transaction is characterized), the Corresponding Source conveyed under this section must be accompanied by the Installation Information. But this requirement does not apply if neither you nor any third party retains the ability to install modified object code on the User Product (for example, the work has been installed in ROM).
 
-The requirement to provide Installation Information does not include a
-requirement to continue to provide support service, warranty, or updates for a
-work that has been modified or installed by the recipient, or for the User
-Product in which it has been modified or installed. Access to a network may be
-denied when the modification itself materially and adversely affects the
-operation of the network or violates the rules and protocols for communication
-across the network.
+The requirement to provide Installation Information does not include a requirement to continue to provide support service, warranty, or updates for a work that has been modified or installed by the recipient, or for the User Product in which it has been modified or installed. Access to a network may be denied when the modification itself materially and adversely affects the operation of the network or violates the rules and protocols for communication across the network.
 
-Corresponding Source conveyed, and Installation Information provided, in accord
-with this section must be in a format that is publicly documented (and with an
-implementation available to the public in source code form), and must require
-no special password or key for unpacking, reading or copying.
+Corresponding Source conveyed, and Installation Information provided, in accord with this section must be in a format that is publicly documented (and with an implementation available to the public in source code form), and must require no special password or key for unpacking, reading or copying.
 
 ### 7. Additional Terms.
 
-*Additional permissions* are terms that supplement the terms of this License by
-making exceptions from one or more of its conditions. Additional permissions
-that are applicable to the entire Program shall be treated as though they were
-included in this License, to the extent that they are valid under applicable
-law. If additional permissions apply only to part of the Program, that part may
-be used separately under those permissions, but the entire Program remains
-governed by this License without regard to the additional permissions.
+*Additional permissions* are terms that supplement the terms of this License by making exceptions from one or more of its conditions. Additional permissions that are applicable to the entire Program shall be treated as though they were included in this License, to the extent that they are valid under applicable law. If additional permissions apply only to part of the Program, that part may be used separately under those permissions, but the entire Program remains governed by this License without regard to the additional permissions.
 
-When you convey a copy of a covered work, you may at your option remove any
-additional permissions from that copy, or from any part of it. (Additional permissions may be written to require their own removal in certain cases when you modify the work.) You may place additional permissions on material, added by you to a covered work, for which you have or can give appropriate copyright permission.
+When you convey a copy of a covered work, you may at your option remove any additional permissions from that copy, or from any part of it. (Additional permissions may be written to require their own removal in certain cases when you modify the work.) You may place additional permissions on material, added by you to a covered work, for which you have or can give appropriate copyright permission.
 
 Notwithstanding any other provision of this License, for material you add to a covered work, you may (if authorized by the copyright holders of that material) supplement the terms of this License with terms:
 
@@ -452,5 +415,5 @@ You should also get your employer (if you work as a programmer) or school, if an
 
 The GNU General Public License does not permit  incorporating your program into proprietary programs. If your program is a subroutine library, you may consider it more useful to permit linking proprietary applications with the library. If this is what you want to do, use the GNU Lesser General Public License instead of this License. But first, please read [http://www.gnu.org/philosophy/why-not-lgpl.html](http://www.gnu.org/philosophy/why-not-lgpl.html).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTcwNTM4MjkwOF19
+eyJoaXN0b3J5IjpbMTU1NTk2Nzc2OF19
 -->

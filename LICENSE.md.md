@@ -226,28 +226,11 @@ under the terms of this License, in one of these ways:
   - b) Convey the object code in, or embodied in, a physical product (including
     a physical distribution medium), accompanied by a written offer, valid for
     at least three years and valid for as long as you offer spare parts or
-    customer support for that product model, to give anyone who possesses the
-    object code either
-    1. a copy of the Corresponding Source for all the software in the product
-       that is covered by this License, on a durable physical medium
-       customarily used for software interchange, for a price no more than your
-       reasonable cost of physically performing this conveying of source, or
-    2. access to copy the Corresponding Source from a network server at no
-       charge.
-  - c) Convey individual copies of the object code with a copy of the written
-    offer to provide the Corresponding Source. This alternative is allowed only
-    occasionally and noncommercially, and only if you received the object code
-    with such an offer, in accord with subsection 6b.
-  - d) Convey the object code by offering access from a designated place
-    (gratis or for a charge), and offer equivalent access to the Corresponding
-    Source in the same way through the same place at no further charge. You
-    need not require recipients to copy the Corresponding Source along with the
-    object code. If the place to copy the object code is a network server, the
-    Corresponding Source may be on a different server operated by you or a
-    third party) that supports equivalent copying facilities, provided you
-    maintain clear directions next to the object code saying where to find the
-    Corresponding Source. Regardless of what server hosts the Corresponding
-    Source, you remain obligated to ensure that it is available for as long as needed to satisfy these requirements.
+    customer support for that product model, to give anyone who possesses the object code either
+    1. a copy of the Corresponding Source for all the software in the product that is covered by this License, on a durable physical medium customarily used for software interchange, for a price no more than your reasonable cost of physically performing this conveying of source, or
+    2. access to copy the Corresponding Source from a network server at no charge.
+  - c) Convey individual copies of the object code with a copy of the written offer to provide the Corresponding Source. This alternative is allowed only occasionally and noncommercially, and only if you received the object code with such an offer, in accord with subsection 6b.
+  - d) Convey the object code by offering access from a designated place (gratis or for a charge), and offer equivalent access to the Corresponding Source in the same way through the same place at no further charge. You need not require recipients to copy the Corresponding Source along with the object code. If the place to copy the object code is a network server, the Corresponding Source may be on a different server operated by you or a third party) that supports equivalent copying facilities, provided you maintain clear directions next to the object code saying where to find the Corresponding Source. Regardless of what server hosts the Corresponding Source, you remain obligated to ensure that it is available for as long as needed to satisfy these requirements.
   - e) Convey the object code using peer-to-peer transmission, provided you inform other peers where the object code and Corresponding Source of the work are being offered to the general public at no charge under subsection     6d.
 
 A separable portion of the object code, whose source code is excluded from the Corresponding Source as a System Library, need not be included in conveying the object code work.
@@ -409,5 +392,5 @@ You should also get your employer (if you work as a programmer) or school, if an
 
 The GNU General Public License does not permit  incorporating your program into proprietary programs. If your program is a subroutine library, you may consider it more useful to permit linking proprietary applications with the library. If this is what you want to do, use the GNU Lesser General Public License instead of this License. But first, please read [http://www.gnu.org/philosophy/why-not-lgpl.html](http://www.gnu.org/philosophy/why-not-lgpl.html).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5MTU4NDgzODZdfQ==
+eyJoaXN0b3J5IjpbMTQ3NzM5NDA4XX0=
 -->

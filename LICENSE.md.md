@@ -399,58 +399,23 @@ so.
 ### 10. Automatic Licensing of Downstream Recipients.
 
 Each time you convey a covered work, the recipient automatically receives a
-license from the original licensors, to run, modify and propagate that work,
-subject to this License. You are not responsible for enforcing compliance by
-third parties with this License.
+license from the original licensors, to run, modify and propagate that work, subject to this License. You are not responsible for enforcing compliance by third parties with this License.
 
-An *entity transaction* is a transaction transferring control of an
-organization, or substantially all assets of one, or subdividing an
-organization, or merging organizations. If propagation of a covered work
-results from an entity transaction, each party to that transaction who receives
-a copy of the work also receives whatever licenses to the work the party's
-predecessor in interest had or could give under the previous paragraph, plus a
-right to possession of the Corresponding Source of the work from the
-predecessor in interest, if the predecessor has it or can get it with
-reasonable efforts.
+An *entity transaction* is a transaction transferring control of an organization, or substantially all assets of one, or subdividing an organization, or merging organizations. If propagation of a covered work results from an entity transaction, each party to that transaction who receives a copy of the work also receives whatever licenses to the work the party's predecessor in interest had or could give under the previous paragraph, plus a right to possession of the Corresponding Source of the work from the predecessor in interest, if the predecessor has it or can get it with reasonable efforts.
 
-You may not impose any further restrictions on the exercise of the rights
-granted or affirmed under this License. For example, you may not impose a
-license fee, royalty, or other charge for exercise of rights granted under this
-License, and you may not initiate litigation (including a cross-claim or
-counterclaim in a lawsuit) alleging that any patent claim is infringed by
-making, using, selling, offering for sale, or importing the Program or any
-portion of it.
+You may not impose any further restrictions on the exercise of the rights granted or affirmed under this License. For example, you may not impose a license fee, royalty, or other charge for exercise of rights granted under this License, and you may not initiate litigation (including a cross-claim or counterclaim in a lawsuit) alleging that any patent claim is infringed by making, using, selling, offering for sale, or importing the Program or any portion of it.
 
 ### 11. Patents.
 
-A *contributor* is a copyright holder who authorizes use under this License of
-the Program or a work on which the Program is based. The work thus licensed is
-called the contributor's *contributor version*.
+A *contributor* is a copyright holder who authorizes use under this License of the Program or a work on which the Program is based. The work thus licensed is called the contributor's *contributor version*.
 
-A contributor's *essential patent claims* are all patent claims owned or
-controlled by the contributor, whether already acquired or hereafter acquired,
-that would be infringed by some manner, permitted by this License, of making,
-using, or selling its contributor version, but do not include claims that would
-be infringed only as a consequence of further modification of the contributor
-version. For purposes of this definition, *control* includes the right to grant
-patent sublicenses in a manner consistent with the requirements of this
-License.
+A contributor's *essential patent claims* are all patent claims owned or controlled by the contributor, whether already acquired or hereafter acquired, that would be infringed by some manner, permitted by this License, of making, using, or selling its contributor version, but do not include claims that would be infringed only as a consequence of further modification of the contributor version. For purposes of this definition, *control* includes the right to grant patent sublicenses in a manner consistent with the requirements of this License.
 
-Each contributor grants you a non-exclusive, worldwide, royalty-free patent
-license under the contributor's essential patent claims, to make, use, sell,
-offer for sale, import and otherwise run, modify and propagate the contents of
-its contributor version.
+Each contributor grants you a non-exclusive, worldwide, royalty-free patent license under the contributor's essential patent claims, to make, use, sell, offer for sale, import and otherwise run, modify and propagate the contents of its contributor version.
 
-In the following three paragraphs, a *patent license* is any express agreement
-or commitment, however denominated, not to enforce a patent (such as an express
-permission to practice a patent or covenant not to sue for patent
-infringement). To *grant* such a patent license to a party means to make such
-an agreement or commitment not to enforce a patent against the party.
+In the following three paragraphs, a *patent license* is any express agreement or commitment, however denominated, not to enforce a patent (such as an express permission to practice a patent or covenant not to sue for patent infringement). To *grant* such a patent license to a party means to make such an agreement or commitment not to enforce a patent against the party.
 
-If you convey a covered work, knowingly relying on a patent license, and the
-Corresponding Source of the work is not available for anyone to copy, free of
-charge and under the terms of this License, through a publicly available
-network server or other readily accessible means, then you must either
+If you convey a covered work, knowingly relying on a patent license, and the Corresponding Source of the work is not available for anyone to copy, free of charge and under the terms of this License, through a publicly available network server or other readily accessible means, then you must either
 
   1. cause the Corresponding Source to be so available, or
   2. arrange to deprive yourself of the benefit of the patent license for this particular work, or
@@ -536,5 +501,5 @@ You should also get your employer (if you work as a programmer) or school, if an
 
 The GNU General Public License does not permit  incorporating your program into proprietary programs. If your program is a subroutine library, you may consider it more useful to permit linking proprietary applications with the library. If this is what you want to do, use the GNU Lesser General Public License instead of this License. But first, please read [http://www.gnu.org/philosophy/why-not-lgpl.html](http://www.gnu.org/philosophy/why-not-lgpl.html).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzOTQzMjEwNjRdfQ==
+eyJoaXN0b3J5IjpbOTgwNDEzOTcwXX0=
 -->

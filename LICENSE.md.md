@@ -314,32 +314,16 @@ be used separately under those permissions, but the entire Program remains
 governed by this License without regard to the additional permissions.
 
 When you convey a copy of a covered work, you may at your option remove any
-additional permissions from that copy, or from any part of it. (Additional
-permissions may be written to require their own removal in certain cases when
-you modify the work.) You may place additional permissions on material, added
-by you to a covered work, for which you have or can give appropriate copyright
-permission.
+additional permissions from that copy, or from any part of it. (Additional permissions may be written to require their own removal in certain cases when you modify the work.) You may place additional permissions on material, added by you to a covered work, for which you have or can give appropriate copyright permission.
 
-Notwithstanding any other provision of this License, for material you add to a
-covered work, you may (if authorized by the copyright holders of that material)
-supplement the terms of this License with terms:
+Notwithstanding any other provision of this License, for material you add to a covered work, you may (if authorized by the copyright holders of that material) supplement the terms of this License with terms:
 
-  - a) Disclaiming warranty or limiting liability differently from the terms of
-    sections 15 and 16 of this License; or
-  - b) Requiring preservation of specified reasonable legal notices or author
-    attributions in that material or in the Appropriate Legal Notices displayed
-    by works containing it; or
-  - c) Prohibiting misrepresentation of the origin of that material, or
-    requiring that modified versions of such material be marked in reasonable
-    ways as different from the original version; or
-  - d) Limiting the use for publicity purposes of names of licensors or authors
-    of the material; or
-  - e) Declining to grant rights under trademark law for use of some trade
-    names, trademarks, or service marks; or
-  - f) Requiring indemnification of licensors and authors of that material by
-    anyone who conveys the material (or modified versions of it) with
-    contractual assumptions of liability to the recipient, for any liability
-    that these contractual assumptions directly impose on those licensors and authors.
+  - a) Disclaiming warranty or limiting liability differently from the terms of sections 15 and 16 of this License; or
+  - b) Requiring preservation of specified reasonable legal notices or author attributions in that material or in the Appropriate Legal Notices displayed by works containing it; or
+  - c) Prohibiting misrepresentation of the origin of that material, or requiring that modified versions of such material be marked in reasonable ways as different from the original version; or
+  - d) Limiting the use for publicity purposes of names of licensors or authors of the material; or
+  - e) Declining to grant rights under trademark law for use of some trade names, trademarks, or service marks; or
+  - f) Requiring indemnification of licensors and authors of that material by anyone who conveys the material (or modified versions of it) with contractual assumptions of liability to the recipient, for any liability that these contractual assumptions directly impose on those licensors and authors.
 
 All other non-permissive additional terms are considered *further restrictions* within the meaning of section 10. If the Program as you received it, or any part of it, contains a notice stating that it is governed by this License along with a term that is a further restriction, you may remove that term. If a license document contains a further restriction but permits relicensing or conveying under this License, you may add to a covered work material governed by the terms of that license document, provided that the further restriction does not survive such relicensing or conveying.
 
@@ -468,5 +452,5 @@ You should also get your employer (if you work as a programmer) or school, if an
 
 The GNU General Public License does not permit  incorporating your program into proprietary programs. If your program is a subroutine library, you may consider it more useful to permit linking proprietary applications with the library. If this is what you want to do, use the GNU Lesser General Public License instead of this License. But first, please read [http://www.gnu.org/philosophy/why-not-lgpl.html](http://www.gnu.org/philosophy/why-not-lgpl.html).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyNTI4NDE0NTRdfQ==
+eyJoaXN0b3J5IjpbLTcwNTM4MjkwOF19
 -->

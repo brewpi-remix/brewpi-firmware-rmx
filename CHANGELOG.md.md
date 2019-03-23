@@ -11,12 +11,11 @@ The primary change in this release is to move the workspace to PlatformIO from A
  - Re-establish build version in eeprom (remove "unknown")
 
 ## 0.2.10a
+This was the version provided in BrewPi-Legacy-Remix after the move from the original BrewPi repositories.  The [0.2.10 tag in that repository](https://github.com/BrewPi/firmware/releases/tag/0.2.10) was correct/complete, however the [HEAD of the Legacy branch](https://github.com/BrewPi/firmware/tree/legacy) included some commits which broke the Arduino code.  These were rolled back to establish a known good starting point.
 ### Bugfixes
-This was the version provided after the move from the original BrewPi repositories.  The [0.2.10 tag in that repository](https://github.com/BrewPi/firmware/releases/tag/0.2.10) was correct/complete, however the [HEAD of the Legacy branch](https://github.com/BrewPi/firmware/tree/legacy) included some commits which broke the Arduino code.  These were rolled back to establish a known good starting point.  In addition the following fixes were merged:
+  In addition the following fixes were merged:
 - [Fix for bug in setting calibration offset ](https://github.com/BrewPi/firmware/commit/41ccbd502540cad60fdeb5a82e3b6e14444cafbe)
 - [Fixed ncorrect [sic] capitalization (BrewPi.h instead of Brewpi.h) in OneWire.h](https://github.com/BrewPi/firmware/commit/c0a4cef2df38bb206163fda964ddfa48907b0c10)
-
-I missed a test case in yesterday's release. Converting a temperature very close to a whole number (e.g. 20.998) converted 1 degree too high (22) due to erroneous rounding of an internal result. This releases fixes the bug and improves the unit tests to go through the entire temperature range to make sure it works.
 
 ## 0.2.10
 ### Bugfixes
@@ -72,5 +71,5 @@ We fixed small 1 bit rounding errors (0.0002 degree) in or temperature conversio
 - Use git describe to generate build name
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTE3Mzk5NzUwOF19
+eyJoaXN0b3J5IjpbLTE4OTcxMzk5NDldfQ==
 -->

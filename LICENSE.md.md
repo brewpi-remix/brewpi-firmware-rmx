@@ -139,54 +139,27 @@ the Program, and are irrevocable provided the stated conditions are met. This
 License explicitly affirms your unlimited permission to run the unmodified
 Program. The output from running a covered work is covered by this License only
 if the output, given its content, constitutes a covered work. This License
-acknowledges your rights of fair use or other equivalent, as provided by
-copyright law.
+acknowledges your rights of fair use or other equivalent, as provided by copyright law.
 
-You may make, run and propagate covered works that you do not convey, without
-conditions so long as your license otherwise remains in force. You may convey
-covered works to others for the sole purpose of having them make modifications
-exclusively for you, or provide you with facilities for running those works,
-provided that you comply with the terms of this License in conveying all
-material for which you do not control copyright. Those thus making or running
-the covered works for you must do so exclusively on your behalf, under your
-direction and control, on terms that prohibit them from making any copies of
-your copyrighted material outside their relationship with you.
+You may make, run and propagate covered works that you do not convey, without conditions so long as your license otherwise remains in force. You may convey covered works to others for the sole purpose of having them make modifications exclusively for you, or provide you with facilities for running those works, provided that you comply with the terms of this License in conveying all material for which you do not control copyright. Those thus making or running the covered works for you must do so exclusively on your behalf, under your direction and control, on terms that prohibit them from making any copies of your copyrighted material outside their relationship with you.
 
-Conveying under any other circumstances is permitted solely under the
-conditions stated below. Sublicensing is not allowed; section 10 makes it
-unnecessary.
+Conveying under any other circumstances is permitted solely under the conditions stated below. Sublicensing is not allowed; section 10 makes it unnecessary.
 
 ### 3. Protecting Users' Legal Rights From Anti-Circumvention Law.
 
-No covered work shall be deemed part of an effective technological measure
-under any applicable law fulfilling obligations under article 11 of the WIPO
-copyright treaty adopted on 20 December 1996, or similar laws prohibiting or
-restricting circumvention of such measures.
+No covered work shall be deemed part of an effective technological measure under any applicable law fulfilling obligations under article 11 of the WIPO copyright treaty adopted on 20 December 1996, or similar laws prohibiting or restricting circumvention of such measures.
 
-When you convey a covered work, you waive any legal power to forbid
-circumvention of technological measures to the extent such circumvention is
-effected by exercising rights under this License with respect to the covered
-work, and you disclaim any intention to limit operation or modification of the
-work as a means of enforcing, against the work's users, your or third parties'
-legal rights to forbid circumvention of technological measures.
+When you convey a covered work, you waive any legal power to forbid circumvention of technological measures to the extent such circumvention is effected by exercising rights under this License with respect to the covered work, and you disclaim any intention to limit operation or modification of the work as a means of enforcing, against the work's users, your or third parties' legal rights to forbid circumvention of technological measures.
 
 ### 4. Conveying Verbatim Copies.
 
-You may convey verbatim copies of the Program's source code as you receive it,
-in any medium, provided that you conspicuously and appropriately publish on
-each copy an appropriate copyright notice; keep intact all notices stating that
-this License and any non-permissive terms added in accord with section 7 apply
-to the code; keep intact all notices of the absence of any warranty; and give
-all recipients a copy of this License along with the Program.
+You may convey verbatim copies of the Program's source code as you receive it, in any medium, provided that you conspicuously and appropriately publish on each copy an appropriate copyright notice; keep intact all notices stating that this License and any non-permissive terms added in accord with section 7 apply to the code; keep intact all notices of the absence of any warranty; and give all recipients a copy of this License along with the Program.
 
-You may charge any price or no price for each copy that you convey, and you may
-offer support or warranty protection for a fee.
+You may charge any price or no price for each copy that you convey, and you may offer support or warranty protection for a fee.
 
 ### 5. Conveying Modified Source Versions.
 
-You may convey a work based on the Program, or the modifications to produce it
-from the Program, in the form of source code under the terms of section 4,
-provided that you also meet all of these conditions:
+You may convey a work based on the Program, or the modifications to produce it from the Program, in the form of source code under the terms of section 4, provided that you also meet all of these conditions:
 
   - a) The work must carry prominent notices stating that you modified it, and giving a relevant date.
   - b) The work must carry prominent notices stating that it is released under this License and any conditions added under section 7. This requirement modifies the requirement in section 4 to *keep intact all notices*.
@@ -366,5 +339,5 @@ You should also get your employer (if you work as a programmer) or school, if an
 
 The GNU General Public License does not permit  incorporating your program into proprietary programs. If your program is a subroutine library, you may consider it more useful to permit linking proprietary applications with the library. If this is what you want to do, use the GNU Lesser General Public License instead of this License. But first, please read [http://www.gnu.org/philosophy/why-not-lgpl.html](http://www.gnu.org/philosophy/why-not-lgpl.html).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTczNTc1ODExNF19
+eyJoaXN0b3J5IjpbMTUzNTgyMzYwNl19
 -->

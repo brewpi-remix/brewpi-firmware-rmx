@@ -1,4 +1,3 @@
-
 # ![BrewPi Legacy Remix Logo](https://raw.githubusercontent.com/lbussy/brewpi-www-rmx/master/images/brewpi_logo.png)
 *[@LBussy](https://github.com/lbussy)'s forks of the original [BrewPi Project](https://github.com/BrewPi)*.  This project has a new website, please also visit https://www/brewpiremix.com.  All code will remain here, the website is just to make it easier for me to keep current information available.
 

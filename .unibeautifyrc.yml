@@ -1,0 +1,39 @@
+HTML:
+  beautifiers:
+    - Pretty Diff
+    - JS-Beautify
+    - indent_style: "space"
+    - indent_size: 4
+Java:
+  beautifiers:
+    - Pretty Diff
+    - indent_style: "space"
+    - indent_size: 4
+JavaScript:
+  beautifiers:
+    - Prettier
+    - Pretty Diff
+    - JS-Beautify
+    - ESLint
+    - indent_style: "space"
+    - indent_size: 4
+Markdown:
+  beautifiers:
+    - Prettier
+    - indent_style: "space"
+    - indent_size: 4
+PHP:
+  beautifiers:
+    - PHP-CS-Fixer
+    - indent_style: "space"
+    - indent_size: 4
+'C#':
+  beautifiers:
+    - Pretty Diff
+    - indent_style: "space"
+    - indent_size: 4
+'C++':
+  beautifiers:
+    - Pretty Diff
+    - indent_style: "space"
+    - indent_size: 4

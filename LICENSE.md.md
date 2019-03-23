@@ -15,10 +15,7 @@ versions of a program--to make sure it remains free software for all its users. 
 
 When we speak of free software, we are referring to freedom, not price. Our General Public Licenses are designed to make sure that you have the freedom to distribute copies of free software (and charge for them if you wish), that you receive source code or can get it if you want it, that you can change the software or use pieces of it in new free programs, and that you know you can do these things.
 
-To protect your rights, we need to prevent others from denying you these rights
-or asking you to surrender the rights. Therefore, you have certain
-responsibilities if you distribute copies of the software, or if you modify it:
-responsibilities to respect the freedom of others.
+To protect your rights, we need to prevent others from denying you these rights or asking you to surrender the rights. Therefore, you have certain responsibilities if you distribute copies of the software, or if you modify it: responsibilities to respect the freedom of others.
 
 For example, if you distribute copies of such a program, whether gratis or for
 a fee, you must pass on to the recipients the same freedoms that you received.
@@ -558,29 +555,20 @@ PERMITTED ABOVE, BE LIABLE TO YOU FOR DAMAGES, INCLUDING ANY GENERAL, SPECIAL,
 INCIDENTAL OR CONSEQUENTIAL DAMAGES ARISING OUT OF THE USE OR INABILITY TO USE
 THE PROGRAM (INCLUDING BUT NOT LIMITED TO LOSS OF DATA OR DATA BEING RENDERED
 INACCURATE OR LOSSES SUSTAINED BY YOU OR THIRD PARTIES OR A FAILURE OF THE
-PROGRAM TO OPERATE WITH ANY OTHER PROGRAMS), EVEN IF SUCH HOLDER OR OTHER PARTY
+PROGRAM TO OPERATE WITH ANY OTHER PROGRAMS), EVEN IF SUCH HOLDER OR OTHER PARTY 
 HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
 
 ### 17. Interpretation of Sections 15 and 16.
 
-If the disclaimer of warranty and limitation of liability provided above cannot
-be given local legal effect according to their terms, reviewing courts shall
-apply local law that most closely approximates an absolute waiver of all civil
-liability in connection with the Program, unless a warranty or assumption of
-liability accompanies a copy of the Program in return for a fee.
+If the disclaimer of warranty and limitation of liability provided above cannot be given local legal effect according to their terms, reviewing courts shall apply local law that most closely approximates an absolute waiver of all civil liability in connection with the Program, unless a warranty or assumption of liability accompanies a copy of the Program in return for a fee.
 
 ## END OF TERMS AND CONDITIONS ###
 
 ### How to Apply These Terms to Your New Programs
 
-If you develop a new program, and you want it to be of the greatest possible
-use to the public, the best way to achieve this is to make it free software
-which everyone can redistribute and change under these terms.
+If you develop a new program, and you want it to be of the greatest possible use to the public, the best way to achieve this is to make it free software which everyone can redistribute and change under these terms.
 
-To do so, attach the following notices to the program. It is safest to attach
-them to the start of each source file to most effectively state the exclusion
-of warranty; and each file should have at least the *copyright* line and a
-pointer to where the full notice is found.
+To do so, attach the following notices to the program. It is safest to attach them to the start of each source file to most effectively state the exclusion of warranty; and each file should have at least the *copyright* line and a pointer to where the full notice is found.
 
 	<one line to give the program's name and a brief idea of what it does.>
 	Copyright (C) <year>  <name of author>
@@ -600,29 +588,18 @@ pointer to where the full notice is found.
 
 Also add information on how to contact you by electronic and paper mail.
 
-If the program does terminal interaction, make it output a short notice like
-this when it starts in an interactive mode:
+If the program does terminal interaction, make it output a short notice like this when it starts in an interactive mode:
 
 	<program>  Copyright (C) <year>  <name of author>
 	This program comes with ABSOLUTELY NO WARRANTY; for details type `show w'.
 	This is free software, and you are welcome to redistribute it
 	under certain conditions; type `show c' for details.
 
-The hypothetical commands `show w` and `show c` should show the appropriate
-parts of the General Public License. Of course, your program's commands might
-be different; for a GUI interface, you would use an *about box*.
+The hypothetical commands `show w` and `show c` should show the appropriate parts of the General Public License. Of course, your program's commands might be different; for a GUI interface, you would use an *about box*.
 
-You should also get your employer (if you work as a programmer) or school, if
-any, to sign a *copyright disclaimer* for the program, if necessary. For more
-information on this, and how to apply and follow the GNU GPL, see
-[http://www.gnu.org/licenses/](http://www.gnu.org/licenses/).
+You should also get your employer (if you work as a programmer) or school, if any, to sign a *copyright disclaimer* for the program, if necessary. For more information on this, and how to apply and follow the GNU GPL, see [http://www.gnu.org/licenses/](http://www.gnu.org/licenses/).
 
-The GNU General Public License does not permit incorporating your program into
-proprietary programs. If your program is a subroutine library, you may consider
-it more useful to permit linking proprietary applications with the library. If
-this is what you want to do, use the GNU Lesser General Public License instead
-of this License. But first, please read
-[http://www.gnu.org/philosophy/why-not-lgpl.html](http://www.gnu.org/philosophy/why-not-lgpl.html).
+The GNU General Public License does not permit  incorporating your program into proprietary programs. If your program is a subroutine library, you may consider it more useful to permit linking proprietary applications with the library. If this is what you want to do, use the GNU Lesser General Public License instead of this License. But first, please read [http://www.gnu.org/philosophy/why-not-lgpl.html](http://www.gnu.org/philosophy/why-not-lgpl.html).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTkyODkxMjU2XX0=
+eyJoaXN0b3J5IjpbLTUyMTkxNjgzNl19
 -->

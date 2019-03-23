@@ -12,7 +12,7 @@ The primary change in this release is to move the workspace to PlatformIO from A
 
 ## 0.2.10a
 ### Bugfixes
-This was the version provided after the move from the original BrewPi repositories.  The 0.2.10 tag in that repository 
+This was the version provided after the move from the original BrewPi repositories.  The [0.2.10 tag in that repository](https://github.com/BrewPi/firmware/releases/tag/0.2.10) was correct/complete, however the HEAD of the Legacy branch included some commits 
 
 I missed a test case in yesterday's release. Converting a temperature very close to a whole number (e.g. 20.998) converted 1 degree too high (22) due to erroneous rounding of an internal result. This releases fixes the bug and improves the unit tests to go through the entire temperature range to make sure it works.
 
@@ -70,5 +70,5 @@ We fixed small 1 bit rounding errors (0.0002 degree) in or temperature conversio
 - Use git describe to generate build name
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwODAzNjc0NzddfQ==
+eyJoaXN0b3J5IjpbMTI3MzYwNjEwNF19
 -->

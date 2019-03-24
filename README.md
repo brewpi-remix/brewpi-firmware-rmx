@@ -1,5 +1,4 @@
-
-# ![BrewPi Legacy Remix Logo](https://raw.githubusercontent.com/lbussy/brewpi-www-rmx/master/brewpi_logo.png)
+# ![BrewPi Legacy Remix Logo](https://raw.githubusercontent.com/lbussy/brewpi-www-rmx/master/images/brewpi_logo.png)
 *[@LBussy](https://github.com/lbussy)'s forks of the original [BrewPi Project](https://github.com/BrewPi)*.  This project has a new website, please also visit https://www/brewpiremix.com.  All code will remain here, the website is just to make it easier for me to keep current information available.
 
 This repository contains the Arduino firmware for [BrewPi Legacy Remix](https://www.brewpi.com/this-is-brewpi-0-2/) which runs on a [Raspberry Pi](https://www.raspberrypi.org/), communicating with an [Arduino](https://www.arduino.cc/en/guide/introduction).  
@@ -10,8 +9,10 @@ Before we proceed, a huge thank you to [Elco Jacobs](https://github.com/elcojaco
 # Getting Started
 
 To get started, please head over to the [BrewPi Legacy Remix tools](https://github.com/lbussy/brewpi-tools-rmx/blob/master/README.md) README page, and follow along there.
-
+# Compiling Source Code
 It is not necessary to compile your own firmware.  If you desire simply to obtain the firmware, you can download it compiled for your controller on the [releases page](https://github.com/lbussy/brewpi-firmware-rmx/releases).
+
+If you wish however to compile this project, beginning with version 0.2.11 it is moved to [PlatformIO](https://platformio.org/) on top of [VSCode](https://code.visualstudio.com/).  Install PlatformIO on the platform of your choice, clone this repository, and open the workspace by navigating to the local repository.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTIxMjc1MjY1XX0=
+eyJoaXN0b3J5IjpbNzgxNTc4NzgyLDUyMTI3NTI2NV19
 -->

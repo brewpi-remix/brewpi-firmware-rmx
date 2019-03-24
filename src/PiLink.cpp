@@ -192,12 +192,12 @@ void PiLink::receive(void)
 						 "\"b\":\"%c\","
 						 "\"l\":\"%d\""
 						 "}"),
-					PSTR(VERSION_STRING),		  // v:
-					PSTR(stringify(BUILD_NAME)),  // n:
-					BREWPI_STATIC_CONFIG,		  // s:
-					BREWPI_SIMULATE,			  // y:
-					BREWPI_BOARD,				  // b:
-					BREWPI_LOG_MESSAGES_VERSION); // l:
+					PSTR(stringify(VERSION_STRING)),// v:
+					PSTR(stringify(BUILD_NAME)),	// n:
+					BREWPI_STATIC_CONFIG,			// s:
+					BREWPI_SIMULATE,				// y:
+					BREWPI_BOARD,					// b:
+					BREWPI_LOG_MESSAGES_VERSION);	// l:
 			printNewLine();
 			break;
 		case 'l': // Display content requested

@@ -30,6 +30,7 @@ license and credits. */
 #ifndef VERSION_H_
 #define VERSION_H_
 
-#define VERSION_STRING "0.2.10"
+#define VERSION_STRING PIO_SRC_TAG
+#define BUILD_NAME PIO_SRC_REV
 
 #endif /* VERSION_H_ */

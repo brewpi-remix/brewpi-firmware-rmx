@@ -53,7 +53,7 @@ license and credits. */
 // Define build name
 //
 // #ifndef BUILD_NAME
-// #define BUILD_NAME "0.2.10-40-g4e815b4"
+// #define BUILD_NAME PIO_SRC_REV
 // #endif
 //
 //////////////////////////////////////////////////////////////////////////

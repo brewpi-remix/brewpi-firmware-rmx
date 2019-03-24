@@ -10,8 +10,7 @@ Everyone is permitted to copy and distribute verbatim copies of this license doc
 
 The GNU General Public License is a free, copyleft license for software and other kinds of works.
 
-The licenses for most software and other practical works are designed to take away your freedom to share and change the works. By contrast, the GNU General Public License is intended to guarantee your freedom to share and change all
-versions of a program--to make sure it remains free software for all its users. We, the Free Software Foundation, use the GNU General Public License for most of our software; it applies also to any other work released this way by its authors. You can apply it to your programs, too.
+The licenses for most software and other practical works are designed to take away your freedom to share and change the works. By contrast, the GNU General Public License is intended to guarantee your freedom to share and change all versions of a program--to make sure it remains free software for all its users. We, the Free Software Foundation, use the GNU General Public License for most of our software; it applies also to any other work released this way by its authors. You can apply it to your programs, too.
 
 When we speak of free software, we are referring to freedom, not price. Our General Public Licenses are designed to make sure that you have the freedom to distribute copies of free software (and charge for them if you wish), that you receive source code or can get it if you want it, that you can change the software or use pieces of it in new free programs, and that you know you can do these things.
 
@@ -46,8 +45,7 @@ To *modify* a work means to copy from or adapt all or part of the work in a fash
 
 A *covered work* means either the unmodified Program or a work based on the Program.
 
-To *propagate* a work means to do anything with it that, without permission, would make you directly or secondarily liable for infringement under applicable copyright law, except executing it on a computer or modifying a private copy.
-Propagation includes copying, distribution (with or without modification), making available to the public, and in some countries other activities as well.
+To *propagate* a work means to do anything with it that, without permission, would make you directly or secondarily liable for infringement under applicable copyright law, except executing it on a computer or modifying a private copy. Propagation includes copying, distribution (with or without modification), making available to the public, and in some countries other activities as well.
 
 To *convey* a work means any kind of propagation that enables other parties to make or receive copies. Mere interaction with a user through a computer network, with no transfer of a copy, is not conveying.
 
@@ -113,7 +111,7 @@ You may convey a covered work in object code form under the terms of sections 4 
     2. access to copy the Corresponding Source from a network server at no charge.
   - c) Convey individual copies of the object code with a copy of the written offer to provide the Corresponding Source. This alternative is allowed only occasionally and noncommercially, and only if you received the object code with such an offer, in accord with subsection 6b.
   - d) Convey the object code by offering access from a designated place (gratis or for a charge), and offer equivalent access to the Corresponding Source in the same way through the same place at no further charge. You need not require recipients to copy the Corresponding Source along with the object code. If the place to copy the object code is a network server, the Corresponding Source may be on a different server operated by you or a third party) that supports equivalent copying facilities, provided you maintain clear directions next to the object code saying where to find the Corresponding Source. Regardless of what server hosts the Corresponding Source, you remain obligated to ensure that it is available for as long as needed to satisfy these requirements.
-  - e) Convey the object code using peer-to-peer transmission, provided you inform other peers where the object code and Corresponding Source of the work are being offered to the general public at no charge under subsection     6d.
+  - e) Convey the object code using peer-to-peer transmission, provided you inform other peers where the object code and Corresponding Source of the work are being offered to the general public at no charge under subsection 6d.
 
 A separable portion of the object code, whose source code is excluded from the Corresponding Source as a System Library, need not be included in conveying the object code work.
 
@@ -192,7 +190,7 @@ If you convey a covered work, knowingly relying on a patent license, and the Cor
 
   1. cause the Corresponding Source to be so available, or
   2. arrange to deprive yourself of the benefit of the patent license for this particular work, or
-  3. arrange, in a manner consistent with the requirements of this License, to      extend the patent license to downstream recipients.
+  3. arrange, in a manner consistent with the requirements of this License, to extend the patent license to downstream recipients.
 
 *Knowingly relying* means you have actual knowledge that, but for the patent license, your conveying the covered work in a country, or your recipient's use of the covered work in a country, would infringe one or more identifiable patents in that country that you have reason to believe are valid.
 
@@ -201,7 +199,7 @@ If, pursuant to or in connection with a single transaction or arrangement, you c
 A patent license is *discriminatory* if it does not include within the scope of its coverage, prohibits the exercise of, or is conditioned on the non-exercise of one or more of the rights that are specifically granted under this License. You may not convey a covered work if you are a party to an arrangement with a third party that is in the business of distributing software, under which you make payment to the third party based on the extent of your activity of conveying the work, and under which the third party grants, to any of the parties who would receive the covered work from you, a discriminatory patent license
 
   - a) in connection with copies of the covered work conveyed by you (or copies made from those copies), or
-  - b) primarily for and in connection with specific products or compilations     that contain the covered work, unless you entered into that arrangement, or     that patent license was granted, prior to 28 March 2007.
+  - b) primarily for and in connection with specific products or compilations that contain the covered work, unless you entered into that arrangement, or that patent license was granted, prior to 28 March 2007.
 
 Nothing in this License shall be construed as excluding or limiting any implied license or other defenses to infringement that may otherwise be available to you under applicable patent law.
 

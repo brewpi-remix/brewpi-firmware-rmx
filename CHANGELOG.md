@@ -2,12 +2,12 @@
 The primary change in this release is to move the workspace to PlatformIO from Atmel Studio.
 
 ### Features
- - Move to Platformio
- - Remove (some of) the Spark shrapnel that was in 0.2.10
- - Bump logMessage.h to be compatible with @Thorrak's ESP8266 firmware
+ - Move to PlatformIO
+ - Remove (some of) the Spark shrapnel that was added to the Legacy 0.2.10
+ - Bump LogMessages.h to be compatible with @Thorrak's ESP8266 firmware
 
 ### Bugfixes
- - Added a reset to help LCD scramble
+ - Added a reset on interval to help LCD scramble
  - Re-establish build version in eeprom (remove "unknown")
 
 ## 0.2.10a

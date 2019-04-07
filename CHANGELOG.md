@@ -1,3 +1,13 @@
+## 0.2.12
+The primary change for this release is to enable I2C support (thank you @Thorrak!)
+
+### Features
+ - Add I2C support
+ - Remove reset of LCD when using I2C
+
+### Bugfixes
+ - None yet!
+
 ## 0.2.11
 The primary change in this release is to move the workspace to PlatformIO from Atmel Studio.
 

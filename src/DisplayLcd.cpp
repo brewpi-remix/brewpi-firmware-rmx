@@ -39,7 +39,7 @@ license and credits. */
 uint8_t LcdDisplay::stateOnDisplay;
 uint8_t LcdDisplay::flags;
 #if defined(BREWPI_IIC)
-LcdDriver LcdDisplay::lcd(0x27, 20, 4);  // NOTE - The address here doesn't get used. Address is autodetected at startup.
+LcdDriver LcdDisplay::lcd(0x3F, 20, 4);  // TODO:  Needs autodetect
 #else
 LcdDriver LcdDisplay::lcd;
 #endif
@@ -145,11 +145,7 @@ void LcdDisplay::printTemperature(temperature temp)
 //print the stationary text on the lcd.
 void LcdDisplay::printStationaryText(void)
 {
-#ifdef BREWPI_IIC
 	printAt_P(0, 0, PSTR("Mode"));
-#else
-	printAt_P(0, 0, PSTR("Mode"));
-#endif
 	printAt_P(0, 1, STR_Beer_);
 	printAt_P(0, 2, (flags & LCD_FLAG_DISPLAY_ROOM) ? PSTR("Room  ") : STR_Fridge_);
 	printDegreeUnit(18, 1);

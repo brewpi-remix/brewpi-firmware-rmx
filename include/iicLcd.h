@@ -5,7 +5,7 @@
 #include "Brewpi.h"
 #include "BrewpiStrings.h"
 #include <inttypes.h>
-#include <Print.h>
+//#include <Print.h>
 #include "Ticks.h"
 
 // commands
@@ -54,7 +54,7 @@
 #define Rw B00000010  // Read/Write bit
 #define Rs B00000001  // Register select bit
 
-class IIClcd : public Print {
+class IIClcd {
 public:
     IIClcd(uint8_t lcd_Addr, uint8_t lcd_cols, uint8_t lcd_rows);
     ~IIClcd() {};
@@ -91,7 +91,7 @@ public:
 
     virtual size_t write(uint8_t);
 
-#define print_P_inline 1
+//#define print_P_inline 1
 #ifdef print_P_inline
     // print a string stored in PROGMEM
     void print_P(const char *str)
@@ -101,6 +101,7 @@ public:
         print(buf);			// print from RAM
     }
 #else
+    void print(char * str);
     void print_P(const char * str);
 #endif
 
@@ -127,7 +128,6 @@ public:
 
     void printSpacesToRestOfLine(void);
 
-    using Print::write;
 
 private:
     void init_priv();

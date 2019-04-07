@@ -343,15 +343,21 @@ void IIClcd::getLine(uint8_t lineNumber, char * buffer) {
 
 void IIClcd::printSpacesToRestOfLine(void) {
     while (_currpos < _cols) {
-        print(' ');
+        write(' ');
     }
 }
 
 
 #ifndef print_P_inline
 void IIClcd::print_P(const char * str) { // print a string stored in PROGMEM
-    char buf[21]; // create buffer in RAM
-    strcpy_P(buf, str); // copy string to RAM
-    print(buf); // print from RAM
+    for(uint8_t i=0; i<strlen_P(str); i++) {
+        write(pgm_read_byte_near(str+i));
+    }
+}
+
+void IIClcd::print(char * str) { // print a string stored in PROGMEM
+    for(uint8_t i=0; i<strlen(str); i++) {
+        write(str[i]);
+    }
 }
 #endif

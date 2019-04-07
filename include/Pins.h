@@ -32,6 +32,7 @@ license and credits. */
 #include "Brewpi.h"
 
 #if BREWPI_STATIC_CONFIG == BREWPI_SHIELD_REV_A
+
 #ifndef beerSensorPin
 #define beerSensorPin A5 // OneWire 1
 #endif
@@ -48,9 +49,28 @@ license and credits. */
 #define heatingPin 5
 #endif
 
+#ifndef doorPin
+#define doorPin 4
 #endif
 
-#if BREWPI_STATIC_CONFIG == BREWPI_SHIELD_REV_C
+#ifndef alarmPin
+#define alarmPin 3
+#endif
+
+#ifndef lcdLatchPin
+#define lcdLatchPin 10
+#endif
+
+
+// If you change the interrupt pins, you will also have to review the interrupt vectors of the rotary encoder
+#define rotarySwitchPin 7 // INT6 on leo or PCINT23 on uno
+#define rotaryAPin 8      // PCINT4 on leo or PCINT0 on uno
+#define rotaryBPin 9      // PCINT5 on leo or PCINT1 on uno
+
+#define BREWPI_INVERT_ACTUATORS 1
+
+
+#elif BREWPI_STATIC_CONFIG == BREWPI_SHIELD_REV_C
 
 #ifndef oneWirePin
 #define oneWirePin A4
@@ -72,13 +92,18 @@ license and credits. */
 #define actuatorPin4 A5
 #endif
 
+#ifndef doorPin
+#define doorPin 4
 #endif
 
-#if BREWPI_STATIC_CONFIG == BREWPI_SHIELD_REV_A || BREWPI_STATIC_CONFIG == BREWPI_SHIELD_REV_C
-
-#define doorPin 4
+#ifndef alarmPin
 #define alarmPin 3
+#endif
+
+#ifndef lcdLatchPin
 #define lcdLatchPin 10
+#endif
+
 
 // If you change the interrupt pins, you will also have to review the interrupt vectors of the rotary encoder
 #define rotarySwitchPin 7 // INT6 on leo or PCINT23 on uno
@@ -113,6 +138,52 @@ license and credits. */
 #define DISP_D7 3
 
 #define BREWPI_INVERT_ACTUATORS 0
+
+#elif BREWPI_STATIC_CONFIG == BREWPI_SHIELD_TWI
+
+
+#ifndef oneWirePin
+#define oneWirePin A2  // Originally A4
+#endif
+
+#ifndef actuatorPin1
+#define actuatorPin1 2  // NC
+#endif
+
+#ifndef actuatorPin2
+#define actuatorPin2 5
+#endif
+
+#ifndef actuatorPin3
+#define actuatorPin3 6
+#endif
+
+#ifndef actuatorPin4
+#define actuatorPin4 3  // NC
+#endif
+
+#ifndef doorPin
+#define doorPin 4
+#endif
+
+#ifndef alarmPin
+#define alarmPin 3
+#endif
+
+#ifndef lcdLatchPin
+#define lcdLatchPin 10
+#endif
+
+
+// If you change the interrupt pins, you will also have to review the interrupt vectors of the rotary encoder
+#define rotarySwitchPin 7 // INT6 on leo or PCINT23 on uno
+#define rotaryAPin 8      // PCINT4 on leo or PCINT0 on uno
+#define rotaryBPin 9      // PCINT5 on leo or PCINT1 on uno
+
+#define IIC_SDA  A4  // These aren't actually used anywhere in the code, but I want them here for documentation
+#define IIC_SCL  A5  // These aren't actually used anywhere in the code, but I want them here for documentation
+
+#define BREWPI_INVERT_ACTUATORS 1
 
 #endif
 

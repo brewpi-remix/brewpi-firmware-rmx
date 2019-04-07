@@ -75,7 +75,7 @@ license and credits. */
 //
 // Define which brewpi shield is used.
 // BREWPI_SHIELD_REV_A The RevA shield (ca. Feb 2013), two OneWire buses, door, heat, cool.
-// BREWPI_SHIELD_REV_C The RevC shield (ca. May 2013). One common ONeWire bus, 4 actuators. Dynaconfig.
+// BREWPI_SHIELD_REV_C The RevC shield (ca. May 2013). One common OneWire bus, 4 actuators. Dynaconfig.
 //
 // #ifndef BREWPI_STATIC_CONFIG
 // #define BREWPI_STATIC_CONFIG BREWPI_SHIELD_REV_A

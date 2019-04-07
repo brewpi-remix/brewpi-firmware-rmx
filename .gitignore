@@ -5,4 +5,4 @@
 .vscode/c_cpp_properties.json
 .vscode/launch.json
 .vscode/ipch
-brewpi-firmware-remix.code-workspace
+*.code-workspace

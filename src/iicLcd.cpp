@@ -27,8 +27,9 @@ those were the names listed as contributors on the Legacy branch.
 See: 'original-license.md' for notes about the original project's
 license and credits. */
 
-// Included in this version of the BrewPi Firmware courtesy of https://github.com/slintak
-// Thank you for coding this, and thank you for reaching out on HomeBrewTalk!
+// Included in this version of the BrewPi Firmware courtesy of
+// https://github.com/slintak. Thank you for coding this, and thank
+// you for reaching out on HomeBrewTalk!
 
 // YWROBOT
 // last updated on 21/12/2011
@@ -49,7 +50,7 @@ license and credits. */
 
 extern "C" {
 // The version @slintak had used Twi. I'm using wire instead.
-//#include "Twi.h"
+// #include "Twi.h"
 #include <Wire.h>
 }
 
@@ -95,12 +96,10 @@ void IIClcd::scan_address() {
     }
 }
 
-
 void IIClcd::init() {
     init_priv();
     _backlightTime = 0;
 }
-
 
 void IIClcd::init_priv()
 {
@@ -109,6 +108,7 @@ void IIClcd::init_priv()
 	scan_address();
 #else
     Wire.begin();
+    scan_address();
 #endif
     _displayfunction = LCD_4BITMODE | LCD_1LINE | LCD_5x8DOTS;
     begin(_cols, _rows);
@@ -129,14 +129,14 @@ void IIClcd::begin(uint8_t cols, uint8_t lines, uint8_t dotsize) {
 
     // SEE PAGE 45/46 FOR INITIALIZATION SPECIFICATION!
     // according to datasheet, we need at least 40ms after power rises above 2.7V
-    // before sending commands. Arduino can turn on way befer 4.5V so we'll wait 50
+    // before sending commands. Arduino can turn on way before 4.5V so we'll wait 50
     delay(50);
 
     // Now we pull both RS and R/W low to begin commands
     expanderWrite(_backlightval);	// reset expanderand turn backlight off (Bit 8 =1)
     delay(1000);
 
-    //put the LCD into 4 bit mode
+    // put the LCD into 4 bit mode
     // this is according to the hitachi HD44780 datasheet
     // figure 24, pg 46
 
@@ -155,7 +155,6 @@ void IIClcd::begin(uint8_t cols, uint8_t lines, uint8_t dotsize) {
     // finally, set to 4-bit interface
     write4bits(0x02 << 4);
 
-
     // set # lines, font size, etc.
     command(LCD_FUNCTIONSET | _displayfunction);
 
@@ -173,7 +172,6 @@ void IIClcd::begin(uint8_t cols, uint8_t lines, uint8_t dotsize) {
     command(LCD_ENTRYMODESET | _displaymode);
 
     home();
-
 }
 
 /********** high level commands, for the user! */
@@ -289,8 +287,6 @@ void IIClcd::backlight(void) {
     expanderWrite(0);
 }
 
-
-
 /*********** mid level commands, for sending data/cmds */
 
 inline void IIClcd::command(uint8_t value) {
@@ -374,7 +370,6 @@ void IIClcd::printSpacesToRestOfLine(void) {
         write(' ');
     }
 }
-
 
 #ifndef print_P_inline
 void IIClcd::print_P(const char * str) { // print a string stored in PROGMEM

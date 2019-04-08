@@ -37,6 +37,9 @@ license and credits. */
 //#include <Print.h>
 #include "Ticks.h"
 
+// Turn off backlight after timeout (seconds)
+#define BACKLIGHT_AUTO_OFF_PERIOD 600
+
 // commands
 #define LCD_CLEARDISPLAY 0x01
 #define LCD_RETURNHOME 0x02

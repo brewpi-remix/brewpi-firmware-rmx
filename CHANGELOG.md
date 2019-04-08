@@ -1,9 +1,9 @@
 ## 0.2.12
-The primary change for this release is to enable I2C support (thank you @Thorrak!)
+The primary change for this release is to enable I2C support (thank you @Thorrak!)  This brings in a new shield type called "I2C" with accompanying pin definition changes.
 
 ### Features
  - Add I2C support
- - Remove reset of LCD when using I2C
+ - Remove reset of LCD on timer when using I2C.  It was an attempt to get rid of shift-register LCD scrambling, it's not needed with the I2C.
 
 ### Bugfixes
  - None yet!

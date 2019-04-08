@@ -39,11 +39,16 @@ license and credits. */
 #include "OneWire.h"
 
 /**
- * A user has freedom to connect various devices to the arduino, either via extending the oneWire bus, or by assigning to specific pins, e.g. actuators, switch sensors.
- * Rather than make this compile-time, the configuration is stored at runtime. 
- * Also, the availability of various sensors will change. E.g. it's possible to have a fridge constant mode without a beer sensor.
+ * A user has freedom to connect various devices to the arduino, either via
+ * extending the oneWire bus, or by assigning to specific pins, e.g. 
+ * actuators, switch sensors. Rather than make this compile-time, the
+ * configuration is stored at runtime.
+ * 
+ * Also, the availability of various sensors will change. E.g. it's possible
+ * to have a fridge constant mode without a beer sensor.
  *
- * Since the data has to be persisted to EEPROM, references to the actual uses of the devices have to be encoded.  This is the function of the deviceID.
+ * Since the data has to be persisted to EEPROM, references to the actual uses
+ * of the devices have to be encoded.  This is the function of the deviceID.
  */
 
 class DeviceConfig;
@@ -60,23 +65,23 @@ enum DeviceFunction
 {
 	DEVICE_NONE = 0, // used as a sentry to mark end of list
 	// chamber devices
-	DEVICE_CHAMBER_DOOR = 1, // switch sensor
+	DEVICE_CHAMBER_DOOR = 1, 				// switch sensor
 	DEVICE_CHAMBER_HEAT = 2,
 	DEVICE_CHAMBER_COOL = 3,
-	DEVICE_CHAMBER_LIGHT = 4, // actuator
+	DEVICE_CHAMBER_LIGHT = 4,				// actuator
 	DEVICE_CHAMBER_TEMP = 5,
-	DEVICE_CHAMBER_ROOM_TEMP = 6, // temp sensors
-	DEVICE_CHAMBER_FAN = 7,		  // a fan in the chamber
-	DEVICE_CHAMBER_RESERVED1 = 8, // reserved for future use
+	DEVICE_CHAMBER_ROOM_TEMP = 6, 			// temp sensors
+	DEVICE_CHAMBER_FAN = 7,		  			// a fan in the chamber
+	DEVICE_CHAMBER_RESERVED1 = 8, 			// reserved for future use
 	// carboy devices
 	DEVICE_BEER_FIRST = 9,
-	DEVICE_BEER_TEMP = DEVICE_BEER_FIRST, // primary beer temp sensor
-	DEVICE_BEER_TEMP2 = 10,				  // secondary beer temp sensor
+	DEVICE_BEER_TEMP = DEVICE_BEER_FIRST,	// primary beer temp sensor
+	DEVICE_BEER_TEMP2 = 10,				  	// secondary beer temp sensor
 	DEVICE_BEER_HEAT = 11,
-	DEVICE_BEER_COOL = 12, // individual actuators
-	DEVICE_BEER_SG = 13,   // SG sensor
+	DEVICE_BEER_COOL = 12, 					// individual actuators
+	DEVICE_BEER_SG = 13,   					// SG sensor
 	DEVICE_BEER_RESERVED1 = 14,
-	DEVICE_BEER_RESERVED2 = 15, // reserved
+	DEVICE_BEER_RESERVED2 = 15, 			// reserved
 	DEVICE_MAX = 16
 };
 
@@ -93,9 +98,9 @@ enum DeviceOwner
 enum DeviceType
 {
 	DEVICETYPE_NONE = 0,
-	DEVICETYPE_TEMP_SENSOR = 1,	/* BasicTempSensor - OneWire */
-	DEVICETYPE_SWITCH_SENSOR = 2,  /* SwitchSensor - direct pin and onewire are supported */
-	DEVICETYPE_SWITCH_ACTUATOR = 3 /* Actuator - both direct pin and onewire are supported */
+	DEVICETYPE_TEMP_SENSOR = 1,		/* BasicTempSensor - OneWire */
+	DEVICETYPE_SWITCH_SENSOR = 2,  	/* SwitchSensor - direct pin and onewire are supported */
+	DEVICETYPE_SWITCH_ACTUATOR = 3	/* Actuator - both direct pin and onewire are supported */
 };
 
 enum DeviceConnection
@@ -113,9 +118,9 @@ enum DeviceHardware
 	DEVICE_HARDWARE_NONE = 0,
 	DEVICE_HARDWARE_PIN = 1,		  // a digital pin, either input or output
 	DEVICE_HARDWARE_ONEWIRE_TEMP = 2, // a onewire temperature sensor
-//#if BREWPI_DS2413
-//	DEVICE_HARDWARE_ONEWIRE_2413 = 3 // a onewire 2-channel PIO input or output.
-//#endif
+#if BREWPI_DS2413
+	DEVICE_HARDWARE_ONEWIRE_2413 = 3 // a onewire 2-channel PIO input or output.
+#endif
 };
 
 inline bool isAssignable(DeviceType type, DeviceHardware hardware)
@@ -170,13 +175,18 @@ struct DeviceConfig
 	DeviceHardware deviceHardware; // flag to indicate the runtime type of device
 	struct Hardware
 	{
-		uint8_t pinNr;		   // the arduino pin nr this device is connected to
-		bool invert;		   // for actuators/sensors, controls if the signal value is inverted.
-		bool deactivate;	   // disable this device - the device will not be installed.
-		DeviceAddress address; // for onewire devices, if address[0]==0 then use the first matching device type, otherwise use the device with the specific address
+		uint8_t pinNr;		   // The arduino pin nr this device is connected to
+		bool invert;		   // For actuators/sensors, controls if the signal value is inverted.
+		bool deactivate;	   // Disable this device - the device will not be installed.
+		DeviceAddress address; // For onewire devices, if address[0]==0 then use the first
+		                       // matching device type, otherwise use the device with the 
+							   // specific address
 
-		/* The pio and sensor calibration are never needed at the same time so they are a union. 
-		 * To ensure the eeprom format is stable when including/excluding DS2413 support, ensure all fields are the same size.
+		/* 
+		 * The pio and sensor calibration are never needed at the same time so
+		 * they are a union. To ensure the eeprom format is stable when
+		 * including/excluding DS2413 support, ensure all fields are the same
+		 * size.
 		 */
 		union {
 #if BREWPI_DS2413
@@ -267,9 +277,10 @@ class DeviceManager
 	bool isDefaultTempSensor(BasicTempSensor *sensor);
 
 	/**
-	 * Create the device corresponding to the give config.
+	 * Create the device corresponding to the give config:
 	 * @param config	The DeviceConfig describing the device to create.
-	 * @param dt		The device type indicating the type of device to create (where hardware type is not unambiguous.)	
+	 * @param dt		The device type indicating the type of device to
+	 *                  create (where hardware type is not unambiguous.)	
 	 */
 	static void *createDevice(DeviceConfig &config, DeviceType dt);
 	static void disposeDevice(DeviceType dt, void *device);
@@ -282,8 +293,8 @@ class DeviceManager
 	static bool firstUndefinedAlternative(DeviceConfig &config, DeviceAlternatives &alternatives);
 
 	/**
-     * Creates and Installs a device from the given device config.
-     * /return true if a device was installed. false if the config is not complete.
+     * Creates and Installs a device from the given device config. Return true
+	 * if a device was installed. false if the config is not complete.
      */
 	static void installDevice(DeviceConfig &config);
 
@@ -293,9 +304,10 @@ class DeviceManager
 	static void printDevice(device_slot_t slot, DeviceConfig &config, const char *value, Print &p);
 
 	/**
-     * Iterate over the defined devices.
-     * Caller first calls with deviceIndex 0. If the return value is true, config is filled out with the 
-     * config for the device. The caller can then increment deviceIndex and try again.
+     * Iterate over the defined devices:
+     * Caller first calls with deviceIndex 0. If the return value is true,
+	 * config is filled out with the config for the device. The caller can
+	 * then increment deviceIndex and try again.
      */
 	static bool allDevices(DeviceConfig &config, uint8_t deviceIndex);
 
@@ -308,16 +320,20 @@ class DeviceManager
 
 	/**
      * Enumerates the devices detected in the system. Installed devices
-     * are signified by returning their slot number in {@code callbackData}, while
-     * non-installed devices have slot set to -1. 
-     * @param spec              The hardware enumeration spec, specifies constraints
-     *  on the hardware to enumerate. For an unconstrained search, set all fields
-     *  to 0, and pin and hardware to -1.
-     * @param callback  The callback that is called with each device enumerated.
+     * are signified by returning their slot number in {@code callbackData},
+	 * while non-installed devices have slot set to -1.
+	 *  
+     * @param spec      The hardware enumeration spec, specifies constraints
+	 *                  on the hardware to enumerate. For an unconstrained
+	 *                  search, set all fields to 0, and pin and hardware
+	 *                  to -1.
+     * @param callback  The callback that is called with each device
+	 *                  enumerated.
      *
      * @param callbackData  The storage for the device callback info, allowing
-     *  the enumeration to return additional info on each device, plus an application
-     *  provided pointer in {@code info->data}.
+     *                      the enumeration to return additional info on each
+	 *                      device, plus an application provided pointer in
+	 *                      {@code info->data}.
      */
 	static void enumerateHardware(EnumerateHardware &spec, EnumDevicesCallback callback, DeviceCallbackInfo *callbackData);
 

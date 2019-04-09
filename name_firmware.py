@@ -1,3 +1,5 @@
+#!/usr/bin/python
+
 # Copyright (C) 2018, 2019 Lee C. Bussy (@LBussy)
 
 # This file is part of LBussy's BrewPi Firmware Remix (BrewPi-Firmware-RMX).
@@ -29,12 +31,25 @@
 # license and credits. */
 
 import subprocess
+Import("env")
 
-tagcmd = "git describe --tags --abbrev=0"
-version = subprocess.check_output(tagcmd).decode().strip()
+my_flags = env.ParseFlags(env['BUILD_FLAGS'])
+defines = {k: v for (k, v) in my_flags.get("CPPDEFINES")}
 
-revcmd = "git log --pretty=format:'%h' -n 1"
-commit = subprocess.check_output(revcmd).decode().strip()
+# Parse out defined shield from Config.h
+shields = []
+linenum = 0
+define = "#define BREWPI_STATIC_CONFIG".lower()
+with open (str(env["PROJECTINCLUDE_DIR"]) + '/Config.h', 'rt') as config:
+    for line in config:
+        linenum += 1
+        if line.lower().startswith(define):
+            shields.append(line.rstrip('\n'))
+for variant in shields:
+    shield = variant.split(" ")[-1].split("_")[-1].lower()
 
-print "-DPIO_SRC_TAG=%s" % version
-print "-DPIO_SRC_REV=%s" % commit
+env.Replace(PROGNAME="brewpi-%s-%s-%s-%s" % (
+    env["PIOFRAMEWORK"][0],
+    str(env["BOARD"]),
+    shield,
+    defines.get("PIO_SRC_TAG")))

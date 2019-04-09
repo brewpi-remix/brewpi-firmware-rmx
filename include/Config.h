@@ -31,7 +31,7 @@ license and credits. */
 
 //////////////////////////////////////////////////////////////////////////
 //
-// Define build version
+// Define build version (git tag)
 //
 #ifndef VERSION_STRING
 #define VERSION_STRING PIO_SRC_TAG
@@ -41,7 +41,7 @@ license and credits. */
 
 //////////////////////////////////////////////////////////////////////////
 //
-// Define build commit
+// Define build commit (short git commit)
 //
 #ifndef BUILD_NAME
 #define BUILD_NAME PIO_SRC_REV

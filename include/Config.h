@@ -31,26 +31,6 @@ license and credits. */
 
 //////////////////////////////////////////////////////////////////////////
 //
-// Define build version (git tag)
-//
-#ifndef VERSION_STRING
-#define VERSION_STRING PIO_SRC_TAG
-#endif
-//
-//////////////////////////////////////////////////////////////////////////
-
-//////////////////////////////////////////////////////////////////////////
-//
-// Define build commit (short git commit)
-//
-#ifndef BUILD_NAME
-#define BUILD_NAME PIO_SRC_REV
-#endif
-//
-//////////////////////////////////////////////////////////////////////////
-
-//////////////////////////////////////////////////////////////////////////
-//
 // Set verbosity of debug messages 0-3
 // 0: means no debug messages
 // 1: is typical debug messages required for end users
@@ -64,10 +44,33 @@ license and credits. */
 
 //////////////////////////////////////////////////////////////////////////
 //
-// Define which brewpi shield is used.
-// BREWPI_SHIELD_REV_A The RevA shield (ca. Feb 2013), two OneWire buses, door, heat, cool.
-// BREWPI_SHIELD_REV_C The RevC shield (ca. May 2013). One common OneWire bus, 4 actuators. Dynaconfig.
-// BREWPI_SHIELD_TWI   Unofficial TWI shield. Similar to Rev C but moves pins around to support I2C bus on A4/A5
+// Define build version (Git tag from PIO Env)
+//
+#ifndef VERSION_STRING
+#define VERSION_STRING PIO_SRC_TAG
+#endif
+//
+//////////////////////////////////////////////////////////////////////////
+
+//////////////////////////////////////////////////////////////////////////
+//
+// Define build commit (Git commit from PIO Env)
+//
+#ifndef BUILD_NAME
+#define BUILD_NAME PIO_SRC_REV
+#endif
+//
+//////////////////////////////////////////////////////////////////////////
+
+//////////////////////////////////////////////////////////////////////////
+//
+// Define which brewpi shield is used:
+// BREWPI_SHIELD_REV_A The RevA shield (ca. Feb 2013), two OneWire buses,
+//                     door, heat, cool.
+// BREWPI_SHIELD_REV_C The RevC shield (ca. May 2013). One common OneWire
+//                     bus, 4 actuators. Dynaconfig.
+// BREWPI_SHIELD_TWI   TWI shield. Similar to Rev C but moves pins around
+//                     to support I2C bus on A4/A5
 //
 #ifndef BREWPI_STATIC_CONFIG
 // #define BREWPI_STATIC_CONFIG BREWPI_SHIELD_REV_A
@@ -79,12 +82,75 @@ license and credits. */
 
 //////////////////////////////////////////////////////////////////////////
 //
-// Enable the simulator. Real sensors/actuators are replaced with simulated versions. In particular, the values reported by
-// temp sensors are based on a model of the fridge/beer.
+// Enable the LCD display. Without this, a NullDisplay is used
+// If using an IIC/TWI shield, enable IIC support
 //
-// #ifndef BREWPI_SIMULATE
-// #define BREWPI_SIMULATE 0
-// #endif
+#ifndef BREWPI_LCD
+#define BREWPI_LCD 1
+#if BREWPI_STATIC_CONFIG == BREWPI_SHIELD_TWI
+#define BREWPI_IIC 1
+#endif
+#endif
+//
+//////////////////////////////////////////////////////////////////////////
+
+//////////////////////////////////////////////////////////////////////////
+//
+// Turn off LCD backlight after timeout (seconds)
+//
+#ifndef BACKLIGHT_AUTO_OFF_PERIOD
+#define BACKLIGHT_AUTO_OFF_PERIOD 600
+#endif
+//
+//////////////////////////////////////////////////////////////////////////
+
+//////////////////////////////////////////////////////////////////////////
+//
+#ifndef BREWPI_ROTARY_ENCODER
+#define BREWPI_ROTARY_ENCODER 1
+#endif
+//
+//////////////////////////////////////////////////////////////////////////
+
+//////////////////////////////////////////////////////////////////////////
+//
+// Enable the LCD menu.
+//
+#ifndef BREWPI_MENU
+#define BREWPI_MENU 1
+#endif
+//
+//////////////////////////////////////////////////////////////////////////
+
+//////////////////////////////////////////////////////////////////////////
+//
+// Enables the PWM buzzer
+//
+#ifndef BREWPI_BUZZER
+#define BREWPI_BUZZER 1
+#endif
+//
+//////////////////////////////////////////////////////////////////////////
+
+//////////////////////////////////////////////////////////////////////////
+//
+// BREWPI_ACTUATOR_PINS - Should be enabled for digital pins (not sure this
+//                        is used)
+//
+#ifndef BREWPI_ACTUATOR_PINS
+#define BREWPI_ACTUATOR_PINS 1
+#endif
+//
+//////////////////////////////////////////////////////////////////////////
+
+//////////////////////////////////////////////////////////////////////////
+//
+// FORCE_DEVICE_DEFAULTS - Overwrite the chamber/beer number to prevent
+//                         user error.
+//
+#ifndef FORCE_DEVICE_DEFAULTS
+#define FORCE_DEVICE_DEFAULTS 1
+#endif
 //
 //////////////////////////////////////////////////////////////////////////
 
@@ -94,17 +160,6 @@ license and credits. */
 //
 // #ifndef BREWPI_DS2413
 // #define BREWPI_DS2413 0
-// #endif
-//
-//////////////////////////////////////////////////////////////////////////
-
-//////////////////////////////////////////////////////////////////////////
-//
-// This flag virtualizes as much of the hardware as possible, so the code can be run in the AvrStudio simulator, which
-// only emulates the microcontroller, not any attached peripherals.
-//
-// #ifndef BREWPI_EMULATE
-// #define BREWPI_EMULATE 0
 // #endif
 //
 //////////////////////////////////////////////////////////////////////////
@@ -122,7 +177,8 @@ license and credits. */
 //////////////////////////////////////////////////////////////////////////
 //
 // Flag to control implementation of TempControl as a static class.
-// Should normally be left alone unles you are experimenting with multi-instancing.
+// Should normally be left alone unless you are experimenting with multi-
+// instancing.
 //
 // #ifndef TEMP_CONTROL_STATIC
 // #define TEMP_CONTROL_STATIC 1
@@ -142,57 +198,7 @@ license and credits. */
 
 //////////////////////////////////////////////////////////////////////////
 //
-// Enable the LCD menu.
-//
-#ifndef BREWPI_MENU
-#define BREWPI_MENU 1
-#endif
-//
-//////////////////////////////////////////////////////////////////////////
-
-//////////////////////////////////////////////////////////////////////////
-//
-// Enable the LCD display. Without this, a NullDisplay is used
-//
-#ifndef BREWPI_LCD
-#define BREWPI_LCD 1
-
-// If we're using an IIC shield, we need to enable IIC support
-#if BREWPI_STATIC_CONFIG == BREWPI_SHIELD_TWI
-#define BREWPI_IIC 1
-#endif
-
-#endif
-//
-//////////////////////////////////////////////////////////////////////////
-
-//////////////////////////////////////////////////////////////////////////
-//
-#ifndef BREWPI_BUZZER
-#define BREWPI_BUZZER 1
-#endif
-//
-//////////////////////////////////////////////////////////////////////////
-
-//////////////////////////////////////////////////////////////////////////
-//
-#ifndef BREWPI_ROTARY_ENCODER
-#define BREWPI_ROTARY_ENCODER 1
-#endif
-//
-//////////////////////////////////////////////////////////////////////////
-
-//////////////////////////////////////////////////////////////////////////
-//
-// #ifndef BREWPI_EEPROM_HELPER_COMMANDS
-// #define BREWPI_EEPROM_HELPER_COMMANDS BREWPI_DEBUG || BREWPI_SIMULATE
-// #endif
-//
-//////////////////////////////////////////////////////////////////////////
-
-//////////////////////////////////////////////////////////////////////////
-//
-// BREWPI_SENSOR_PINS - can be disabled if only using onewire devices
+// BREWPI_SENSOR_PINS - Enabled if not using onewire sensors
 //
 // #ifndef BREWPI_SENSOR_PINS
 // #define BREWPI_SENSOR_PINS 1
@@ -201,20 +207,32 @@ license and credits. */
 
 //////////////////////////////////////////////////////////////////////////
 //
-// BREWPI_ACTUATOR_PINS - can be disabled if only using onewire devices
-#ifndef BREWPI_ACTUATOR_PINS
-#define BREWPI_ACTUATOR_PINS 1
-#endif
+// Enable the simulator. Real sensors/actuators are replaced with simulated
+// versions. In particular, the values reported by
+// temp sensors are based on a model of the fridge/beer.
+//
+// #ifndef BREWPI_SIMULATE
+// #define BREWPI_SIMULATE 0
+// #endif
 //
 //////////////////////////////////////////////////////////////////////////
 
 //////////////////////////////////////////////////////////////////////////
 //
-// FORCE_DEVICE_DEFAULTS - Overwrite the chamber/beer number to prevent user
-//                         error.
+// This flag virtualizes as much of the hardware as possible, so the code
+// can be run in the AvrStudio simulator, which only emulates the 
+// microcontroller, not any attached peripherals.
 //
-#ifndef FORCE_DEVICE_DEFAULTS
-#define FORCE_DEVICE_DEFAULTS 1
-#endif
+// #ifndef BREWPI_EMULATE
+// #define BREWPI_EMULATE 0
+// #endif
+//
+//////////////////////////////////////////////////////////////////////////
+
+//////////////////////////////////////////////////////////////////////////
+//
+// #ifndef BREWPI_EEPROM_HELPER_COMMANDS
+// #define BREWPI_EEPROM_HELPER_COMMANDS BREWPI_DEBUG || BREWPI_SIMULATE
+// #endif
 //
 //////////////////////////////////////////////////////////////////////////

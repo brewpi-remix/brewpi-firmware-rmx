@@ -61,14 +61,12 @@ license and credits. */
 #define lcdLatchPin 10
 #endif
 
-
 // If you change the interrupt pins, you will also have to review the interrupt vectors of the rotary encoder
 #define rotarySwitchPin 7 // INT6 on leo or PCINT23 on uno
 #define rotaryAPin 8      // PCINT4 on leo or PCINT0 on uno
 #define rotaryBPin 9      // PCINT5 on leo or PCINT1 on uno
 
 #define BREWPI_INVERT_ACTUATORS 1
-
 
 #elif BREWPI_STATIC_CONFIG == BREWPI_SHIELD_REV_C
 
@@ -103,7 +101,6 @@ license and credits. */
 #ifndef lcdLatchPin
 #define lcdLatchPin 10
 #endif
-
 
 // If you change the interrupt pins, you will also have to review the interrupt vectors of the rotary encoder
 #define rotarySwitchPin 7 // INT6 on leo or PCINT23 on uno
@@ -140,7 +137,6 @@ license and credits. */
 #define BREWPI_INVERT_ACTUATORS 0
 
 #elif BREWPI_STATIC_CONFIG == BREWPI_SHIELD_TWI
-
 
 #ifndef oneWirePin
 #define oneWirePin A0  // A4 in Rev C

@@ -29,7 +29,6 @@ license and credits. */
 
 #pragma once
 
-
 #if BREWPI_EMULATE || !BREWPI_LCD || !ARDUINO
 #include "NullLcdDriver.h"
 typedef NullLcdDriver LcdDriver;
@@ -38,10 +37,10 @@ typedef NullLcdDriver LcdDriver;
 typedef OLEDFourBit LcdDriver;
 #elif defined(BREWPI_IIC)
 #include "IicLcd.h"
-typedef IIClcd      LcdDriver;
+typedef IIClcd LcdDriver;
 #elif !BREWPI_SHIFT_LCD
 #include "SpiLcd.h"
-typedef SpiLcd      LcdDriver;
+typedef SpiLcd LcdDriver;
 #else
 #error "Wrong LCD type! Select one in Config.h."
 #endif

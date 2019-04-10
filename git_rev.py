@@ -33,10 +33,11 @@
 import subprocess
 
 tagcmd = "git describe --tags --abbrev=0"
-version = subprocess.check_output(tagcmd).decode().strip()
+version = subprocess.check_output(tagcmd, shell=True).decode().strip()
 
 revcmd = "git log --pretty=format:'%h' -n 1"
-commit = subprocess.check_output(revcmd).decode().strip()
+commit = subprocess.check_output(revcmd, shell=True).decode().strip()
 
 print "-DPIO_SRC_TAG=%s" % version
 print "-DPIO_SRC_REV=%s" % commit
+

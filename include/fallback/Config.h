@@ -88,13 +88,13 @@ license and credits. */
 //                     door, heat, cool.
 // BREWPI_SHIELD_REV_C The RevC shield (ca. May 2013). One common OneWire
 //                     bus, 4 actuators. Dynaconfig.
-// BREWPI_SHIELD_TWI   TWI shield. Similar to Rev C but moves pins around
+// BREWPI_SHIELD_I2C   TWI shield. Similar to Rev C but moves pins around
 //                     to support I2C bus on A4/A5
 //
 // #ifndef BREWPI_STATIC_CONFIG
 // #define BREWPI_STATIC_CONFIG BREWPI_SHIELD_REV_A
 // #define BREWPI_STATIC_CONFIG BREWPI_SHIELD_REV_C
-// #define BREWPI_STATIC_CONFIG BREWPI_SHIELD_TWI
+// #define BREWPI_STATIC_CONFIG BREWPI_SHIELD_I2C
 // #endif
 //
 //////////////////////////////////////////////////////////////////////////
@@ -106,7 +106,7 @@ license and credits. */
 //
 // #ifndef BREWPI_LCD
 // #define BREWPI_LCD 1
-// #if BREWPI_STATIC_CONFIG == BREWPI_SHIELD_TWI
+// #if BREWPI_STATIC_CONFIG == BREWPI_SHIELD_I2C
 // #define BREWPI_IIC 1
 // #endif
 // #endif

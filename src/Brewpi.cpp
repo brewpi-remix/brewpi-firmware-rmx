@@ -94,7 +94,7 @@ void brewpiLoop(void)
     ui.ticks();
 
     // Reset display on timer if using shift register LCD
-    #if BREWPI_LCD && BREWPI_STATIC_CONFIG != BREWPI_SHIELD_TWI
+    #if BREWPI_LCD && BREWPI_STATIC_CONFIG != BREWPI_SHIELD_I2C
     static unsigned long lastLcdUpdate = 0;  // Counter for LCD reset
     if (ticks.millis() - lastLcdUpdate >= (180000))
     { //reset lcd every 180 seconds as a workaround for screen scramble from @Thorrak

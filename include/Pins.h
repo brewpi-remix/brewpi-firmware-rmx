@@ -136,7 +136,7 @@ license and credits. */
 
 #define BREWPI_INVERT_ACTUATORS 0
 
-#elif BREWPI_STATIC_CONFIG == BREWPI_SHIELD_TWI
+#elif BREWPI_STATIC_CONFIG == BREWPI_SHIELD_I2C
 
 #ifndef oneWirePin
 #define oneWirePin A0  // A4 in Rev C

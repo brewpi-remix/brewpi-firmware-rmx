@@ -80,7 +80,6 @@ IIClcd::IIClcd(uint8_t lcd_Addr, uint8_t lcd_cols, uint8_t lcd_rows)
 }
 
 void IIClcd::scan_address() {
-//	Wire.begin();
     for (byte i = 8; i < 120; i++)
     {
         Wire.beginTransmission(i);
@@ -95,21 +94,21 @@ void IIClcd::scan_address() {
 }
 
 void IIClcd::init() {
-    init_priv();
     _backlightTime = 0;
+    init_priv();
 }
 
 void IIClcd::init_priv()
 {
 #if defined(ESP8266) || defined(ESP32)
     Wire.begin(IIC_SDA, IIC_SCL);
-	scan_address();
 #else
     Wire.begin();
-    scan_address();
 #endif
+    scan_address();
     _displayfunction = LCD_4BITMODE | LCD_1LINE | LCD_5x8DOTS;
     begin(_cols, _rows);
+    backlight();
 }
 
 void IIClcd::begin(uint8_t cols, uint8_t lines, uint8_t dotsize) {
@@ -131,7 +130,7 @@ void IIClcd::begin(uint8_t cols, uint8_t lines, uint8_t dotsize) {
     delay(50);
 
     // Now we pull both RS and R/W low to begin commands
-    expanderWrite(_backlightval);	// Reset expanderand turn backlight off (Bit 8 =1)
+    expanderWrite(_backlightval);	// Reset expander and turn backlight off (Bit 8 =1)
     delay(1000);
 
     // Put the LCD into 4 bit mode
@@ -282,7 +281,6 @@ void IIClcd::noBacklight(void) {
     _backlightval = LCD_NOBACKLIGHT;
     expanderWrite(0);
 }
-
 void IIClcd::backlight(void) {
     _backlightval = LCD_BACKLIGHT;
     expanderWrite(0);

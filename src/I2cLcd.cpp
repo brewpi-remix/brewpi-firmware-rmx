@@ -39,7 +39,7 @@ license and credits. */
 // Compatible with the Arduino IDE 1.0
 // Library version:1.1
 
-#include "IicLcd.h"
+#include "I2cLcd.h"
 
 #include "Brewpi.h"
 #include <stdio.h>
@@ -49,8 +49,6 @@ license and credits. */
 #include "Arduino.h"
 
 extern "C" {
-// The version @slintak had used Twi. I'm using wire instead.
-// #include "Twi.h"
 #include <Wire.h>
 }
 
@@ -122,81 +120,84 @@ void IIClcd::begin(uint8_t cols, uint8_t lines, uint8_t dotsize) {
     _currline = 0;
     _currpos = 0;
 
-    // for some 1 line displays you can select a 10 pixel high font
+    // For some 1 line displays you can select a 10 pixel high font
     if ((dotsize != 0) && (lines == 1)) {
         _displayfunction |= LCD_5x10DOTS;
     }
 
     // SEE PAGE 45/46 FOR INITIALIZATION SPECIFICATION!
-    // according to datasheet, we need at least 40ms after power rises above 2.7V
+    // According to datasheet, we need at least 40ms after power rises above 2.7V
     // before sending commands. Arduino can turn on way before 4.5V so we'll wait 50
     delay(50);
 
     // Now we pull both RS and R/W low to begin commands
-    expanderWrite(_backlightval);	// reset expanderand turn backlight off (Bit 8 =1)
+    expanderWrite(_backlightval);	// Reset expanderand turn backlight off (Bit 8 =1)
     delay(1000);
 
-    // put the LCD into 4 bit mode
-    // this is according to the hitachi HD44780 datasheet
+    // Put the LCD into 4 bit mode
+    // This is according to the hitachi HD44780 datasheet
     // figure 24, pg 46
 
-    // we start in 8bit mode, try to set 4 bit mode
+    // We start in 8bit mode, try to set 4 bit mode
     write4bits(0x03 << 4);
     delayMicroseconds(4500); // wait min 4.1ms
 
-    // second try
+    // Second try
     write4bits(0x03 << 4);
     delayMicroseconds(4500); // wait min 4.1ms
 
-    // third go!
+    // Third go!
     write4bits(0x03 << 4);
     delayMicroseconds(150);
 
-    // finally, set to 4-bit interface
+    // Finally, set to 4-bit interface
     write4bits(0x02 << 4);
 
-    // set # lines, font size, etc.
+    // Set # lines, font size, etc.
     command(LCD_FUNCTIONSET | _displayfunction);
 
-    // turn the display on with no cursor or blinking default
+    // Turn the display on with no cursor or blinking default
     _displaycontrol = LCD_DISPLAYON | LCD_CURSOROFF | LCD_BLINKOFF;
     display();
 
-    // clear it off
+    // Clear it off
     clear();
 
     // Initialize to default text direction (for roman languages)
     _displaymode = LCD_ENTRYLEFT | LCD_ENTRYSHIFTDECREMENT;
 
-    // set the entry mode
+    // Set the entry mode
     command(LCD_ENTRYMODESET | _displaymode);
 
     home();
 }
 
-/********** high level commands, for the user! */
+/**********
+ * High level commands for the user
+ */
+
 void IIClcd::clear() {
-    command(LCD_CLEARDISPLAY);// clear display, set cursor position to zero
+    command(LCD_CLEARDISPLAY); // Clear display, set cursor position to zero
 
     for (uint8_t i = 0; i < _rows; i++) {
         for (uint8_t j = 0; j < _cols; j++) {
-            content[i][j] = ' '; // initialize on all spaces
+            content[i][j] = ' '; // Initialize on all spaces
         }
         content[i][_cols] = '\0'; // NULL terminate string
     }
 
-    delayMicroseconds(2000);  // this command takes a long time!
+    delayMicroseconds(2000);  // This command takes a long time
 }
 
 void IIClcd::home() {
-    command(LCD_RETURNHOME);  // set cursor position to zero
-    delayMicroseconds(2000);  // this command takes a long time!
+    command(LCD_RETURNHOME);  // Set cursor position to zero
+    delayMicroseconds(2000);  // This command takes a long time
 }
 
 void IIClcd::setCursor(uint8_t col, uint8_t row) {
     int row_offsets[] = { 0x00, 0x40, 0x14, 0x54 };
     if (row > _numlines) {
-        row = _numlines - 1;    // we count rows starting w/0
+        row = _numlines - 1;  // Count rows starting w/0
     }
 
     _currline = row;
@@ -287,7 +288,9 @@ void IIClcd::backlight(void) {
     expanderWrite(0);
 }
 
-/*********** mid level commands, for sending data/cmds */
+/*********** 
+ * Mid level commands, for sending data/cmds
+ */
 
 inline void IIClcd::command(uint8_t value) {
     send(value, 0);
@@ -302,9 +305,11 @@ inline size_t IIClcd::write(uint8_t value) {
     return 0;
 }
 
-/************ low level data pushing commands **********/
+/************
+ * Low level data pushing commands
+ */
 
-// write either command or data
+// Write either command or data
 void IIClcd::send(uint8_t value, uint8_t mode) {
     uint8_t highnib = value & 0xf0;
     uint8_t lownib = (value << 4) & 0xf0;
@@ -327,10 +332,10 @@ void IIClcd::expanderWrite(uint8_t _data) {
 
 void IIClcd::pulseEnable(uint8_t _data) {
     expanderWrite(_data | En);	// En high
-    delayMicroseconds(1);		// enable pulse must be >450ns
+    delayMicroseconds(1);		// Enable pulse must be >450ns
 
     expanderWrite(_data & ~En);	// En low
-    delayMicroseconds(50);		// commands need > 37us to settle
+    delayMicroseconds(50);		// Commands need > 37us to settle
 }
 
 // This resets the backlight timer and updates the SPI output
@@ -372,13 +377,13 @@ void IIClcd::printSpacesToRestOfLine(void) {
 }
 
 #ifndef print_P_inline
-void IIClcd::print_P(const char * str) { // print a string stored in PROGMEM
+void IIClcd::print_P(const char * str) { // Print a string stored in PROGMEM
     for(uint8_t i=0; i<strlen_P(str); i++) {
         write(pgm_read_byte_near(str+i));
     }
 }
 
-void IIClcd::print(char * str) { // print a string stored in PROGMEM
+void IIClcd::print(char * str) { // Print a string stored in PROGMEM
     for(uint8_t i=0; i<strlen(str); i++) {
         write(str[i]);
     }

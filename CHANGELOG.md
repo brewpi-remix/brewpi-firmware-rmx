@@ -3,10 +3,11 @@ The primary change for this release is to enable I2C support (thank you @Thorrak
 
 ### Features
  - Add I2C support
- - Remove reset of LCD on timer when using I2C.  The reset was an attempt to get rid of shift-register LCD scrambling, it's not needed with the I2C.
+ - Add I2C shield type (pin changes)
+ - Add firmware auto-naming to PlatformIO compile
 
 ### Bugfixes
- - None yet!
+ - Remove reset of LCD on timer when using I2C.  The reset was an attempt to get rid of shift-register LCD scrambling, it's not needed with the I2C.
 
 ## 0.2.11
 The primary change in this release is to move the workspace to PlatformIO from Atmel Studio.

@@ -34,7 +34,11 @@ license and credits. */
  */
 
 #ifndef BREWPI_STATIC_CONFIG
-#define BREWPI_STATIC_CONFIG BREWPI_SHIELD_REV_C
+#define BREWPI_STATIC_CONFIG BREWPI_SHIELD_REVC
+#endif
+
+#if BREWPI_STATIC_CONFIG == BREWPI_SHIELD_I2C
+#define BREWPI_IIC 1
 #endif
 
 /*

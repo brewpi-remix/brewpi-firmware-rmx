@@ -38,7 +38,7 @@ typedef OLEDFourBit LcdDriver;
 #elif defined(BREWPI_IIC)
 #include "I2cLcd.h"
 typedef IIClcd LcdDriver;
-#elif !BREWPI_SHIFT_LCD
+#elif BREWPI_SHIFT_LCD
 #include "SpiLcd.h"
 typedef SpiLcd LcdDriver;
 #else

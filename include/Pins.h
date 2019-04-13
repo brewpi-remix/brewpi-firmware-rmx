@@ -31,7 +31,7 @@ license and credits. */
 
 #include "Brewpi.h"
 
-#if BREWPI_STATIC_CONFIG == BREWPI_SHIELD_REV_A
+#if BREWPI_STATIC_CONFIG == BREWPI_SHIELD_REVA
 
 #ifndef beerSensorPin
 #define beerSensorPin A5 // OneWire 1
@@ -68,7 +68,7 @@ license and credits. */
 
 #define BREWPI_INVERT_ACTUATORS 1
 
-#elif BREWPI_STATIC_CONFIG == BREWPI_SHIELD_REV_C
+#elif BREWPI_STATIC_CONFIG == BREWPI_SHIELD_REVC
 
 #ifndef oneWirePin
 #define oneWirePin A4

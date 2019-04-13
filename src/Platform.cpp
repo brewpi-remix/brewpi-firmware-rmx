@@ -31,10 +31,10 @@ license and credits. */
 #include "Pins.h"
 
 #if !BREWPI_SIMULATE
-#if BREWPI_STATIC_CONFIG <= BREWPI_SHIELD_REV_A
+#if BREWPI_STATIC_CONFIG <= BREWPI_SHIELD_REVA
 OneWire beerSensorBus(beerSensorPin);
 OneWire fridgeSensorBus(fridgeSensorPin);
-#elif BREWPI_STATIC_CONFIG >= BREWPI_SHIELD_REV_C
+#elif BREWPI_STATIC_CONFIG >= BREWPI_SHIELD_REVC
 OneWire primaryOneWireBus(oneWirePin);
 #endif
 #endif
@@ -42,12 +42,12 @@ OneWire primaryOneWireBus(oneWirePin);
 OneWire *DeviceManager::oneWireBus(uint8_t pin)
 {
 #if !BREWPI_SIMULATE
-#if BREWPI_STATIC_CONFIG <= BREWPI_SHIELD_REV_A
+#if BREWPI_STATIC_CONFIG <= BREWPI_SHIELD_REVA
     if (pin == beerSensorPin)
         return &beerSensorBus;
     if (pin == fridgeSensorPin)
         return &fridgeSensorBus;
-#elif BREWPI_STATIC_CONFIG >= BREWPI_SHIELD_REV_C
+#elif BREWPI_STATIC_CONFIG >= BREWPI_SHIELD_REVC
     if (pin == oneWirePin)
         return &primaryOneWireBus;
 #endif
@@ -57,7 +57,7 @@ OneWire *DeviceManager::oneWireBus(uint8_t pin)
 
 int8_t DeviceManager::enumerateActuatorPins(uint8_t offset)
 {
-#if BREWPI_STATIC_CONFIG <= BREWPI_SHIELD_REV_A
+#if BREWPI_STATIC_CONFIG <= BREWPI_SHIELD_REVA
     switch (offset)
     {
     case 0:
@@ -67,7 +67,7 @@ int8_t DeviceManager::enumerateActuatorPins(uint8_t offset)
     default:
         return -1;
     }
-#elif BREWPI_STATIC_CONFIG >= BREWPI_SHIELD_REV_C
+#elif BREWPI_STATIC_CONFIG >= BREWPI_SHIELD_REVC
     switch (offset)
     {
     case 0:
@@ -97,13 +97,13 @@ int8_t DeviceManager::enumerateSensorPins(uint8_t offset)
  */
 int8_t DeviceManager::enumOneWirePins(uint8_t offset)
 {
-#if BREWPI_STATIC_CONFIG <= BREWPI_SHIELD_REV_A
+#if BREWPI_STATIC_CONFIG <= BREWPI_SHIELD_REVA
     if (offset == 0)
         return beerSensorPin;
     if (offset == 1)
         return fridgeSensorPin;
 #endif
-#if BREWPI_STATIC_CONFIG >= BREWPI_SHIELD_REV_C
+#if BREWPI_STATIC_CONFIG >= BREWPI_SHIELD_REVC
     if (offset == 0)
         return oneWirePin;
 #endif

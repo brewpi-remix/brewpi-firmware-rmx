@@ -58,8 +58,9 @@ license and credits. */
 #endif
 
 /**
- * This flag virtualizes as much of the hardware as possible, so the code can be run in the AvrStudio simulator, which
- * only emulates the microcontroller, not any attached peripherals.
+ * This flag virtualizes as much of the hardware as possible, so the code can
+ * be run in the AvrStudio simulator, which only emulates the microcontroller,
+ * not any attached peripherals.
  */
 #ifndef BREWPI_EMUFLATE
 #define BREWPI_EMULATE 0
@@ -74,8 +75,9 @@ license and credits. */
 #endif
 
 /**
- * Enable the simulator. Real sensors/actuators are replaced with simulated versions. In particular, the values reported by
- * temp sensors are based on a model of the fridge/beer.
+ * Enable the simulator. Real sensors/actuators are replaced with simulated
+ * versions. In particular, the values reported by temp sensors are based on
+ * a model of the fridge/beer.
  */
 #ifndef BREWPI_SIMULATE
 #define BREWPI_SIMULATE 0

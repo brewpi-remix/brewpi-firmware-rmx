@@ -81,7 +81,6 @@ void UI::ticks()
 
 void UI::update()
 {
-
 	// update the lcd for the chamber being displayed
 	display.printState();
 	display.printAllTemperatures();

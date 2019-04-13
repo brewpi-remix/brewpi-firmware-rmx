@@ -80,9 +80,6 @@ license and credits. */
 #define LCD_SHIFT_QD 3			 // unused QD pin
 #define LCD_SHIFT_DATA_MASK 0xF0 // Data bits, QE = D4, QF = D5, QG = D6, QH = D7
 
-// Backlight is switched with a P-channel MOSFET, so signal is inverted.
-#define BACKLIGHT_AUTO_OFF_PERIOD 600
-
 class SpiLcd : public Print
 {
   public:

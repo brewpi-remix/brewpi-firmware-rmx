@@ -37,14 +37,15 @@ extern void loop(void);
 
 void handleReset()
 {
-	// resetting using the watchdog timer (which is a full reset of all registers)
-	// might not be compatible with old Arduino bootloaders. jumping to 0 is safer.
+	// Resetting using the watchdog timer (which is a full reset of all
+	// registers) might not be compatible with old Arduino bootloaders.
+	// Jumping to 0 is safer.
 	asm volatile("  jmp 0");
 }
 
 void flashFirmware()
 {
-	// a no-op. This is not used on this platform.
+	// A no-op. This is not used on this platform.
 }
 
 __attribute__((OS_main)) int main(void);

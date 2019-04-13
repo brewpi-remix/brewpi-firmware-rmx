@@ -1,3 +1,5 @@
+#!/usr/bin/python
+
 # Copyright (C) 2018, 2019 Lee C. Bussy (@LBussy)
 
 # This file is part of LBussy's BrewPi Firmware Remix (BrewPi-Firmware-RMX).
@@ -30,11 +32,14 @@
 
 import subprocess
 
+# Get 0.0.0 version from latest Git tag
 tagcmd = "git describe --tags --abbrev=0"
-version = subprocess.check_output(tagcmd).decode().strip()
+version = subprocess.check_output(tagcmd, shell=True).decode().strip()
 
+# Get latest commit short from Git
 revcmd = "git log --pretty=format:'%h' -n 1"
-commit = subprocess.check_output(revcmd).decode().strip()
+commit = subprocess.check_output(revcmd, shell=True).decode().strip()
 
+# Make both available for use in the defines
 print "-DPIO_SRC_TAG=%s" % version
 print "-DPIO_SRC_REV=%s" % commit

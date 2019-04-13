@@ -30,8 +30,8 @@ license and credits. */
 #ifndef FIXSTL_H
 #define FIXSTL_H
 
-// the Spark platform defines min/max as macros - these interfere with the STL and
-// need to be undefined. see https://github.com/spark/firmware/pull/398
+// the Spark platform defines min/max as macros - these interfere with the STL
+// and need to be undefined. see https://github.com/spark/firmware/pull/398
 
 #ifndef ARDUINO
 #undef min

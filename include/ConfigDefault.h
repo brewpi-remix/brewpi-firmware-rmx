@@ -38,11 +38,13 @@ license and credits. */
 #endif
 
 /*
- * LCD Display using a shift register.
- * For diy-shields prior to the revA shield, this should be set to 0.
+ * LCD Display using a shift register:
+ * For DIY-shields prior to the revA shield, this should be set to 0. With
+ * IIC support, we want BREWPI_SHIFT_LCD set to 0 if BREWPI_IIC is set.
  */
+
 #ifndef BREWPI_SHIFT_LCD
-#if BREWPI_STATIC_CONFIG != BREWPI_SHIELD_DIY
+#if BREWPI_STATIC_CONFIG != BREWPI_SHIELD_DIY && !defined(BREWPI_IIC)
 #define BREWPI_SHIFT_LCD 1
 #else
 #define BREWPI_SHIFT_LCD 0
@@ -56,9 +58,9 @@ license and credits. */
 /**
  * Enable DS2413 Actuators. 
  */
-//#ifndef BREWPI_DS2413
-//#define BREWPI_DS2413 0
-//#endif
+#ifndef BREWPI_DS2413
+#define BREWPI_DS2413 0
+#endif
 
 /**
  * Enable the LCD display. Without this, a NullDisplay is used
@@ -83,12 +85,12 @@ license and credits. */
 #endif
 #endif
 
-// BREWPI_SENSOR_PINS - can be disabled if only using onewire devices
+// BREWPI_SENSOR_PINS  - Enabled if not using onewire sensors
 #ifndef BREWPI_SENSOR_PINS
-#define BREWPI_SENSOR_PINS 1
+#define BREWPI_SENSOR_PINS 0
 #endif
 
-// BREWPI_ACTUATOR_PINS - can be disabled if only using onewire devices
+// BREWPI_ACTUATOR_PINS - Enabled if not using onewire actuators
 #ifndef BREWPI_ACTUATOR_PINS
 #define BREWPI_ACTUATOR_PINS 1
 #endif

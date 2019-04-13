@@ -191,14 +191,12 @@ void RotaryEncoder::process(uint8_t currPinA, uint8_t currPinB)
         else if (s < minimum)
             s = maximum;
         steps = s;
-        display.resetBacklightTimer();
     }
 }
 
 void RotaryEncoder::setPushed(void)
 {
     pushFlag = true;
-    display.resetBacklightTimer();
 }
 
 bool RotaryEncoder::changed(void)
@@ -209,10 +207,14 @@ bool RotaryEncoder::changed(void)
     if (r != prevValue)
     {
         prevValue = r;
+        display.resetBacklightTimer();
+        display.updateBacklight();
         return 1;
     }
     if (pushFlag == true)
     {
+        display.resetBacklightTimer();
+        display.updateBacklight();
         return 1;
     }
     return 0;

@@ -38,7 +38,11 @@ license and credits. */
 
 uint8_t LcdDisplay::stateOnDisplay;
 uint8_t LcdDisplay::flags;
+#if defined(BREWPI_IIC)
+LcdDriver LcdDisplay::lcd(0x00, 20, 4);  // 20x4 LCD, address will autodetect
+#else
 LcdDriver LcdDisplay::lcd;
+#endif
 
 // Constant strings used multiple times
 static const char STR_Beer_[] PROGMEM = "Beer ";

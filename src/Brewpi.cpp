@@ -90,10 +90,12 @@ void setup()
 void brewpiLoop(void)
 {
     static unsigned long lastUpdate = -1000; // init at -1000 to update immediately
-    static unsigned long lastLcdUpdate = 0;  // Counter for LCD reset
     uint8_t oldState;
     ui.ticks();
 
+    // Reset display on timer if using shift register LCD
+    #if BREWPI_LCD && BREWPI_STATIC_CONFIG != BREWPI_SHIELD_I2C
+    static unsigned long lastLcdUpdate = 0;  // Counter for LCD reset
     if (ticks.millis() - lastLcdUpdate >= (180000))
     { //reset lcd every 180 seconds as a workaround for screen scramble from @Thorrak
         lastLcdUpdate = ticks.millis();
@@ -104,6 +106,7 @@ void brewpiLoop(void)
 
         rotaryEncoder.init();
     }
+    #endif
 
     if (!ui.inStartup() && (ticks.millis() - lastUpdate >= (1000)))
     { //update settings every second

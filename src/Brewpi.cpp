@@ -45,14 +45,19 @@ license and credits. */
 #include "Simulator.h"
 #endif
 
-// global class objects static and defined in class cpp and h files
-// instantiate and configure the sensors, actuators and controllers we want to use
+// Global class objects static and defined in class cpp and h files.
+// Instantiate and configure the sensors, actuators and controllers
+// we want to use.
 
 void setup(void);
 void loop(void);
 
-/* Configure the counter and delay timer. The actual type of these will vary depending upon the environment.
- * They are non-virtual to keep code size minimal, so typedefs and preprocessing are used to select the actual compile-time type used. */
+/*  
+ *  Configure the counter and delay timer. The actual type of these will vary
+ *  depending upon the environment. They are non-virtual to keep code size
+ *  minimal, so typedefs and preprocessing are used to select the actual
+ *  compile-time type used.
+ */
 TicksImpl ticks = TicksImpl(TICKS_IMPL_CONFIG);
 DelayImpl wait = DelayImpl(DELAY_IMPL_CONFIG);
 
@@ -93,19 +98,20 @@ void brewpiLoop(void)
     uint8_t oldState;
     ui.ticks();
 
-    // Reset display on timer if using shift register LCD
-    #if BREWPI_LCD && BREWPI_STATIC_CONFIG != BREWPI_SHIELD_I2C
-    static unsigned long lastLcdUpdate = 0;  // Counter for LCD reset
-    if (ticks.millis() - lastLcdUpdate >= (180000))
-    { //reset lcd every 180 seconds as a workaround for screen scramble from @Thorrak
-        lastLcdUpdate = ticks.millis();
+    // Reset LCD every 180 seconds as a workaround for screen scramble
+    // (from @Thorrak)
+    #if BREWPI_LCD
+        static unsigned long lastLcdUpdate = 0;  // Counter for LCD reset
+        if (ticks.millis() - lastLcdUpdate >= (180000))
+        {
+            lastLcdUpdate = ticks.millis();
 
-        display.init();
-        display.printStationaryText();
-        display.printState();
+            display.init();
+            display.printStationaryText();
+            display.printState();
 
-        rotaryEncoder.init();
-    }
+            rotaryEncoder.init();
+        }
     #endif
 
     if (!ui.inStartup() && (ticks.millis() - lastUpdate >= (1000)))

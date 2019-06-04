@@ -27,7 +27,7 @@ those were the names listed as contributors on the Legacy branch.
 See: 'original-license.md' for notes about the original project's
 license and credits. */
 
-#include "SparkEepromRegions.h"
+//#include "SparkEepromRegions.h"
 #include "EepromAccessImpl.h"
 
 /* void SparkEepromAccess::init()

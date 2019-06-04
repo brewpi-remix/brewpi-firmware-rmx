@@ -30,8 +30,9 @@ license and credits. */
 #pragma once
 
 /**
- * To use the display, include this file. It takes care of setting DisplayType to the appropriate type of display according
- * to the compile-time config.
+ * To use the display, include this file. It takes care of setting
+ * DisplayType to the appropriate type of display according to the
+ * compile-time config.
  */
 
 #include "DisplayBase.h"

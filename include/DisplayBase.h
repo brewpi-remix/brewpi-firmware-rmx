@@ -154,11 +154,13 @@ class NullDisplay DISPLAY_SUPERCLASS
 };
 
 /**
-	* When set in flags, the current display will show the room temp, rather than beer temp.
+	* When set in flags, the current display will show the room temp, rather
+	* than beer temp.
 	*/
 static const uint8_t LCD_FLAG_DISPLAY_ROOM = 0x01;
 
 /**
-	* When set, the room temp will automatically alternate between beer and room temp.
+	* When set, the room temp will automatically alternate between beer and room
+	* temp.
 	*/
 static const uint8_t LCD_FLAG_ALTERNATE_ROOM = 0x02;

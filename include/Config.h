@@ -74,7 +74,7 @@ license and credits. */
 //
 #ifndef BREWPI_STATIC_CONFIG
 // #define BREWPI_STATIC_CONFIG BREWPI_SHIELD_REVA
-// #define BREWPI_STATIC_CONFIG BREWPI_SHIELD_REVC
+//#define BREWPI_STATIC_CONFIG BREWPI_SHIELD_REVC
 #define BREWPI_STATIC_CONFIG BREWPI_SHIELD_I2C
 #endif
 //
@@ -83,7 +83,7 @@ license and credits. */
 //////////////////////////////////////////////////////////////////////////
 //
 // Enable the LCD display. Without this, a NullDisplay is used
-// If using an IIC/TWI shield, enable IIC support
+// If using an IIC/TWI shield, also enable IIC support
 //
 #ifndef BREWPI_LCD
 #define BREWPI_LCD 1
@@ -97,6 +97,16 @@ license and credits. */
 //
 #ifndef BACKLIGHT_AUTO_OFF_PERIOD
 #define BACKLIGHT_AUTO_OFF_PERIOD 600
+#endif
+//
+//////////////////////////////////////////////////////////////////////////
+
+//////////////////////////////////////////////////////////////////////////
+//
+// Reset LCD after timeout (seconds) to mitigate scrambling
+//
+#ifndef LCD_RESET_PERIOD
+#define LCD_RESET_PERIOD 180000
 #endif
 //
 //////////////////////////////////////////////////////////////////////////

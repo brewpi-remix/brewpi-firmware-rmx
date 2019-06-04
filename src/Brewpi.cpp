@@ -94,15 +94,15 @@ void setup()
 
 void brewpiLoop(void)
 {
-    static unsigned long lastUpdate = -1000; // init at -1000 to update immediately
+    static unsigned long lastUpdate = -1000;  // init at -1000 to update immediately
     uint8_t oldState;
     ui.ticks();
 
-    // Reset LCD every 180 seconds as a workaround for screen scramble
-    // (from @Thorrak)
+    // Reset display on timer to mitigate screen scramble
+    //#if BREWPI_LCD && BREWPI_STATIC_CONFIG != BREWPI_SHIELD_I2C
     #if BREWPI_LCD
         static unsigned long lastLcdUpdate = 0;  // Counter for LCD reset
-        if (ticks.millis() - lastLcdUpdate >= (180000))
+        if (ticks.millis() - lastLcdUpdate >= LCD_RESET_PERIOD)
         {
             lastLcdUpdate = ticks.millis();
 

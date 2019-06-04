@@ -45,14 +45,19 @@ license and credits. */
 #include "Simulator.h"
 #endif
 
-// global class objects static and defined in class cpp and h files
-// instantiate and configure the sensors, actuators and controllers we want to use
+// Global class objects static and defined in class cpp and h files.
+// Instantiate and configure the sensors, actuators and controllers
+// we want to use.
 
 void setup(void);
 void loop(void);
 
-/* Configure the counter and delay timer. The actual type of these will vary depending upon the environment.
- * They are non-virtual to keep code size minimal, so typedefs and preprocessing are used to select the actual compile-time type used. */
+/*  
+ *  Configure the counter and delay timer. The actual type of these will vary
+ *  depending upon the environment. They are non-virtual to keep code size
+ *  minimal, so typedefs and preprocessing are used to select the actual
+ *  compile-time type used.
+ */
 TicksImpl ticks = TicksImpl(TICKS_IMPL_CONFIG);
 DelayImpl wait = DelayImpl(DELAY_IMPL_CONFIG);
 

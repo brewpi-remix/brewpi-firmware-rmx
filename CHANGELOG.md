@@ -6,6 +6,7 @@ The primary change for this release is to enable I2C support (thank you @Thorrak
  - Add I2C shield type (pin changes)
  - Add firmware auto-naming to PlatformIO compile
  - Move LCD reset timer to config.h
+ - Change reset timer to one hour
 
 ## 0.2.11
 The primary change in this release is to move the workspace to PlatformIO from Atmel Studio.

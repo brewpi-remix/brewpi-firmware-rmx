@@ -102,9 +102,11 @@ void brewpiLoop(void)
     //#if BREWPI_LCD && BREWPI_STATIC_CONFIG != BREWPI_SHIELD_I2C
     #if BREWPI_LCD
         static unsigned long lastLcdUpdate = 0;  // Counter for LCD reset
-        if (ticks.millis() - lastLcdUpdate >= LCD_RESET_PERIOD)
+        //if (ticks.millis() - lastLcdUpdate >= LCD_RESET_PERIOD)
+        if (ticks.seconds() - lastLcdUpdate >= LCD_RESET_PERIOD)
         {
-            lastLcdUpdate = ticks.millis();
+            //lastLcdUpdate = ticks.millis();
+            lastLcdUpdate = ticks.seconds();
 
             display.init();
             display.printStationaryText();

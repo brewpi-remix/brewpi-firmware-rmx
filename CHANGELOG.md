@@ -2,9 +2,10 @@
 The primary change for this release is to enable I2C support (thank you @Thorrak!)  This brings in a new shield type called "I2C" with accompanying pin definition changes.
 
 ### Features
- - Add I2C support
+ - Add support for I2C display
  - Add I2C shield type (pin changes)
  - Add firmware auto-naming to PlatformIO compile
+ - Add an additional actuator pin
  - Move LCD reset timer to config.h
  - Change reset timer to one hour
 

@@ -41,5 +41,5 @@ revcmd = "git log --pretty=format:'%h' -n 1"
 commit = subprocess.check_output(revcmd, shell=True).decode().strip()
 
 # Make both available for use in the defines
-print "-DPIO_SRC_TAG=%s" % version
-print "-DPIO_SRC_REV=%s" % commit
+print("-DPIO_SRC_TAG={0}".format(version))
+print("-DPIO_SRC_REV={0}".format(commit))

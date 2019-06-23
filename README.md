@@ -13,6 +13,3 @@ To get started, please head over to the [BrewPi Legacy Remix tools](https://gith
 It is not necessary to compile your own firmware.  If you desire simply to obtain the firmware, you can download it compiled for your controller on the [releases page](https://github.com/lbussy/brewpi-firmware-rmx/releases).
 
 If you wish however to compile this project, beginning with version 0.2.11 it is moved to [PlatformIO](https://platformio.org/) on top of [VSCode](https://code.visualstudio.com/).  Install PlatformIO on the platform of your choice, clone this repository, and open the workspace by navigating to the local repository.
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbNzgxNTc4NzgyLDUyMTI3NTI2NV19
--->

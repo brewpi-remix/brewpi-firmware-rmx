@@ -80,7 +80,3 @@ We fixed small 1 bit rounding errors (0.0002 degree) in or temperature conversio
 - [Arduino] Updated Arduino dependencies. This should increase Serial reliability on the Leonardo and fix dropped characters
 - Fixed bug that timer was shown in OFF mode
 - Use git describe to generate build name
-
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4OTcxMzk5NDldfQ==
--->

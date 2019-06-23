@@ -17,19 +17,6 @@
 # You should have received a copy of the GNU General Public License
 # along with BrewPi Firmware RMX. If not, see <https://www.gnu.org/licenses/>.
 
-# These Firmwares were originally a part of brewpi-Firmware, a part of
-# the BrewPi project. Legacy support (for the very popular Arduino
-# controller) seems to have been discontinued in favor of new hardware.
-
-# All credit for the original brewpi-Firmware goes to @elcojacobs,
-# @m-mcgowan, @rbrady, @steersbob, @glibersat, @Niels-R and I'm sure
-# many more contributors around the world. My apologies if I have
-# missed anyone; those were the names listed as contributors on the
-# Legacy branch.
-
-# See: 'original-license.md' for notes about the original project's
-# license and credits. */
-
 import subprocess
 Import("env")
 

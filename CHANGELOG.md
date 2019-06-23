@@ -22,9 +22,9 @@ The primary change in this release is to move the workspace to PlatformIO from A
  - Re-establish build version in eeprom (remove "unknown")
 
 ## 0.2.10a
-This was the version provided in BrewPi-Legacy-Remix after the move from the original BrewPi repositories.  The [0.2.10 tag in that repository](https://github.com/BrewPi/firmware/releases/tag/0.2.10) was correct/complete, however the [HEAD of the Legacy branch](https://github.com/BrewPi/firmware/tree/legacy) included some commits which broke the Arduino code.  These were rolled back to establish a known good starting point.
+This is the version provided in BrewPi-Legacy-Remix after the move from the original BrewPi repositories.  The [0.2.10 tag in that repository](https://github.com/BrewPi/firmware/releases/tag/0.2.10) was correct/complete, however the [HEAD of the Legacy branch](https://github.com/BrewPi/firmware/tree/legacy) included some commits which broke the Arduino code.  These were rolled back to establish a known good starting point.  The hex file here is the identical file available on the [BrewPi Firmware 0.2.10 repository](https://github.com/BrewPi/firmware/releases/tag/0.2.10).
 ### Bugfixes
-  In addition the following fixes were merged:
+  In addition the following fixes were merged (which were also in the released compiled firmware):
 - [Fix for bug in setting calibration offset ](https://github.com/BrewPi/firmware/commit/41ccbd502540cad60fdeb5a82e3b6e14444cafbe)
 - [Fixed ncorrect [sic] capitalization (BrewPi.h instead of Brewpi.h) in OneWire.h](https://github.com/BrewPi/firmware/commit/c0a4cef2df38bb206163fda964ddfa48907b0c10)
 

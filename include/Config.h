@@ -36,9 +36,9 @@ license and credits. */
 // 1: is typical debug messages required for end users
 // 2-3: more verbose debug messages
 //
-//#ifndef BREWPI_DEBUG
-//#define BREWPI_DEBUG 1
-//#endif
+#ifndef BREWPI_DEBUG
+#define BREWPI_DEBUG 3
+#endif
 //
 //////////////////////////////////////////////////////////////////////////
 
@@ -64,7 +64,7 @@ license and credits. */
 
 //////////////////////////////////////////////////////////////////////////
 //
-// Define which BrewPi shield is used:
+// Define which BrewPi shield is used (only one):
 // BREWPI_SHIELD_REVA  The RevA shield (ca. Feb 2013), two OneWire buses,
 //                     door, heat, cool.
 // BREWPI_SHIELD_REVC  The RevC shield (ca. May 2013). One common OneWire
@@ -74,8 +74,8 @@ license and credits. */
 //
 #ifndef BREWPI_STATIC_CONFIG
 // #define BREWPI_STATIC_CONFIG BREWPI_SHIELD_REVA
-#define BREWPI_STATIC_CONFIG BREWPI_SHIELD_REVC
-// #define BREWPI_STATIC_CONFIG BREWPI_SHIELD_I2C
+// #define BREWPI_STATIC_CONFIG BREWPI_SHIELD_REVC
+#define BREWPI_STATIC_CONFIG BREWPI_SHIELD_I2C
 #endif
 //
 //////////////////////////////////////////////////////////////////////////
@@ -157,6 +157,16 @@ license and credits. */
 //
 #ifndef FORCE_DEVICE_DEFAULTS
 #define FORCE_DEVICE_DEFAULTS 1
+#endif
+//
+//////////////////////////////////////////////////////////////////////////
+
+//////////////////////////////////////////////////////////////////////////
+//
+// Set serial baud rate
+//
+#ifndef BAUD
+#define BAUD 57600
 #endif
 //
 //////////////////////////////////////////////////////////////////////////

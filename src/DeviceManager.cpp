@@ -943,7 +943,7 @@ void UpdateDeviceState(DeviceDisplay &dd, DeviceConfig &dc, char *val)
 	if (dd.write >= 0 && dt == DEVICETYPE_SWITCH_ACTUATOR)
 	{
 		// write value to a specific device. For now, only actuators are relevant targets
-		DEBUG_ONLY(logInfoInt(INFO_SETTING_ACTIVATOR_STATE, dd.write != 0));
+		//DEBUG_ONLY(logInfoInt(INFO_SETTING_ACTIVATOR_STATE, dd.write != 0));
 		((Actuator *)*ppv)->setActive(dd.write != 0);
 	}
 	else if (dd.value == 1)

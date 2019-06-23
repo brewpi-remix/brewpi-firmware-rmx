@@ -56,7 +56,7 @@ license and credits. */
 #if BREWPI_EMULATE
 class MockSerial : public Stream
 {
-  public:
+public:
 	void print(char c) {}
 	void print(const char *c) {}
 	void printNewLine() {}
@@ -89,7 +89,7 @@ char PiLink::printfBuff[PRINTF_BUFFER_SIZE];
 
 void PiLink::init(void)
 {
-	piStream.begin(57600);
+	piStream.begin(BAUD);
 }
 
 // create a printf like interface to the Arduino Serial function. Format string stored in PROGMEM

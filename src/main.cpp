@@ -30,17 +30,29 @@ license and credits. */
 #include "Brewpi.h"
 #include "Platform.h"
 #include "PiLinkHandlers.h"
+#include <avr/wdt.h>
 
 // setup and loop are in brewpi_config so they can be reused across projects
 extern void setup(void);
 extern void loop(void);
+
+void softwareReset( uint8_t prescaller) {
+  // Start watchdog with the provided prescaller
+  wdt_enable(prescaller);
+  // Wait for the prescaller time to expire without sending the reset signal
+  // by using the wdt_reset() method.
+  while(1) {}
+}
 
 void handleReset()
 {
 	// Resetting using the watchdog timer (which is a full reset of all
 	// registers) might not be compatible with old Arduino bootloaders.
 	// Jumping to 0 is safer.
-	asm volatile("  jmp 0");
+	// asm volatile("  jmp 0");
+	
+	// Restart in 60 milliseconds
+	softwareReset(WDTO_60MS);
 }
 
 void flashFirmware()
@@ -73,5 +85,5 @@ int main(void)
 ISR(BADISR_vect)
 {
 	while (1)
-		;
+	;
 }

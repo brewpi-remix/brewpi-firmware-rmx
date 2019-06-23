@@ -49,7 +49,7 @@ struct UI
     static void showControllerPage();
 
     /**
-     * Called as often as possible by the application. Allows the UI to peform
+     * Called as often as possible by the application. Allows the UI to perform
      * quick background tasks, such as reading the touch screen.
      */
     static void ticks();

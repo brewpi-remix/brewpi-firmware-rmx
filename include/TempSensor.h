@@ -106,8 +106,9 @@ class TempSensor
 	unsigned char updateCounter;
 	temperature_precise prevOutputForSlope;
 
-	// An indication of how stale the data is in the filters. Each time a read fails, this value is incremented.
-	// It's used to reset the filters after a large enough disconnect delay, and on the first init.
+	// An indication of how stale the data is in the filters. Each time a
+	// read fails, this value is incremented. It's used to reset the filters
+	// after a large enough disconnect delay, and on the first init.
 	uint8_t failedReadCount;
 
 	friend class ChamberManager;

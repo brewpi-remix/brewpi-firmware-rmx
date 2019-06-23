@@ -38,7 +38,7 @@ license and credits. */
 #include "EepromManager.h"
 #include "TempSensorDisconnected.h"
 #include "ModeControl.h"
-#include "fixstl.h"
+// #include "fixstl.h"
 
 TempControl tempControl;
 

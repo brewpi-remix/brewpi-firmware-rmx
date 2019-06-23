@@ -34,7 +34,7 @@ license and credits. */
 #include "DisplayLcd.h"
 #include "TempControl.h"
 #include "Pins.h"
-#include "fixstl.h"
+// #include "fixstl.h"
 
 uint8_t LcdDisplay::stateOnDisplay;
 uint8_t LcdDisplay::flags;

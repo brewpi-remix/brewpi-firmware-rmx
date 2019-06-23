@@ -129,7 +129,7 @@ void LcdDisplay::printTemperature(temperature temp)
 {
 	if (isDisabledOrInvalid(temp))
 	{
-		lcd.print_P(PSTR(" --.-"));
+		lcd.print_P(PSTR(" --.- "));
 		return;
 	}
 	char tempString[9];

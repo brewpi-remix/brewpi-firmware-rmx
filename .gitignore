@@ -1,9 +1,5 @@
 .pio
 .pioenvs
 .piolibdeps
-.vscode/.browse.c_cpp*
-.vscode/c_cpp_properties.json
-.vscode/launch.json
-.vscode/ipch
-.vscode\settings.json
+.vscode
 *.code-workspace

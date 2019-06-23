@@ -84,6 +84,5 @@ int main(void)
 // catch bad interrupts here, uncomment while only when debugging
 ISR(BADISR_vect)
 {
-	while (1)
-	;
+	while (1);
 }

@@ -104,14 +104,14 @@ bool EepromManager::applySettings()
 	// start from a clean state
 	deviceManager.setupUnconfiguredDevices();
 
-	logDebug("Applying settings");
+	// logDebug("Applying settings");
 
 	// load the one chamber and one beer for now
 	eptr_t pv = pointerOffset(chambers);
 	tempControl.loadConstants(pv + offsetof(ChamberBlock, chamberSettings.cc));
 	tempControl.loadSettings(pv + offsetof(ChamberBlock, beer[0].cs));
 
-	logDebug("Applied settings");
+	// logDebug("Applied settings");
 
 	DeviceConfig deviceConfig;
 	for (uint8_t index = 0; fetchDevice(deviceConfig, index); index++)

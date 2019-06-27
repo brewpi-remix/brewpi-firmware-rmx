@@ -60,6 +60,8 @@ license and credits. */
  * or define symbols in the project.
  */
 
+void watchdogSetup(void);
+
 #ifdef ARDUINO
 #include "Config.h"
 #else

@@ -8,13 +8,15 @@ The primary change for this release is to enable I2C support (thank you @Thorrak
  - Add an additional actuator pin
  - Move LCD reset timer to config.h
  - Change reset timer to one hour
+ - Add check on startup for rotary encoder being pulled low.  If so, the LCD backlight timeout is disabled
 
 ### Enhancements
  - Change LCD backlight timeout to 60 seconds
  - Update to atmelavr 1.14.0 from 1.13.0.
- - Add check on startup for rotary encoder being pulled low.  If so, the LCD timeout is disabled
+ - Added watchdog timer to restart controller on lockup
 
 ### Bugfixes
+ - ??
 
 
 ## 0.2.11

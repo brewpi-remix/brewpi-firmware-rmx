@@ -619,7 +619,7 @@ void TempControl::storeSettings(eptr_t offset)
 void TempControl::loadSettings(eptr_t offset)
 {
 	eepromAccess.readBlock((void *)&cs, offset, sizeof(ControlSettings));
-	logDebug("loaded settings");
+	// logDebug("loaded settings");
 	storedBeerSetting = cs.beerSetting;
 	setMode(cs.mode, true); // force the mode update
 }
@@ -642,7 +642,7 @@ void TempControl::initFilters()
 
 void TempControl::setMode(char newMode, bool force)
 {
-	logDebug("TempControl::setMode from %c to %c", cs.mode, newMode);
+	// logDebug("TempControl::setMode from %c to %c", cs.mode, newMode);
 
 	if (newMode != cs.mode || state == WAITING_TO_HEAT || state == WAITING_TO_COOL || state == WAITING_FOR_PEAK_DETECT)
 	{

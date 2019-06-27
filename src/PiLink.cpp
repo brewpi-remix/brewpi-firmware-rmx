@@ -51,6 +51,13 @@ license and credits. */
 #include "Simulator.h"
 #endif
 
+static const char STR_WEB_INTERFACE[] PROGMEM = "in web interface";
+static const char STR_TEMPERATURE_PROFILE[] PROGMEM = "by temperature profile";
+static const char STR_MODE[] PROGMEM = "Mode";
+static const char STR_BEER_TEMP[] PROGMEM = "Beer temp";
+static const char STR_FRIDGE_TEMP[] PROGMEM = "Fridge temp";
+static const char STR_FMT_SET_TO[] PROGMEM = PRINTF_PROGMEM " set to %s " PRINTF_PROGMEM;
+
 // Rename Serial to piStream, to abstract it for later platform independence
 
 #if BREWPI_EMULATE
@@ -273,9 +280,9 @@ void PiLink::receive(void)
 			handleReset();
 			break;
 
-		case 'F': // flash firmware
-			flashFirmware();
-			break;
+		// case 'F': // flash firmware
+		// 	flashFirmware();
+		// 	break;
 
 		default:
 			logWarningInt(WARNING_INVALID_COMMAND, inByte);
@@ -677,12 +684,9 @@ int readNext()
 	}
 	return piStream.read();
 }
-/**
- * Parses a token from the piStream.
- * \return true if a token was parsed
- */
+
 bool parseJsonToken(char *val)
-{
+{  // Parses a token from the piStream, return true if a token was parsed
 	uint8_t index = 0;
 	val[0] = 0;
 	bool result = true;
@@ -731,22 +735,14 @@ void PiLink::parseJson(ParseJsonCallback fn, void *data)
 
 void PiLink::receiveJson(void)
 {
-
 	parseJson(&processJsonPair, NULL);
-
+	
 #if !BREWPI_SIMULATE	   // this is quite an overhead and not needed for the simulator
 	sendControlSettings(); // update script with new settings
 	sendControlConstants();
 #endif
 	return;
 }
-
-static const char STR_WEB_INTERFACE[] PROGMEM = "in web interface";
-static const char STR_TEMPERATURE_PROFILE[] PROGMEM = "by temperature profile";
-static const char STR_MODE[] PROGMEM = "Mode";
-static const char STR_BEER_TEMP[] PROGMEM = "Beer temp";
-static const char STR_FRIDGE_TEMP[] PROGMEM = "Fridge temp";
-static const char STR_FMT_SET_TO[] PROGMEM = PRINTF_PROGMEM " set to %s " PRINTF_PROGMEM;
 
 void PiLink::setMode(const char *val)
 {

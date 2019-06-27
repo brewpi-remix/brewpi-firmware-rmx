@@ -36,14 +36,6 @@ license and credits. */
 extern void setup(void);
 extern void loop(void);
 
-void softwareReset( uint8_t prescaller) {
-  // Start watchdog with the provided prescaller
-  wdt_enable(prescaller);
-  // Wait for the prescaller time to expire without sending the reset signal
-  // by using the wdt_reset() method.
-  while(1) {}
-}
-
 void handleReset()
 {
 	// Resetting using the watchdog timer (which is a full reset of all
@@ -52,15 +44,17 @@ void handleReset()
 	// asm volatile("  jmp 0");
 	
 	// Restart in 60 milliseconds
-	softwareReset(WDTO_60MS);
+	// Start watchdog with the provided prescaller
+	wdt_enable(WDTO_60MS);
+	// Wait for the prescaller time to expire without sending the reset signal
+	// by using the wdt_reset() method.
+	while(1) {}
 }
 
-void flashFirmware()
-{
-	// A no-op. This is not used on this platform.
-}
-
-__attribute__((OS_main)) int main(void);
+// void flashFirmware()
+// {
+// 	// A no-op. This is not used on this platform.
+// }
 
 int main(void)
 {
@@ -81,8 +75,10 @@ int main(void)
 	return 0;
 }
 
-// catch bad interrupts here, uncomment while only when debugging
-ISR(BADISR_vect)
-{
-	while (1);
-}
+// Catch bad interrupts here, uncomment while only when debugging
+// ISR(BADISR_vect)
+// {
+// 	while (1);
+// }
+
+__attribute__((OS_main)) int main(void);

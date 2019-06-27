@@ -158,7 +158,7 @@ void setTicks(ExternalTicks &externalTicks, const char *val, int multiplier = 10
             externalTicks.incMillis(atol(val + 1) * multiplier);
     }
 
-    logDebug("New ticks %lu", externalTicks.millis());
+    // logDebug("New ticks %lu", externalTicks.millis());
 }
 
 /* How often the temperature is output, in simulated seconds.

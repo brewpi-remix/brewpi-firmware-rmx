@@ -34,13 +34,13 @@ license and credits. */
 
 void TempSensor::init()
 {
-    logDebug("tempsensor::init - begin %d", failedReadCount);
+    // logDebug("tempsensor::init - begin %d", failedReadCount);
     if (_sensor && _sensor->init() && failedReadCount > 60)
     {
         temperature temp = _sensor->read();
         if (temp != TEMP_SENSOR_DISCONNECTED)
         {
-            logDebug("initializing filters with value %d", temp);
+            // logDebug("initializing filters with value %d", temp);
             fastFilter.init(temp);
             slowFilter.init(temp);
             slopeFilter.init(0);

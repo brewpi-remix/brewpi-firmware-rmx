@@ -35,7 +35,7 @@ license and credits. */
 
 void SettingsManager::loadSettings()
 {
-	logDebug("loading settings");
+	// logDebug("loading settings");
 
 	if (!eepromManager.applySettings())
 	{
@@ -49,7 +49,7 @@ void SettingsManager::loadSettings()
 
 #if (BREWPI_SIMULATE)
 	{
-		logDebug("Setting up simulator devices.");
+		// logDebug("Setting up simulator devices.");
 
 		// temp sensors are special in the simulator - make sure they are set up even if not
 		// configured in the eeprom

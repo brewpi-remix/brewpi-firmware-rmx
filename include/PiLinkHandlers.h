@@ -38,6 +38,6 @@ void handleReset();
 /**
  * Called to start the platform firmware update process.
  */
-void flashFirmware();
+// void flashFirmware();
 
 #endif /* PILINKHANDLERS_H */

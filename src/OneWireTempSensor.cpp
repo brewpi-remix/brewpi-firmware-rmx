@@ -68,7 +68,7 @@ bool OneWireTempSensor::init()
         }
     }
 
-    logDebug("init onewire sensor");
+    // logDebug("init onewire sensor");
     // This quickly tests if the sensor is connected and initializes the reset detection if necessary.
     if (sensor)
     {
@@ -93,7 +93,7 @@ bool OneWireTempSensor::init()
         }
     }
     setConnected(success);
-    logDebug("init onewire sensor complete %d", success);
+    // logDebug("init onewire sensor complete %d", success);
     return success;
 }
 

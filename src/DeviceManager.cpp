@@ -354,7 +354,7 @@ const char DEVICE_ATTRIB_TYPE = 't';
 void handleDeviceDefinition(const char *key, const char *val, void *pv)
 {
 	DeviceDefinition *def = (DeviceDefinition *)pv;
-	//	logDebug("deviceDef %s:%s", key, val);
+	// logDebug("deviceDef %s:%s", key, val);
 
 	// the characters are listed in the same order as the DeviceDefinition struct.
 	int8_t idx = indexOf(DeviceDefinition::ORDER, key[0]);
@@ -666,7 +666,7 @@ bool DeviceManager::enumDevice(DeviceDisplay &dd, DeviceConfig &dc, uint8_t idx)
 void handleHardwareSpec(const char *key, const char *val, void *pv)
 {
 	EnumerateHardware *h = (EnumerateHardware *)pv;
-	//	logDebug("hardwareSpec %s:%s", key, val);
+	// logDebug("hardwareSpec %s:%s", key, val);
 
 	int8_t idx = indexOf("hpvuf", key[0]);
 	if (idx >= 0)
@@ -743,7 +743,7 @@ void DeviceManager::handleEnumeratedDevice(DeviceConfig &config, EnumerateHardwa
 	if (h.function && !isAssignable(deviceType(DeviceFunction(h.function)), config.deviceHardware))
 		return; // device not applicable for required function
 
-	//	logDebug("Handling device");
+	// logDebug("Handling device");
 	device_slot_t slot = findHardwareDevice(config);
 	info->slot = slot;
 	info->value[0] = 0;
@@ -759,7 +759,7 @@ void DeviceManager::handleEnumeratedDevice(DeviceConfig &config, EnumerateHardwa
 
 	if (h.values)
 	{
-		//		logDebug("Fetching device value");
+		// logDebug("Fetching device value");
 		switch (config.deviceHardware)
 		{
 		case DEVICE_HARDWARE_ONEWIRE_TEMP:
@@ -771,7 +771,7 @@ void DeviceManager::handleEnumeratedDevice(DeviceConfig &config, EnumerateHardwa
 			break;
 		}
 	}
-	//	logDebug("Passing device to callback");
+	// logDebug("Passing device to callback");
 	callback(&config, info);
 }
 
@@ -827,7 +827,7 @@ void DeviceManager::enumerateOneWireDevices(EnumerateHardware &h, EnumDevicesCal
 			continue;
 		config.hw.pinNr = pin;
 		config.chamber = 1; // chamber 1 is default
-							//		logDebug("Enumerating one-wire devices on pin %d", pin);
+							// logDebug("Enumerating one-wire devices on pin %d", pin);
 		OneWire *wire = oneWireBus(pin);
 		if (wire != NULL)
 		{
@@ -899,11 +899,11 @@ void DeviceManager::enumerateHardwareToStream(Stream &p)
 	DeviceCallbackInfo info;
 	info.data = &p;
 
-	//	logDebug("Enumerating Hardware");
+	// logDebug("Enumerating Hardware");
 
 	firstDeviceOutput = true;
 	enumerateHardware(spec, OutputEnumeratedDevices, &info);
-	//	logDebug("Enumerating Hardware Complete");
+	// logDebug("Enumerating Hardware Complete");
 }
 
 void DeviceManager::enumerateHardware(EnumerateHardware &spec, EnumDevicesCallback callback, DeviceCallbackInfo *info)

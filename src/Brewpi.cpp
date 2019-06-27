@@ -51,6 +51,9 @@ license and credits. */
 
 void setup(void);
 void loop(void);
+#ifdef BREWPI_ROTARY_ENCODER
+bool blankDisplay;
+#endif
 
 /*  
  *  Configure the counter and delay timer. The actual type of these will vary
@@ -89,6 +92,10 @@ void setup()
 
     ui.showControllerPage();
 
+    // If pushbutton is low on startup, disable backlight off timer
+    pinMode(rotarySwitchPin, INPUT_PULLUP);
+    blankDisplay = (digitalRead(rotarySwitchPin) == HIGH);
+
     logDebug("init complete");
 }
 
@@ -99,20 +106,20 @@ void brewpiLoop(void)
     ui.ticks();
 
     // Reset display on timer to mitigate screen scramble
-    //#if BREWPI_LCD && BREWPI_STATIC_CONFIG != BREWPI_SHIELD_I2C
     #if BREWPI_LCD
         static unsigned long lastLcdUpdate = 0;  // Counter for LCD reset
-        //if (ticks.millis() - lastLcdUpdate >= LCD_RESET_PERIOD)
         if (ticks.seconds() - lastLcdUpdate >= LCD_RESET_PERIOD)
         {
-            //lastLcdUpdate = ticks.millis();
             lastLcdUpdate = ticks.seconds();
 
             display.init();
             display.printStationaryText();
             display.printState();
 
+            
+            #ifdef BREWPI_ROTARY_ENCODER
             rotaryEncoder.init();
+            #endif
         }
     #endif
 

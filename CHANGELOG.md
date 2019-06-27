@@ -9,6 +9,14 @@ The primary change for this release is to enable I2C support (thank you @Thorrak
  - Move LCD reset timer to config.h
  - Change reset timer to one hour
 
+### Enhancements
+ - Change LCD backlight timeout to 60 seconds
+ - Update to atmelavr 1.14.0 from 1.13.0.
+ - Add check on startup for rotary encoder being pulled low.  If so, the LCD timeout is disabled
+
+### Bugfixes
+
+
 ## 0.2.11
 The primary change in this release is to move the workspace to PlatformIO from Atmel Studio.
 

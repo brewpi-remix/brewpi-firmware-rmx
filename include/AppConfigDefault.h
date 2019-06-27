@@ -36,6 +36,7 @@ license and credits. */
 
 #if BREWPI_DEBUG > 0
 #define DEBUG_ONLY(x) x
+#define BREWPI_LOG_DEBUG 1
 #else
 #define DEBUG_ONLY(x)
 #endif
@@ -53,7 +54,7 @@ license and credits. */
 #define BREWPI_LOG_INFO 1
 #endif
 
-#ifndef BREWPI_LOG_DEBUG
+#ifndef BREWPI_LOG_DEBUG 
 #define BREWPI_LOG_DEBUG 0
 #endif
 

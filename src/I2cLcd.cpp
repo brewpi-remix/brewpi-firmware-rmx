@@ -351,6 +351,12 @@ void IIClcd::updateBacklight(void) {
     // Default to backlight always on
     bool backLightOutput = false;
 #endif
+
+#ifdef BREWPI_ROTARY_ENCODER
+    // If blankDisplay is false, force backLightOutput false (keep light on)
+    if (!blankDisplay) { backLightOutput = blankDisplay; }
+#endif
+
     if (backLightOutput) {
         noBacklight();
     } else {

@@ -214,13 +214,24 @@ void SpiLcd::createChar(uint8_t location, uint8_t charmap[])
 void SpiLcd::resetBacklightTimer(void)
 {
     _backlightTime = ticks.seconds();
-    updateBacklight();
+    updateBacklight(); 
     spiOut(); // instant update since the backlight may be turned on by user input
 }
 
 void SpiLcd::updateBacklight(void)
 {
+#if BACKLIGHT_AUTO_OFF_PERIOD > 0 || BREWPI_SIMULATE
     bool backLightOutput = BREWPI_SIMULATE || ticks.timeSince(_backlightTime) > BACKLIGHT_AUTO_OFF_PERIOD;
+#else
+    // Default to backlight always on
+    bool backLightOutput = false;
+#endif
+
+#ifdef BREWPI_ROTARY_ENCODER
+    // If blankDisplay is false, force backLightOutput false (keep light on)
+    if (!blankDisplay) { backLightOutput = blankDisplay; }
+#endif
+
     bitWrite(_spiByte, LCD_SHIFT_BACKLIGHT, backLightOutput); // 1=OFF, 0=ON
 }
 

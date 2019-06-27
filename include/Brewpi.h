@@ -73,3 +73,11 @@ license and credits. */
 #include <AppConfig.h>
 #endif
 #include "AppConfigDefault.h"
+
+#ifndef BREWPI_H
+#define BREWPI_H
+#ifdef BREWPI_ROTARY_ENCODER
+#include "Pins.h"
+extern bool blankDisplay;
+#endif
+#endif /* BREWPI_H */

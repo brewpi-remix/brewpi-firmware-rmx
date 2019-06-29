@@ -37,7 +37,7 @@ license and credits. */
 // 2-3: more verbose debug messages
 //
 #ifndef BREWPI_DEBUG
-#define BREWPI_DEBUG 3
+#define BREWPI_DEBUG 0
 #endif
 //
 //////////////////////////////////////////////////////////////////////////

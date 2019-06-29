@@ -13,7 +13,6 @@ The primary change for this release is to enable I2C support (thank you @Thorrak
 ### Enhancements
  - Change LCD backlight timeout to 60 seconds
  - Update to atmelavr 1.14.0 from 1.13.0.
- - Added watchdog timer to restart controller on lockup
 
 ### Bugfixes
  - ??

@@ -68,33 +68,6 @@ DelayImpl wait = DelayImpl(DELAY_IMPL_CONFIG);
 ValueActuator alarm;
 UI ui;
 
-void watchdogSetup(void)
-{
-    cli();
-    wdt_reset();
-    /*
-    WDTCSR configuration:
-    WDIE = 1: Interrupt Enable
-    WDE = 1 :Reset Enable
-    See table for time-out variations:
-    WDP3 = 0 :For 1000ms Time-out
-    WDP2 = 1 :For 1000ms Time-out
-    WDP1 = 1 :For 1000ms Time-out
-    WDP0 = 0 :For 1000ms Time-out
-    */
-    // Enter Watchdog Configuration mode:
-    // Enter Watchdog Configuration mode:
-    WDTCSR |= (1<<WDCE) | (1<<WDE);
-    // Set Watchdog settings:
-    WDTCSR = (1<<WDIE) | (1<<WDE) | (0<<WDP3) | (1<<WDP2) | (1<<WDP1) | (1<<WDP0);
-    sei();
-}
-
-ISR(WDT_vect)
-{
-     // Watchdog timer interrupt.
-}
-
 void setup()
 {
     ui.init();
@@ -123,8 +96,6 @@ void setup()
     // If pushbutton is low on startup, disable backlight off timer
     pinMode(rotarySwitchPin, INPUT_PULLUP);
     blankDisplay = (digitalRead(rotarySwitchPin) == HIGH);
-
-    watchdogSetup(); // Setup a watchdog timer
 
     // logDebug("init complete");
 }
@@ -173,7 +144,6 @@ void brewpiLoop(void)
 
     //listen for incoming serial connections while waiting to update
     piLink.receive();
-    wdt_reset(); // Reset watchdog
 }
 
 void loop()

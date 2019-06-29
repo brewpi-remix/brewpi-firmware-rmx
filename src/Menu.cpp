@@ -41,6 +41,7 @@ license and credits. */
 #include "RotaryEncoder.h"
 #include "PiLink.h"
 #include "Ticks.h"
+#include <avr/wdt.h>
 
 Menu menu;
 

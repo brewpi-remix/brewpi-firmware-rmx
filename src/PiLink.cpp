@@ -409,8 +409,11 @@ void PiLink::printTemperatures(void)
 	printTemperaturesJSON(0, 0);
 }
 
+#ifndef BREWPI_I2C
+// There is a bug with the I2C code which prevents this from working.
+// Removing it so we aren't tempted to use it.
 void PiLink::printBeerAnnotation(const char *annotation, ...)
-{
+{	// DEBUG: This is broken
 	char tempString[128]; // resulting string limited to 128 chars
 	va_list args;
 	// Using print_P for the Annotation fails. Arguments are not passed correctly. Use Serial directly as a work around.
@@ -421,7 +424,7 @@ void PiLink::printBeerAnnotation(const char *annotation, ...)
 }
 
 void PiLink::printFridgeAnnotation(const char *annotation, ...)
-{
+{ 	// DEBUG: This is broken
 	char tempString[128]; // resulting string limited to 128 chars
 	va_list args;
 	// Using print_P for the Annotation fails. Arguments are not passed correctly. Use Serial directly as a work around.
@@ -430,6 +433,7 @@ void PiLink::printFridgeAnnotation(const char *annotation, ...)
 	va_end(args);
 	printTemperaturesJSON(0, tempString);
 }
+#endif
 
 void PiLink::printResponse(char type)
 {
@@ -748,7 +752,9 @@ void PiLink::setMode(const char *val)
 {
 	char mode = val[0];
 	tempControl.setMode(mode);
+	#ifndef BREWPI_I2C
 	piLink.printFridgeAnnotation(STR_FMT_SET_TO, STR_MODE, val, STR_WEB_INTERFACE);
+	#endif
 }
 
 void PiLink::setBeerSetting(const char *val)
@@ -772,7 +778,9 @@ void PiLink::setBeerSetting(const char *val)
 	}
 	if (source)
 	{
+		#ifndef BREWPI_I2C
 		printBeerAnnotation(STR_FMT_SET_TO, STR_BEER_TEMP, val, source);
+		#endif
 	}
 	tempControl.setBeerTemp(newTemp);
 }
@@ -786,7 +794,9 @@ void PiLink::setFridgeSetting(const char *val)
 	}
 	if (tempControl.cs.mode == 'f')
 	{
+		#ifndef BREWPI_I2C
 		printFridgeAnnotation(STR_FMT_SET_TO, STR_FRIDGE_TEMP, val, STR_WEB_INTERFACE);
+		#endif
 	}
 	tempControl.setFridgeTemp(newTemp);
 }

@@ -158,11 +158,15 @@ void selectMode()
 	}
 	else if (mode == MODE_BEER_PROFILE)
 	{
+		#ifndef BREWPI_I2C
 		piLink.printBeerAnnotation(PSTR("Changed to profile mode in menu."));
+		#endif
 	}
 	else if (mode == MODE_OFF)
 	{
+		#ifndef BREWPI_I2C
 		piLink.printBeerAnnotation(PSTR("Temp control turned off in menu."));
+		#endif
 	}
 }
 
@@ -236,12 +240,20 @@ void pickTempSetting(ReadTemp readTemp, WriteTemp writeTemp, const char *tempNam
 
 void Menu::pickFridgeSetting(void)
 {
+	#ifndef BREWPI_I2C
 	pickTempSetting(tempControl.getFridgeSetting, tempControl.setFridgeTemp, PSTR("Fridge"), piLink.printFridgeAnnotation, 2);
+	#else
+	pickTempSetting(tempControl.getFridgeSetting, tempControl.setFridgeTemp, PSTR("Fridge"), NULL, 2);
+	#endif
 }
 
 void Menu::pickBeerSetting(void)
 {
+	#ifndef BREWPI_I2C
 	pickTempSetting(tempControl.getBeerSetting, tempControl.setBeerTemp, PSTR("Beer"), piLink.printBeerAnnotation, 1);
+	#else
+	pickTempSetting(tempControl.getBeerSetting, tempControl.setBeerTemp, PSTR("Beer"), NULL, 1);
+	#endif
 }
 
 #endif

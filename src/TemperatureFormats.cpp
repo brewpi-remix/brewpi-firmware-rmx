@@ -70,7 +70,7 @@ void mysnprintf_P(char *buf, int len, const char *fmt, ...)
     va_list args;
     va_start(args, fmt);
     vsnprintf_P(buf, len, fmt, args);
-    va_end(args);
+    va_end(args); 
 }
 
 char *fixedPointToString(char *s, long_temperature rawValue, uint8_t numDecimals, uint8_t maxLength)

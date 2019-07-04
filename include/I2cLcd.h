@@ -30,9 +30,8 @@ license and credits. */
 #ifndef LiquidCrystal_I2C_h
 #define LiquidCrystal_I2C_h
 
-#include "Brewpi.h"
+#include "Brewpi.h" 
 #include "BrewpiStrings.h"
-#include <inttypes.h>
 #include "Ticks.h"
 
 // Commands

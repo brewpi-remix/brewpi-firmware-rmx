@@ -38,17 +38,17 @@ license and credits. */
 #endif
 
 #if BREWPI_STATIC_CONFIG == BREWPI_SHIELD_I2C
-#define BREWPI_IIC 1
+#define BREWPI_I2C 1
 #endif
 
 /*
  * LCD Display using a shift register:
  * For DIY-shields prior to the revA shield, this should be set to 0. With
- * IIC support, we want BREWPI_SHIFT_LCD set to 0 if BREWPI_IIC is set.
+ * IIC support, we want BREWPI_SHIFT_LCD set to 0 if BREWPI_I2C is set.
  */
 
 #ifndef BREWPI_SHIFT_LCD
-#if BREWPI_STATIC_CONFIG != BREWPI_SHIELD_DIY && !defined(BREWPI_IIC)
+#if BREWPI_STATIC_CONFIG != BREWPI_SHIELD_DIY && !defined(BREWPI_I2C)
 #define BREWPI_SHIFT_LCD 1
 #else
 #define BREWPI_SHIFT_LCD 0

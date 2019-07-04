@@ -38,7 +38,7 @@ license and credits. */
 
 uint8_t LcdDisplay::stateOnDisplay;
 uint8_t LcdDisplay::flags;
-#if defined(BREWPI_IIC)
+#if defined(BREWPI_I2C)
 LcdDriver LcdDisplay::lcd(0x00, 20, 4);  // 20x4 LCD, address will autodetect
 #else
 LcdDriver LcdDisplay::lcd;

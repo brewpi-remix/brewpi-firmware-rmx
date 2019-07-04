@@ -47,8 +47,10 @@ class PiLink
 
 	static void printFridgeAnnotation(const char *annotation, ...);
 	static void printBeerAnnotation(const char *annotation, ...);
-
+	
+	//#if BREWPI_LOG_DEBUG
 	static void debugMessage(const char *message, ...);
+	//#endif
 
 	static void printTemperatures(void);
 

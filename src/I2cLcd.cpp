@@ -40,16 +40,10 @@ license and credits. */
 // Library version:1.1
 
 #include "I2cLcd.h"
-
 #include "Brewpi.h"
-#include <stdio.h>
-#include <string.h>
-#include <inttypes.h>
-#include <inttypes.h>
-#include "Arduino.h"
 
 extern "C" {
-#include <Wire.h>
+    #include <Wire.h>
 }
 
 // When the display powers up, it is configured as follows:

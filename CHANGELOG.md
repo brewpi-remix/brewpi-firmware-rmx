@@ -1,44 +1,62 @@
+# BrewPi Remix Firmware Changelog
+
 ## 0.2.12
+
 The primary change for this release is to enable I2C support (thank you @Thorrak!)  This brings in a new shield type called "I2C" with accompanying pin definition changes.
 
 ### Features
- - Add support for I2C display
- - Add I2C shield type (pin changes)
- - Add firmware auto-naming to PlatformIO compile
- - Add an additional actuator pin
- - Move LCD reset timer to config.h
- - Change reset timer to one hour
- - Add check on startup for rotary encoder being pulled low.  If so, the LCD backlight timeout is disabled
+
+- Add support for I2C display
+- Add I2C shield type (pin changes)
+- Add firmware auto-naming to PlatformIO compile
+- Add an additional actuator pin
+- Move LCD reset timer to config.h
+- Change reset timer to one hour
+- Add check on startup for rotary encoder being pulled low.  If so, the LCD backlight timeout is disabled
 
 ### Enhancements
- - Change LCD backlight timeout to 60 seconds
- - Update to atmelavr 1.14.0 from 1.13.0.
+
+- Change LCD backlight timeout to 60 seconds
+- Update to atmelavr 1.14.0 from 1.13.0.
 
 ### Bugfixes
- - ??
 
+- Shortened some of the message constants to avoid SRAM OOM crashes
 
 ## 0.2.11
+
 The primary change in this release is to move the workspace to PlatformIO from Atmel Studio.
 
 ### Features
- - Move to PlatformIO
- - Remove (some of) the Spark shrapnel that was added to the Legacy 0.2.10
- - Bump LogMessages.h to be compatible with @Thorrak's ESP8266 firmware
+
+- Move to PlatformIO
+- Remove (some of) the Spark shrapnel that was added to the Legacy 0.2.10
+- Bump LogMessages.h to be compatible with @Thorrak's ESP8266 firmware
 
 ### Bugfixes
- - Added a reset on interval to help LCD scramble
- - Re-establish build version in eeprom (remove "unknown")
+
+- Added a reset on interval to help LCD scramble
+- Re-establish build version in eeprom (remove "unknown")
 
 ## 0.2.10a
+
 This is the version provided in BrewPi-Legacy-Remix after the move from the original BrewPi repositories.  The [0.2.10 tag in that repository](https://github.com/BrewPi/firmware/releases/tag/0.2.10) was correct/complete, however the [HEAD of the Legacy branch](https://github.com/BrewPi/firmware/tree/legacy) included some commits which broke the Arduino code.  These were rolled back to establish a known good starting point.  The hex file here is the identical file available on the [BrewPi Firmware 0.2.10 repository](https://github.com/BrewPi/firmware/releases/tag/0.2.10).
+
 ### Bugfixes
-  In addition the following fixes were merged (which were also in the released compiled firmware):
+
+In addition the following fixes were merged (which were also in the released compiled firmware):
+
 - [Fix for bug in setting calibration offset ](https://github.com/BrewPi/firmware/commit/41ccbd502540cad60fdeb5a82e3b6e14444cafbe)
 - [Fixed ncorrect [sic] capitalization (BrewPi.h instead of Brewpi.h) in OneWire.h](https://github.com/BrewPi/firmware/commit/c0a4cef2df38bb206163fda964ddfa48907b0c10)
 
+# Legacy BrewPi Firmware Changelog
+
+The following changes were in the original CHANGELOG from Legacy BrewPi.
+
 ## 0.2.10
+
 ### Bugfixes
+
 I missed a test case in yesterday's release. Converting a temperature very close to a whole number (e.g. 20.998) converted 1 degree too high (22) due to erroneous rounding of an internal result. This releases fixes the bug and improves the unit tests to go through the entire temperature range to make sure it works.
 
 ## 0.2.9
@@ -48,6 +66,7 @@ This is a faster release in between our normal release schedule to fix some bugs
 No new features in this release
 
 ### Bugfixes
+
 - ####Temperature filter initialization
 Temperature sensor filters could be used uninitialized in when a fridge or beer sensor was plugged in 1-60 seconds after start. See issue #18.
 
@@ -60,10 +79,9 @@ When an invalid temperature or setting string was received from the script, the 
 - ####Small rounding errors in conversions
 We fixed small 1 bit rounding errors (0.0002 degree) in or temperature conversion functions. See issue #22.
 
-
 ### Enhancements
-[Catch](https://github.com/philsquared/Catch) unit tests were added to the build (replacing googletest). We used it to test all the new temperature conversion functions. Closes issue #15.
 
+[Catch](https://github.com/philsquared/Catch) unit tests were added to the build (replacing googletest). We used it to test all the new temperature conversion functions. Closes issue #15.
 
 ## 0.2.8
 
@@ -79,7 +97,6 @@ We fixed small 1 bit rounding errors (0.0002 degree) in or temperature conversio
 - Arduino supported with this release.
 - Removed 'T' command (calibrate) that was causing issues.
 - Default beer and fridge setting is now --.- (disabled). This aligns with the default mode OFF.
-
 
 ### Under the Hood
 

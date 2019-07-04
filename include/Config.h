@@ -51,7 +51,7 @@ license and credits. */
 #endif
 //
 //////////////////////////////////////////////////////////////////////////
-
+ 
 //////////////////////////////////////////////////////////////////////////
 //
 // Define build commit (Git commit from PIO Env)
@@ -141,8 +141,7 @@ license and credits. */
 
 //////////////////////////////////////////////////////////////////////////
 //
-// BREWPI_ACTUATOR_PINS - Should be enabled for digital pins (not sure this
-//                        is used)
+// BREWPI_ACTUATOR_PINS - Should be enabled for digital pins
 //
 #ifndef BREWPI_ACTUATOR_PINS
 #define BREWPI_ACTUATOR_PINS 1

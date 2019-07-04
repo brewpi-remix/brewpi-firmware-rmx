@@ -193,7 +193,5 @@ inline void logInfoTempTempFixedFixed(uint8_t debugId, temperature t1, temperatu
 #include "PiLink.h"
 #define logDebug(string, ...) piLink.debugMessage(PSTR(string), ##__VA_ARGS__)
 #else
-#define logDebug(string, ...) \
-	{                         \
-	}
+#define logDebug(string, ...) {// Non-op}
 #endif

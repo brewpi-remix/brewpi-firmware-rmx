@@ -242,9 +242,7 @@ void TempControl::updateState(void)
 	if (newDoorOpen != doorOpen)
 	{
 		doorOpen = newDoorOpen;
-		#ifndef BREWPI_I2C
 		piLink.printFridgeAnnotation(PSTR("Fridge door %S"), doorOpen ? PSTR("opened") : PSTR("closed"));
-		#endif
 	}
 
 	if (cs.mode == MODE_OFF)

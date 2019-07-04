@@ -45,12 +45,12 @@ class PiLink
 	static void init(void);
 	static void receive(void);
 
-	#ifndef BREWPI_I2C
 	static void printFridgeAnnotation(const char *annotation, ...);
 	static void printBeerAnnotation(const char *annotation, ...);
-	#endif
-
+	
+	//#if BREWPI_LOG_DEBUG
 	static void debugMessage(const char *message, ...);
+	//#endif
 
 	static void printTemperatures(void);
 

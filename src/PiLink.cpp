@@ -51,11 +51,11 @@ license and credits. */
 #include "Simulator.h"
 #endif
 
-static const char STR_WEB_INTERFACE[] PROGMEM = "in web interface";
-static const char STR_TEMPERATURE_PROFILE[] PROGMEM = "by temperature profile";
+static const char STR_WEB_INTERFACE[] PROGMEM = "by web";
+static const char STR_TEMPERATURE_PROFILE[] PROGMEM = "by profile";
 static const char STR_MODE[] PROGMEM = "Mode";
-static const char STR_BEER_TEMP[] PROGMEM = "Beer temp";
-static const char STR_FRIDGE_TEMP[] PROGMEM = "Fridge temp";
+static const char STR_BEER_TEMP[] PROGMEM = "Beer";
+static const char STR_FRIDGE_TEMP[] PROGMEM = "Fridge";
 static const char STR_FMT_SET_TO[] PROGMEM = PRINTF_PROGMEM " set to %s " PRINTF_PROGMEM;
 
 // Rename Serial to piStream, to abstract it for later platform independence
@@ -99,7 +99,8 @@ void PiLink::init(void)
 	piStream.begin(BAUD);
 }
 
-// create a printf like interface to the Arduino Serial function. Format string stored in PROGMEM
+// Create a printf like interface to the Arduino Serial function. Format
+// string stored in PROGMEM
 void PiLink::print_P(const char *fmt, ...)
 {
 	va_list args;
@@ -112,7 +113,8 @@ void PiLink::print_P(const char *fmt, ...)
 	}
 }
 
-// create a printf like interface to the Arduino Serial function. Format string stored in RAM
+// Create a printf like interface to the Arduino Serial function. Format
+// string stored in RAM
 void PiLink::print(char *fmt, ...)
 {
 	va_list args;
@@ -163,18 +165,21 @@ void PiLink::receive(void)
 			soundAlarm(false);
 			break;
 
-		case 't': // temperatures requested
+		case 't': // Temperatures requested
 			printTemperatures();
 			break;
 		case 'C': // Set default constants
 			tempControl.loadDefaultConstants();
-			display.printStationaryText(); // reprint stationary text to update to right degree unit
-			sendControlConstants();		   // update script with new settings
+			// Reprint stationary text to update to correct degree unit
+			display.printStationaryText();
+			// Update script with new settings
+			sendControlConstants();
 			logInfo(INFO_DEFAULT_CONSTANTS_LOADED);
 			break;
 		case 'S': // Set default settings
 			tempControl.loadDefaultSettings();
-			sendControlSettings(); // update script with new settings
+			// Update script with new settings
+			sendControlSettings();
 			logInfo(INFO_DEFAULT_SETTINGS_LOADED);
 			break;
 		case 's': // Control settings requested
@@ -225,7 +230,7 @@ void PiLink::receive(void)
 			break;
 
 #if BREWPI_EEPROM_HELPER_COMMANDS
-		case 'e': // dump contents of eeprom
+		case 'e': // Dump contents of eeprom
 			openListResponse('E');
 			for (uint16_t i = 0; i < 1024;)
 			{
@@ -247,30 +252,30 @@ void PiLink::receive(void)
 			break;
 #endif
 
-		case 'E': // initialize eeprom
+		case 'E': // Initialize eeprom
 			eepromManager.initializeEeprom();
 			logInfo(INFO_EEPROM_INITIALIZED);
 			settingsManager.loadSettings();
 			break;
 
-		case 'd': // list devices in eeprom order
+		case 'd': // List devices in eeprom order
 			openListResponse('d');
 			deviceManager.listDevices(piStream);
 			closeListResponse();
 			break;
 
-		case 'U': // update device
+		case 'U': // Update device
 			deviceManager.parseDeviceDefinition(piStream);
 			break;
 
-		case 'h': // hardware query
+		case 'h': // Hardware query
 			openListResponse('h');
 			deviceManager.enumerateHardwareToStream(piStream);
 			closeListResponse();
 			break;
 
 #if (BREWPI_DEBUG > 0)
-		case 'Z': // zap eeprom
+		case 'Z': // Zap eeprom
 			eepromManager.zapEeprom();
 			logInfo(INFO_EEPROM_ZAPPED);
 			break;
@@ -280,7 +285,7 @@ void PiLink::receive(void)
 			handleReset();
 			break;
 
-		// case 'F': // flash firmware
+		// case 'F': // Flash firmware
 		// 	flashFirmware();
 		// 	break;
 
@@ -405,28 +410,30 @@ void PiLink::sendJsonTemp(const char *name, temperature temp)
 
 void PiLink::printTemperatures(void)
 {
-	// print all temperatures with empty annotations
+	// Print all temperatures with empty annotations
 	printTemperaturesJSON(0, 0);
 }
 
 void PiLink::printBeerAnnotation(const char *annotation, ...)
-{	// DEBUG: This is broken
-	char tempString[128]; // resulting string limited to 128 chars
+{
+	// Using print_P for the Annotation fails. Arguments are not passed
+	// correctly. Use Serial directly as a work around.
+	char tempString[32]; // Resulting string limited to 32 chars
 	va_list args;
-	// Using print_P for the Annotation fails. Arguments are not passed correctly. Use Serial directly as a work around.
 	va_start(args, annotation);
-	vsnprintf_P(tempString, 128, annotation, args);
+	vsnprintf_P(tempString, 32, annotation, args);
 	va_end(args);
 	printTemperaturesJSON(tempString, 0);
 }
 
 void PiLink::printFridgeAnnotation(const char *annotation, ...)
-{ 	// DEBUG: This is broken
-	char tempString[128]; // resulting string limited to 128 chars
+{
+	// Using print_P for the Annotation fails. Arguments are not passed
+	// correctly. Use Serial directly as a work around.
+	char tempString[32]; // Resulting string limited to 32 chars
 	va_list args;
-	// Using print_P for the Annotation fails. Arguments are not passed correctly. Use Serial directly as a work around.
 	va_start(args, annotation);
-	vsnprintf_P(tempString, 128, annotation, args);
+	vsnprintf_P(tempString, 32, annotation, args);
 	va_end(args);
 	printTemperaturesJSON(0, tempString);
 }
@@ -449,21 +456,26 @@ void PiLink::closeListResponse()
 	piStream.print(']');
 	printNewLine();
 }
- 
+
+#if BREWPI_DEBUG == 0
+void PiLink::debugMessage(const char *message, ...){}
+#else
 void PiLink::debugMessage(const char *message, ...)
 {
+	// Using print_P for the Annotation fails. Arguments are not passed
+	// correctly. Use Serial directly as a work around.
 	va_list args;
 
-	//print 'D:' as prefix
+	// Print 'D:' as prefix
 	printResponse('D');
 
-	// Using print_P for the Annotation fails. Arguments are not passed correctly. Use Serial directly as a work around.
 	va_start(args, message);
 	vsnprintf_P(printfBuff, PRINTF_BUFFER_SIZE, message, args);
 	va_end(args);
 	piStream.print(printfBuff);
 	printNewLine();
 }
+#endif
 
 void PiLink::sendJsonClose()
 {
@@ -485,9 +497,10 @@ void PiLink::sendControlSettings(void)
 	sendJsonClose();
 }
 
-// where the offset is relative to. This saves having to store a full 16-bit pointer.
-// becasue the structs are static, we can only compute an offset relative to the struct (cc,cs,cv etc..)
-// rather than offset from tempControl.
+// Location to which the offset is relative. This saves having to store a
+// full 16-bit pointer. Because the structs are static, we can only compute
+// an offset relative to the struct (cc,cs,cv etc..) rather than offset from
+// tempControl.
 uint8_t *jsonOutputBase;
 
 void PiLink::jsonOutputUint8(const char *key, uint8_t offset)
@@ -501,7 +514,7 @@ void PiLink::jsonOutputUint16(const char *key, uint8_t offset)
 }
 
 /**
- * outputs the temperature at the given offset from tempControl.cc.
+ * Outputs the temperature at the given offset from tempControl.cc.
  * The temperature is assumed to be an internal fixed point value.
  */
 void PiLink::jsonOutputTempToString(const char *key, uint8_t offset)
@@ -603,7 +616,8 @@ void PiLink::sendJsonValues(char responseType, const JsonOutput * /*PROGMEM*/ js
 	sendJsonClose();
 }
 
-// Send control constants as JSON string. Might contain spaces between minus sign and number. Python will have to strip these
+// Send control constants as JSON string. Might contain spaces between minus
+// sign and number. Python will have to strip these.
 void PiLink::sendControlConstants(void)
 {
 	jsonOutputBase = (uint8_t *)&tempControl.cc;
@@ -698,16 +712,16 @@ bool parseJsonToken(char *val)
 			result = false;
 			break;
 		}
-		if (character == ',' || character == ':') // end of value
+		if (character == ',' || character == ':') // End of value
 			break;
 		if (character == ' ' || character == '"')
 		{
-			; // skip spaces and apostrophes
+			; // Skip spaces and apostrophes
 		}
 		else
 			val[index++] = character;
 	}
-	val[index] = 0; // null terminate string
+	val[index] = 0; // Null terminate string
 	return result;
 }
 
@@ -718,7 +732,7 @@ void PiLink::parseJson(ParseJsonCallback fn, void *data)
 	*key = 0;
 	*val = 0;
 	bool next = true;
-	// read first open brace
+	// Read first open brace
 	int c = readNext();
 	if (c != '{')
 	{
@@ -737,8 +751,9 @@ void PiLink::receiveJson(void)
 {
 	parseJson(&processJsonPair, NULL);
 	
-#if !BREWPI_SIMULATE	   // this is quite an overhead and not needed for the simulator
-	sendControlSettings(); // update script with new settings
+#if !BREWPI_SIMULATE
+	// This is a lot of overhead and not needed for the simulator	   
+	sendControlSettings(); // Update script with new settings
 	sendControlConstants();
 #endif
 	return;
@@ -762,7 +777,7 @@ void PiLink::setBeerSetting(const char *val)
 	if (tempControl.cs.mode == 'p')
 	{
 		if (abs(newTemp - tempControl.cs.beerSetting) > 100)
-		{ // this excludes gradual updates under 0.2 degrees
+		{ // This excludes gradual updates under 0.2 degrees
 			source = STR_TEMPERATURE_PROFILE;
 		}
 	}
@@ -782,7 +797,7 @@ void PiLink::setFridgeSetting(const char *val)
 	temperature newTemp;
 	if (!stringToTemp(&newTemp, val))
 	{
-		return; // could not parse value
+		return; // Could not parse value
 	}
 	if (tempControl.cs.mode == 'f')
 	{
@@ -794,11 +809,12 @@ void PiLink::setFridgeSetting(const char *val)
 void PiLink::setTempFormat(const char *val)
 {
 	tempControl.cc.tempFormat = val[0];
-	display.printStationaryText(); // reprint stationary text to update to right degree unit
+	// Reprint stationary text to update to correct degree unit
+	display.printStationaryText();
 	eepromManager.storeTempConstantsAndSettings();
 }
 
-// todo - move these structs to PROGMEM.
+// TODO - Move these structs to PROGMEM.
 enum FilterType
 {
 	FAST,
@@ -823,8 +839,8 @@ static uint8_t *const filterSettings[] = {
 
 void applyFilterSetting(const char *val, void *target)
 {
-// the cast was  (uint8_t(uint16_t(target), changed to unsigned int so that the
-// first cast is the same width as a pointer, avoiding a warning
+// The cast was (uint8_t(uint16_t(target), changed to unsigned int so that
+// the first cast is the same width as a pointer, avoiding a warning.
 // On x64 builds, unsigned int is still 32 bits, so cast to uint64_t instead
 #if defined(_M_X64) || defined(__amd64__)
 	uint8_t offset = uint8_t((uint64_t)target); // target is really just an integer
@@ -857,38 +873,41 @@ void applyFilterSetting(const char *val, void *target)
 void setStringToFixedPoint(const char *value, temperature *target)
 {
 	if (stringToFixedPoint(target, value))
-	{
-		eepromManager.storeTempConstantsAndSettings(); // value parsed correctly
+	{	// Value parsed correctly
+		eepromManager.storeTempConstantsAndSettings();
 	}
 }
+
 void setStringToTemp(const char *value, temperature *target)
 {
 	if (stringToTemp(target, value))
-	{
-		eepromManager.storeTempConstantsAndSettings(); // value parsed correctly
+	{	// Value parsed correctly
+		eepromManager.storeTempConstantsAndSettings();
 	}
 }
+
 void setStringToTempDiff(const char *value, temperature *target)
 {
 	if (stringToTempDiff(target, value))
-	{
-		eepromManager.storeTempConstantsAndSettings(); // value parsed correctly
+	{	// Value parsed correctly
+		eepromManager.storeTempConstantsAndSettings();
 	}
 }
 
 void setUint16(const char *value, uint16_t *target)
 {
 	if (stringToUint16(target, value))
-	{
-		eepromManager.storeTempConstantsAndSettings(); // value parsed correctly
+	{	// Value parsed correctly
+		eepromManager.storeTempConstantsAndSettings();
 	}
 }
+
 void setBool(const char *value, uint8_t *target)
 {
 	bool result;
 	if (stringToBool(&result, value))
-	{
-		*target = result; // convert bool to uint8_t
+	{	// Convert bool to uint8_t
+		*target = result;
 		eepromManager.storeTempConstantsAndSettings();
 	}
 }
@@ -943,10 +962,8 @@ void PiLink::processJsonPair(const char *key, const char *val, void *pv)
 	{
 		JsonParserConvert converter;
 		memcpy_P(&converter, &jsonParserConverters[i], sizeof(converter));
-		//logDeveloper("Handling converter %d %s "PRINTF_PROGMEM" %d %d"), i, key, converter.key, converter.fn, converter.target);
 		if (strcmp_P(key, converter.key) == 0)
 		{
-			//logDeveloper("Handling json key %s"), key);
 			converter.fn(val, converter.target);
 			return;
 		}

@@ -40,21 +40,37 @@ license and credits. */
 #include "ModeControl.h"
 #include "TicksImpl.h"
 
+#ifndef ENABLE_GLYCOL
+// These are regular BrewPi constants:
+//
 // Set minimum off time to prevent short cycling the compressor in seconds
 const uint16_t MIN_COOL_OFF_TIME = 300;
-// Use a minimum off time for the heater as well, so it heats in cycles, not lots of short bursts
+// Use a minimum off time for the heater as well, so it heats in cycles, not
+// lots of short bursts
 const uint16_t MIN_HEAT_OFF_TIME = 300;
 // Minimum on time for the cooler.
 const uint16_t MIN_COOL_ON_TIME = 180;
 // Minimum on time for the heater.
 const uint16_t MIN_HEAT_ON_TIME = 180;
-// Use a large minimum off time in fridge constant mode. No need for very fast cycling.
+// Use a large minimum off time in fridge constant mode. No need for very
+// fast cycling.
 const uint16_t MIN_COOL_OFF_TIME_FRIDGE_CONSTANT = 600;
 // Set a minimum off time between switching between heating and cooling
 const uint16_t MIN_SWITCH_TIME = 600;
 // Time allowed for peak detection
 const uint16_t COOL_PEAK_DETECT_TIME = 1800;
 const uint16_t HEAT_PEAK_DETECT_TIME = 900;
+#else
+// Glycol support constants
+const uint16_t MIN_COOL_OFF_TIME = _MIN_COOL_OFF_TIME;
+const uint16_t MIN_HEAT_OFF_TIME = _MIN_HEAT_OFF_TIME;
+const uint16_t MIN_COOL_ON_TIME = _MIN_COOL_ON_TIME;
+const uint16_t MIN_HEAT_ON_TIME = _MIN_HEAT_ON_TIME;
+const uint16_t MIN_COOL_OFF_TIME_FRIDGE_CONSTANT = _MIN_COOL_OFF_TIME_FRIDGE_CONSTANT;
+const uint16_t MIN_SWITCH_TIME = _MIN_SWITCH_TIME;
+const uint16_t COOL_PEAK_DETECT_TIME = _COOL_PEAK_DETECT_TIME;
+const uint16_t HEAT_PEAK_DETECT_TIME = _HEAT_PEAK_DETECT_TIME;
+#endif
 
 // These two structs are stored in and loaded from EEPROM
 struct ControlSettings
@@ -140,13 +156,17 @@ enum states
 #endif
 
 // Making all functions and variables static reduces code size.
-// There will only be one TempControl object, so it makes sense that they are static.
+// There will only be one TempControl object, so it makes sense that they
+// are static.
 
 /*
- * MDM: To support multi-chamber, I could have made TempControl non-static, and had a reference to
- * the current instance. But this means each lookup of a field must be done indirectly, which adds to the code size.
- * Instead, we swap in/out the sensors and control data so that the bulk of the code can work against compile-time resolvable
- * memory references. While the design goes against the grain of typical OO practices, the reduction in code size make it worth it.
+ * MDM: To support multi-chamber, I could have made TempControl non-static,
+ * and had a reference to the current instance. But this means each lookup
+ * of a field must be done indirectly, which adds to the code size. Instead,
+ * we swap in/out the sensors and control data so that the bulk of the code
+ * can work against compile-time resolvable memory references. While the
+ * design goes against the grain of typical OO practices, the reduction in
+ * code size make it worth it.
  */
 
 class TempControl

@@ -27,7 +27,7 @@ defines = {k: v for (k, v) in my_flags.get("CPPDEFINES")}
 shields = []
 linenum = 0
 define = "#define BREWPI_STATIC_CONFIG".lower()
-with open (str(env["PROJECTINCLUDE_DIR"]) + '/Config.h', 'rt') as config:
+with open (str(env["PROJECTSRC_DIR"]) + '\Config.h', 'rt') as config:
     for line in config:
         linenum += 1
         if line.lower().startswith(define):
@@ -35,8 +35,25 @@ with open (str(env["PROJECTINCLUDE_DIR"]) + '/Config.h', 'rt') as config:
 for variant in shields:
     shield = variant.split(" ")[-1].split("_")[-1].lower()
 
-env.Replace(PROGNAME="brewpi-%s-%s-%s-%s" % (
-    env["PIOFRAMEWORK"][0],
-    str(env["BOARD"]),
-    shield,
-    defines.get("PIO_SRC_TAG")))
+# Parse out glycol configuration
+glycol = False
+linenum = 0
+define = "#define ENABLE_GLYCOL".lower()
+with open (str(env["PROJECTSRC_DIR"]) + '\Config.h', 'rt') as config:
+    for line in config:
+        linenum += 1
+        if line.lower().startswith(define):
+            glycol = True
+
+if (glycol):
+    env.Replace(PROGNAME="brewpi-%s-%s-glycol-%s-%s" % (
+        env["PIOFRAMEWORK"][0],
+        str(env["BOARD"]),
+        shield,
+        defines.get("PIO_SRC_TAG")))
+else:
+    env.Replace(PROGNAME="brewpi-%s-%s-%s-%s" % (
+        env["PIOFRAMEWORK"][0],
+        str(env["BOARD"]),
+        shield,
+        defines.get("PIO_SRC_TAG")))

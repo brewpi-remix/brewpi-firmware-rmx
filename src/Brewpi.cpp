@@ -107,7 +107,7 @@ void brewpiLoop(void)
     ui.ticks();
 
     // Reset display on timer to mitigate screen scramble
-    #if BREWPI_LCD
+    #if BREWPI_LCD && LCD_RESET_PERIOD
         static unsigned long lastLcdUpdate = 0;  // Counter for LCD reset
         if (ticks.seconds() - lastLcdUpdate >= LCD_RESET_PERIOD)
         {

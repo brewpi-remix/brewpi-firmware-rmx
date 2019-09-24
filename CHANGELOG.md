@@ -1,5 +1,24 @@
 # BrewPi Remix Firmware Changelog
 
+## 0.2.13 (alpha)
+
+### Do not use this in production, it is an alpha commit only.  The glycol variant may burn up your compressor if you use it on a standard refrigerator setup.
+
+This change enables compiler macros to set parameters suitable for glycol use.  This means there are two new firmware versions; a "glycol" variant for both I2C and RevC.  When using the glycol, zero out the PID values (`Kp`, `Ki`, `Kd`) in order to make "*Fridge setpoint*" equal to "*Beer setpoint*."  Use only the beer sensor, the refrigerator temperature will get its value internally from the beer sensor.  If you wish to monitor the glycol temperature, use the "room" sensor.  Control the pump as "cool" via the relay.
+
+### Features
+
+- Add support for Glycol control
+
+### Enhancements
+
+- Update to atmelavr 1.15.0 from 1.14.0.
+- Merged the src and includes directory - not sure how the headers got in "includes"
+
+### Bugfixes
+
+- N/A
+
 ## 0.2.12
 
 The primary change for this release is to enable I2C support (thank you @Thorrak!)  This brings in a new shield type called "I2C" with accompanying pin definition changes.

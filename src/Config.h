@@ -82,29 +82,9 @@ license and credits. */
 
 //////////////////////////////////////////////////////////////////////////
 //
-// Enable glycol support, reduce min times
-//
-#ifndef ENABLE_GLYCOL
-#define ENABLE_GLYCOL
-#endif
-// Should not have to change any of these
-#ifdef ENABLE_GLYCOL
-#define _MIN_COOL_OFF_TIME (uint16_t)10
-#define _MIN_HEAT_OFF_TIME (uint16_t)10
-#define _MIN_COOL_ON_TIME (uint16_t)10
-#define _MIN_HEAT_ON_TIME (uint16_t)10
-#define _MIN_COOL_OFF_TIME_FRIDGE_CONSTANT (uint16_t)10
-#define _MIN_SWITCH_TIME (uint16_t)10
-#define _COOL_PEAK_DETECT_TIME (uint16_t)1800
-#define _HEAT_PEAK_DETECT_TIME (uint16_t)900
-#endif
-//
-//////////////////////////////////////////////////////////////////////////
-
-//////////////////////////////////////////////////////////////////////////
-//
 // Enable the LCD display. Without this, a NullDisplay is used
-// If using an IIC/TWI shield, also enable IIC support
+// If using an IIC/TWI shield, also enable IIC support.  There is
+// no reason not to leave this enabled
 //
 #ifndef BREWPI_LCD
 #define BREWPI_LCD 1
@@ -133,6 +113,8 @@ license and credits. */
 //////////////////////////////////////////////////////////////////////////
 
 //////////////////////////////////////////////////////////////////////////
+//
+// Enable a rotary encoder.  There is no reason not to leave this enabled
 //
 #ifndef BREWPI_ROTARY_ENCODER
 #define BREWPI_ROTARY_ENCODER 1

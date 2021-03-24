@@ -41,6 +41,10 @@ license and credits. */
 #define BREWPI_I2C 1
 #endif
 
+#if BREWPI_STATIC_CONFIG == BREWPI_SHIELD_GLYCOL
+#define BREWPI_I2C 1
+#endif
+
 /*
  * LCD Display using a shift register:
  * For DIY-shields prior to the revA shield, this should be set to 0. With

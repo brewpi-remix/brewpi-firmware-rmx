@@ -39,9 +39,10 @@ license and credits. */
 #define BREWPI_SHIELD_DIY 0
 #define BREWPI_SHIELD_REVA 1
 #define BREWPI_SHIELD_REVC 2
-#define BREWPI_SHIELD_SPARK_REV_C 3   // Here for reference - this isn't actually supported in this firmware
-#define BREWPI_SHIELD_SPARK_REV_C2 4  // Here for reference - this isn't actually supported in this firmware
-#define BREWPI_SHIELD_I2C 5           // For hardware Uno shields with I2C on A4/A5
+#define BREWPI_SHIELD_SPARK_REV_C 3     // Here for reference - this isn't actually supported in this firmware
+#define BREWPI_SHIELD_SPARK_REV_C2 4    // Here for reference - this isn't actually supported in this firmware
+#define BREWPI_SHIELD_I2C 5             // For hardware Uno shields with I2C on A4/A5
+#define BREWPI_SHIELD_GLYCOL 6          // For hardware Uno shields with I2C on A4/A5
 
 #define BREWPI_BOARD_LEONARDO 'l'
 #define BREWPI_BOARD_STANDARD 's'

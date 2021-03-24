@@ -40,7 +40,7 @@ license and credits. */
 #include "ModeControl.h"
 #include "TicksImpl.h"
 
-#ifndef ENABLE_GLYCOL
+#if BREWPI_STATIC_CONFIG != BREWPI_SHIELD_GLYCOL
 // These are regular BrewPi constants:
 //
 // Set minimum off time to prevent short cycling the compressor in seconds
@@ -62,14 +62,14 @@ const uint16_t COOL_PEAK_DETECT_TIME = 1800;
 const uint16_t HEAT_PEAK_DETECT_TIME = 900;
 #else
 // Glycol support constants
-const uint16_t MIN_COOL_OFF_TIME = _MIN_COOL_OFF_TIME;
-const uint16_t MIN_HEAT_OFF_TIME = _MIN_HEAT_OFF_TIME;
-const uint16_t MIN_COOL_ON_TIME = _MIN_COOL_ON_TIME;
-const uint16_t MIN_HEAT_ON_TIME = _MIN_HEAT_ON_TIME;
-const uint16_t MIN_COOL_OFF_TIME_FRIDGE_CONSTANT = _MIN_COOL_OFF_TIME_FRIDGE_CONSTANT;
-const uint16_t MIN_SWITCH_TIME = _MIN_SWITCH_TIME;
-const uint16_t COOL_PEAK_DETECT_TIME = _COOL_PEAK_DETECT_TIME;
-const uint16_t HEAT_PEAK_DETECT_TIME = _HEAT_PEAK_DETECT_TIME;
+const uint16_t MIN_COOL_OFF_TIME = 0;
+const uint16_t MIN_HEAT_OFF_TIME = 300;
+const uint16_t MIN_COOL_ON_TIME = 0;
+const uint16_t MIN_HEAT_ON_TIME = 180;
+const uint16_t MIN_COOL_OFF_TIME_FRIDGE_CONSTANT = 0;
+const uint16_t MIN_SWITCH_TIME = 600;
+const uint16_t COOL_PEAK_DETECT_TIME = 1800;
+const uint16_t HEAT_PEAK_DETECT_TIME = 900;
 #endif
 
 // These two structs are stored in and loaded from EEPROM

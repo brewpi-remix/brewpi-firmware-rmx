@@ -97,11 +97,19 @@ void TempControl::init(void)
 		beerSensor->init();
 	}
 
+#if BREWPI_STATIC_CONFIG != BREWPI_SHIELD_GLYCOL
 	if (fridgeSensor == NULL)
 	{
 		fridgeSensor = new TempSensor(TEMP_SENSOR_TYPE_FRIDGE, &defaultTempSensor);
 		fridgeSensor->init();
 	}
+#else
+        // use the beer sensor as the fridge sensor when using glycol
+	if (fridgeSensor == NULL)
+	{
+		fridgeSensor = beerSensor;
+	}
+#endif
 
 	updateTemperatures();
 	reset();

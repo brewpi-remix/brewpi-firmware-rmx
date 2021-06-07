@@ -104,7 +104,7 @@ void TempControl::init(void)
 		fridgeSensor->init();
 	}
 #else
-        // use the beer sensor as the fridge sensor when using glycol
+    // Use the beer sensor as the fridge sensor when using glycol
 	if (fridgeSensor == NULL)
 	{
 		fridgeSensor = beerSensor;
@@ -747,13 +747,18 @@ const ControlConstants TempControl::ccDefaults PROGMEM =
 		/* tempFormat */ 'C',
 		/* tempSettingMin */ intToTemp(1),  // +1 deg Celsius
 		/* tempSettingMax */ intToTemp(30), // +30 deg Celsius
-
 		// control defines, also in fixed point format (7 int bits, 9 frac bits), so multiplied by 2^9=512
+#if BREWPI_STATIC_CONFIG != BREWPI_SHIELD_GLYCOL
 		/* Kp	*/ doubleToTempDiff(5.0),	  // +5
 		/* Ki	*/ doubleToTempDiff(0.25),	 // +0.25
 		/* Kd	*/ doubleToTempDiff(1.5),	  // -1.5
 		/* iMaxError */ doubleToTempDiff(0.5), // 0.5 deg
-
+#else // Glycol
+		/* Kp	*/ doubleToTempDiff(0.0),	  // +5
+		/* Ki	*/ doubleToTempDiff(0.0),	 // +0.25
+		/* Kd	*/ doubleToTempDiff(0.0),	  // -1.5
+		/* iMaxError */ doubleToTempDiff(0.5), // 0.5 deg
+#endif
 		// Stay Idle when fridge temperature is in this range
 		/* idleRangeHigh */ intToTempDiff(1), // +1 deg Celsius
 		/* idleRangeLow */ intToTempDiff(-1), // -1 deg Celsius

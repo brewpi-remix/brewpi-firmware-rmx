@@ -100,7 +100,7 @@ copy_binaries() {
         for env in "${ENVIRONMENTS[@]}"
         do
             echo -e "Copying binaries for $env."
-            rm "$GITROOT"/"$BINLOC"/brewpi-arduino-uno-"${env,,}"*.hex  2>/dev/null
+            eval "rm $GITROOT/$BINLOC/brewpi-arduino-uno-${env,,}*.hex"
             cp "$GITROOT"/.pio/build/"$env"/*.hex "$GITROOT"/"$BINLOC"/
         done
     else

@@ -47,6 +47,15 @@ if version and version is not None:
 else:
     tag = "0.0.0"
 
+# Get commit hash from latest commit
+commit = ""
+revcmd = "git log --pretty=format:'%h' -n 1"
+try:
+    commit = subprocess.check_output(revcmd, shell=True).decode().strip()
+    commit = commit[1:-1]
+except:
+    commit = "unknown"
+
 # Get shield
 shield = "unknown"
 #
@@ -75,10 +84,11 @@ if shield == "unknown":
     except:
         pass
 
-firmwareName = "brewpi-%s-%s-%s-%s" % (
+firmwareName = "brewpi-%s-%s-%s-%s+%s" % (
     framework,
     board,
     shield,
-    tag)
+    tag,
+    commit)
 
 env.Replace(PROGNAME=firmwareName)
